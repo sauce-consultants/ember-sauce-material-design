@@ -1,0 +1,1 @@
+export { default } from 'smd-header/components/smd-header';
