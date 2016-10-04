@@ -1,1 +1,1 @@
-export { default } from 'smd-header/components/smd-header';
+export { default } from 'ember-sauce-material-design/components/smd-header';

@@ -6,9 +6,15 @@ module.exports = function(defaults) {
   var app = new EmberAddon(defaults, {
     // Add options here
     sassOptions: {
-      includePaths: ['bower_components/material-design-lite/src']
+      includePaths: [
+        'bower_components/material-design-lite/src',
+        'bower_components/sauce-material-design/src'
+      ]
     },
   });
+
+  app.options.snippetPaths = ['tests/dummy/app/templates/snippets'];
+  app.options.snippetSearchPaths = ['tests/dummy', 'app', 'addon'];
 
   /*
     This build file specifies the options for the dummy test app of this

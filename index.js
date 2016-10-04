@@ -2,5 +2,5 @@
 'use strict';
 
 module.exports = {
-  name: 'smd-header'
+  name: 'ember-sauce-material-design'
 };

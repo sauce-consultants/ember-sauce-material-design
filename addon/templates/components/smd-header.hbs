@@ -1,7 +1,34 @@
-<header class="sdl-header">
-  <h1 class="sdl-header__title">Title</h1>
-  {{mdl-button icon='keyboard_arrow_left' isColored=false class="sdl-header__back"}}
-  {{mdl-button icon='search' isColored=false class="sdl-header__search"}}
-  {{mdl-button isFloating=true icon='add' class="sdl-header__fab"}}
+{{#if hasCoverImageSrc}}
+  <div class="smd-header__cover-image" style="background-image: {{coverImageSrc}}"></div>
+{{/if}}
+
+{{#if hasCoverImageClass}}
+  <div class="smd-header__cover-image {{coverImageClass}}"></div>
+{{/if}}
+
+<div class="smd-header__toolbar smd-header__toolbar--top">
+
+  {{mdl-button icon=backIcon isColored=false class="smd-header__action"}}
+
+  <div class="spacer"></div>
+
+  {{#if hasActionOne}}
+    {{mdl-button icon=actionOneIcon isColored=false class="smd__header__action"}}
+  {{/if}}
+
+  {{#if hasActionTwo}}
+    {{mdl-button icon=actionTwoIcon isColored=false class="smd__header__action"}}
+  {{/if}}
+
+</div>
+
+<div class="smd-header__toolbar smd-header__toolbar--middle"></div>
+
+<div class="smd-header__toolbar smd-header__toolbar--bottom">
+  <h1 class="smd-header__title">{{title}}</h1>
   {{outlet}}
-</header>
+</div>
+
+{{#if hasFab}}
+  {{mdl-button icon=fabIcon isMiniFab=isMiniFab isFloating=true class=fabClassNames}}
+{{/if}}

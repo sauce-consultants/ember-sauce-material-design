@@ -1,0 +1,35 @@
+//@import "_color-definitions";
+
+//$color-primary: $palette-teal-500;
+//$color-accent: $palette-pink-A200;
+
+//@import "material-design-lite";
+@import "sauce-material-design.scss";
+
+html,
+body {
+  height: 100%;
+}
+
+.custom-cover-image-class {
+  background-image: url(https://unsplash.it/g/1200/400/);
+}
+
+.styleguide {
+  &__header {
+    padding: 4rem 2rem 1rem;
+  }
+  &__title {
+    @include typo-display-1;
+    line-height: 1;
+    margin: 0 0 1rem;
+  }
+  &__text {
+    @include typo-body-1;
+  }
+  &__preview {
+    border-bottom: 1px solid #DDD;
+    padding: 0 0 3rem;
+    margin: 0 0 3rem;
+  }
+}

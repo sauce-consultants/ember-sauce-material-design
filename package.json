@@ -1,6 +1,6 @@
 {
-  "name": "smd-header",
-  "version": "0.0.0",
+  "name": "ember-sauce-material-design",
+  "version": "0.0.1",
   "description": "The default blueprint for ember-cli addons.",
   "directories": {
     "doc": "doc",
@@ -41,7 +41,6 @@
     "ember-material-lite": "0.2.5",
     "ember-new-computed": "1.0.3",
     "ember-resolver": "^2.0.3",
-    "ember-welcome-page": "^1.0.1",
     "loader.js": "^4.0.1"
   },
   "keywords": [
