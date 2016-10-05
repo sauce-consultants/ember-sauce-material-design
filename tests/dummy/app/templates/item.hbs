@@ -1,0 +1,275 @@
+<header class="styleguide__header">
+  <h1 class="styleguide__title">Header</h1>
+  <p class="styleguide__text">Variations of a material header</p>
+</header>
+
+<pre class="styleguide__code">
+  <code class="js">&#123;{smd-item
+    title="Item Title"
+    meta="Elit commodo turpis volutpat risus"
+    avatarSrc="http://i.pravatar.cc/80"
+    actionIcon='info_circle'
+    isBordered=true
+  }&#125;</code>
+</pre>
+<div class="styleguide__preview">
+  <ul class="smd-list smd-list--border">
+    {{smd-item
+        title="Item Title"
+        meta="Elit commodo turpis volutpat risus"
+        avatarSrc="http://i.pravatar.cc/80"
+        actionIcon='info_circle'
+        isBordered=true
+    }}
+    {{smd-item
+        title="Item Title"
+        meta="Elit commodo turpis volutpat risus"
+        avatarSrc="http://i.pravatar.cc/80"
+        actionIcon='info_circle'
+        isBordered=true
+    }}
+  </ul>
+</div>
+
+<pre class="styleguide__code">
+  <code class="js">&#123;{smd-item
+    title="Item Title"
+    meta="Elit commodo turpis volutpat risus"
+    avatarSrc="http://i.pravatar.cc/80"
+    actionIcon='star'
+    isInverted=true
+  }&#125;</code>
+</pre>
+<div class="styleguide__preview">
+  <ul class="smd-list smd-list--border">
+    {{smd-item
+        title="Item Title"
+        meta="Elit commodo turpis volutpat risus"
+        avatarSrc="http://i.pravatar.cc/80"
+        actionIcon='star'
+        isInverted=true
+    }}
+    {{smd-item
+        title="Item Title"
+        meta="Elit commodo turpis volutpat risus"
+        avatarSrc="http://i.pravatar.cc/80"
+        actionIcon='star'
+        isInverted=true
+    }}
+  </ul>
+</div>
+
+<pre class="styleguide__code">
+  <code class="js">&#123;{smd-item
+    title="Item Title"
+    subTitle="Subtitle"
+    meta="Elit commodo turpis volutpat risus"
+    avatarSrc="http://i.pravatar.cc/80"
+    actionIcon='info_circle'
+  }&#125;</code>
+</pre>
+<div class="styleguide__preview">
+  <ul class="smd-list">
+    {{smd-item
+        title="Item Title"
+        subTitle="Subtitle"
+        meta="Elit commodo turpis volutpat risus"
+        avatarSrc="http://i.pravatar.cc/80"
+        actionIcon='info_circle'
+    }}
+    {{smd-item
+        title="Item Title"
+        subTitle="Subtitle"
+        meta="Elit commodo turpis volutpat risus"
+        avatarSrc="http://i.pravatar.cc/80"
+        actionIcon='info_circle'
+    }}
+  </ul>
+</div>
+
+<pre class="styleguide__code">
+  <code class="js">&#123;{smd-item
+    title="Item Title"
+    meta="Elit commodo turpis volutpat risus"
+    avatarSrc="http://i.pravatar.cc/80"
+    actionIcon='info_circle'
+    isThreeLines=true
+  }&#125;</code>
+</pre>
+<div class="styleguide__preview">
+  <ul class="smd-list">
+    {{smd-item
+        title="Item Title"
+        meta="Non himenaeos a porttitor a a dui pretium tincidunt rutrum a a ad ac per euismod a donec gravida id."
+        avatarSrc="http://i.pravatar.cc/80"
+        actionIcon='info_circle'
+        isThreeLines=true
+    }}
+    {{smd-item
+        title="Item Title"
+        meta="Non himenaeos a porttitor a a dui pretium tincidunt rutrum a a ad ac per euismod a donec gravida id."
+        avatarSrc="http://i.pravatar.cc/80"
+        actionIcon='info_circle'
+        isThreeLines=true
+
+    }}
+  </ul>
+</div>
+
+<pre class="styleguide__code">
+  <code class="js">&#123;{smd-item
+    title="Item Title"
+    meta="Elit commodo turpis volutpat risus"
+    avatarIcon="person"
+    actionIcon='info_circle'
+  }&#125;</code>
+</pre>
+<div class="styleguide__preview">
+  <ul class="smd-list">
+    {{smd-item
+        title="Item Title"
+        meta="Elit commodo turpis volutpat risus"
+        avatarIcon="person"
+        actionIcon='info_circle'
+    }}
+  </ul>
+</div>
+
+<pre class="styleguide__code">
+  <code class="js">&#123;{smd-item
+    title="Item with no avatar"
+    meta="Non himenaeos a porttitor a a dui pretium tincidunt rutrum a a ad ac per euismod a donec gravida id."
+    actionIcon='info_circle'
+  }&#125;</code>
+</pre>
+<div class="styleguide__preview">
+  <ul class="smd-list">
+    {{smd-item
+        title="Item with no avatar"
+        meta="Non himenaeos a porttitor a a dui pretium tincidunt rutrum a a ad ac per euismod a donec gravida id."
+        actionIcon='info_circle'
+    }}
+  </ul>
+</div>
+
+<pre class="styleguide__code">
+  <code class="js">&#123;{smd-item
+    title="Item with no action"
+    meta="Non himenaeos a porttitor a a dui pretium tincidunt rutrum a a ad ac per euismod a donec gravida id."
+    avatarIcon="person"
+  }&#125;</code>
+</pre>
+<div class="styleguide__preview">
+  <ul class="smd-list">
+    {{smd-item
+        title="Item with no action"
+        meta="Non himenaeos a porttitor a a dui pretium tincidunt rutrum a a ad ac per euismod a donec gravida id."
+        avatarIcon="person"
+    }}
+  </ul>
+</div>
+
+
+<pre class="styleguide__code">
+  <code class="js">&#123;{#smd-item avatarSrc="http://i.pravatar.cc/80" actionIcon='info_circle'}&#125;
+    ...custom markup
+&#123;{/smd-item}&#125;</code>
+</pre>
+<div class="styleguide__preview">
+  <ul class="smd-list">
+    {{#smd-item avatarSrc="http://i.pravatar.cc/80" actionIcon='info_circle'}}
+      <h1 class="smd-item__title">Brunch this weekend?</h1>
+      <p class="smd-item__meta"><strong>Ali Connors</strong> - I'll be in your neighborhood parturient in elit commodo turpis volutpat risus montes arcu rutrum turpis malesuada ac consectetur quam a.</p>
+    {{/smd-item}}
+    {{#smd-item avatarSrc="http://i.pravatar.cc/80" actionIcon='info_circle'}}
+      <h1 class="smd-item__title">What time today?</h1>
+      <p class="smd-item__meta"><strong>Jane Smith</strong> - Elit commodo turpis volutpat risus montes arcu rutrum turpis malesuada ac consectetur quam a.</p>
+    {{/smd-item}}
+  </ul>
+</div>
+
+
+<div class="styleguide__section">
+
+  <h1 class="styleguide__title">Attributes</h1>
+
+  <table class="styleguide__table mdl-data-table mdl-js-data-table">
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Description</th>
+        <th>Type</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>title</td>
+        <td>Defines the items title text</td>
+        <td><em>string</em></td>
+        <td>null</td>
+      </tr>
+      <tr>
+        <td>subTitle</td>
+        <td>Defines the items sub title text</td>
+        <td><em>string</em></td>
+        <td>null</td>
+      </tr>
+      <tr>
+        <td>meta</td>
+        <td>Defines the items meta text</td>
+        <td><em>string</em></td>
+        <td>null</td>
+      </tr>
+      <tr>
+        <td>avatarIcon</td>
+        <td>Defines the <a href="https://design.google.com/icons/">material design icon</a> used for the items avatar</td>
+        <td><em>string</em></td>
+        <td>null</td>
+      </tr>
+      <tr>
+        <td>avatarSrc</td>
+        <td>Alternativly you can provider an image src path for the item avatar</td>
+        <td><em>string</em></td>
+        <td>null</td>
+      </tr>
+      <tr>
+        <td>actionIcon</td>
+        <td>Defines the <a href="https://design.google.com/icons/">material design icon</a> used for the items secondary action</td>
+        <td><em>string</em></td>
+        <td>null</td>
+      </tr>
+      <tr>
+        <td>label</td>
+        <td>Text for the label appearing in the action section</td>
+        <td><em>string</em></td>
+        <td>null</td>
+      </tr>
+      <tr>
+        <td>isRoundedAvatar</td>
+        <td>If true the avatar will appear as a circle</td>
+        <td><em>boolean</em></td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>isBordered</td>
+        <td>If true the items will be seperated by a line</td>
+        <td><em>boolean</em></td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>isThreeLines</td>
+        <td>If true the meta text will span two lines (2 + title = 3)</td>
+        <td><em>boolean</em></td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>isInverted</td>
+        <td>If true the avatar will appear on the right and the action on the left</td>
+        <td><em>boolean</em></td>
+        <td>false</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

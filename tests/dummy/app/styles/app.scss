@@ -11,6 +11,10 @@ body {
   height: 100%;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 .custom-cover-image-class {
   background-image: url(https://unsplash.it/g/1200/400/);
 }
@@ -31,7 +35,7 @@ body {
   &__preview {
     border-bottom: 1px solid #DDD;
     padding: 0 0 3rem;
-    margin: 0 0 3rem;
+    margin: 0 2rem 3rem;
   }
   &__code {
     margin: 2rem;

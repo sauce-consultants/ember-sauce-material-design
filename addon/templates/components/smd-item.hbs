@@ -1,0 +1,35 @@
+
+<div class="{{leftColumnClassNames}}">
+  {{#if isInverted}}
+    {{#if hasActionOrLabel}}
+      {{smd-item-action label=label icon=actionIcon}}
+    {{/if}}
+  {{else}}
+    {{#if hasAvatar}}
+      {{smd-item-avatar avatarIcon=avatarIcon avatarSrc=avatarSrc isRounded=isRoundedAvatar}}
+    {{/if}}
+  {{/if}}
+</div>
+<div class="smd-item__column smd-item__column--middle">
+  {{#if hasTitle}}
+  <h1 class="{{titleClassNames}}">{{title}}</h1>
+  {{/if}}
+  {{#if hasSubTitle}}
+  <h1 class="smd-item__sub-title">{{subTitle}}</h1>
+  {{/if}}
+  {{#if hasMeta}}
+  <p class="{{metaClassNames}}">{{meta}}</p>
+  {{/if}}
+  {{yield}}
+</div>
+<div class="{{rightColumnClassNames}}">
+  {{#if isInverted}}
+    {{#if hasAvatar}}
+      {{smd-item-avatar avatarIcon=avatarIcon avatarSrc=avatarSrc isRounded=isRoundedAvatar}}
+    {{/if}}
+  {{else}}
+    {{#if hasActionOrLabel}}
+      {{smd-item-action label=label icon=actionIcon}}
+    {{/if}}
+  {{/if}}
+</div>
