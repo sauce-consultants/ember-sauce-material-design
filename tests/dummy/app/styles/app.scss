@@ -16,7 +16,8 @@ body {
 }
 
 .styleguide {
-  &__header {
+  &__header,
+  &__section {
     padding: 4rem 2rem 1rem;
   }
   &__title {
@@ -31,5 +32,22 @@ body {
     border-bottom: 1px solid #DDD;
     padding: 0 0 3rem;
     margin: 0 0 3rem;
+  }
+  &__code {
+    margin: 2rem;
+    padding: 0;
+    code {
+      padding: 2rem;
+      margin: 0;
+    }
+  }
+  &__table {
+    width: 100%;
+    td, th {
+      text-align: left;
+    }
+    em {
+      color: unquote("rgb(#{$color-accent;})");
+    }
   }
 }
