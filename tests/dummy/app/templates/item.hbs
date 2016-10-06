@@ -213,6 +213,12 @@
     </thead>
     <tbody>
       <tr>
+        <td>item</td>
+        <td>If set, this variable will be passed back to your route by actions</td>
+        <td><em>mixed</em></td>
+        <td>null</td>
+      </tr>
+      <tr>
         <td>title</td>
         <td>Defines the items title text</td>
         <td><em>string</em></td>
@@ -284,7 +290,7 @@
 </div>
 
 <div class="styleguide__section">
-  
+
   <h1 class="styleguide__title">Actions</h1>
 
   <table class="styleguide__table mdl-data-table mdl-js-data-table">
@@ -292,16 +298,19 @@
       <tr>
         <th>Action</th>
         <th>Description</th>
+        <th>Parameters</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>primaryAction</td>
         <td>If specified this action will be called on item click</td>
+        <td><em>item</em></td>
       </tr>
       <tr>
         <td>secondaryAction</td>
         <td>If specified this action will be called on the action button click</td>
+        <td><em>item</em></td>
       </tr>
     </tbody>
   </table>
