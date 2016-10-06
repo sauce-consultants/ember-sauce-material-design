@@ -22,6 +22,7 @@ export default Ember.Component.extend({
   isMinimized: false,
   hasBack: true,
   // Actions
+  backAction: null,
   toolbarActionOne: null,
   toolbarActionTwo: null,
   toolbarActionThree: null,
