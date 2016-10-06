@@ -25,7 +25,7 @@ export default Ember.Component.extend({
   isInverted: false,
   item:null,
   // Actions
-  primaryAction: null,
+  action: null,
   secondaryAction: null,
   // Computed
   hasTitle: Ember.computed.bool('title'),
@@ -104,8 +104,8 @@ export default Ember.Component.extend({
   }),
   // Events
   click: function() {
-    if (this.get('primaryAction')) {
-      this.sendAction('primaryAction', this.get('item'));
+    if (this.get('action')) {
+      this.sendAction('action', this.get('item'));
     }
   },
   actions: {
