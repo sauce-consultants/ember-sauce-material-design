@@ -2,7 +2,7 @@
 <div class="{{leftColumnClassNames}}">
   {{#if isInverted}}
     {{#if hasActionOrLabel}}
-      {{smd-item-action label=label icon=actionIcon}}
+      {{smd-item-action label=label icon=actionIcon action='secondaryAction'}}
     {{/if}}
   {{else}}
     {{#if hasAvatar}}
@@ -29,7 +29,7 @@
     {{/if}}
   {{else}}
     {{#if hasActionOrLabel}}
-      {{smd-item-action label=label icon=actionIcon}}
+      {{smd-item-action label=label icon=actionIcon action='secondaryAction'}}
     {{/if}}
   {{/if}}
 </div>

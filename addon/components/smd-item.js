@@ -23,6 +23,10 @@ export default Ember.Component.extend({
   isBordered: false,
   isThreeLines: false,
   isInverted: false,
+  item:null,
+  // Actions
+  primaryAction: null,
+  secondaryAction: null,
   // Computed
   hasTitle: Ember.computed.bool('title'),
   hasSubTitle: Ember.computed.bool('subTitle'),
@@ -76,14 +80,39 @@ export default Ember.Component.extend({
       return 'smd-item--border';
     }
   }),
-  noLeftClassModifier: Ember.computed('hasAvatar', function () {
-    if (!this.get('hasAvatar')) {
-      return 'smd-item--no-left';
+  noLeftClassModifier: Ember.computed('isInverted', 'hasActionOrLabel', 'hasAvatar', function () {
+    if (this.get('isInverted')) {
+      if (!this.get('hasActionOrLabel')) {
+        return 'smd-item--no-left';
+      }
+    } else {
+      if (!this.get('hasAvatar')) {
+        return 'smd-item--no-left';
+      }
     }
   }),
-  noRightClassModifier: Ember.computed('hasActionOrLabel', function () {
-    if (!this.get('hasActionOrLabel')) {
-      return 'smd-item--no-right';
+  noRightClassModifier: Ember.computed('isInverted', 'hasActionOrLabel', 'hasAvatar', function () {
+    if (this.get('isInverted')) {
+      if (!this.get('hasAvatar')) {
+        return 'smd-item--no-right';
+      }
+    } else {
+      if (!this.get('hasActionOrLabel')) {
+        return 'smd-item--no-right';
+      }
     }
   }),
+  // Events
+  click: function() {
+    if (this.get('primaryAction')) {
+      this.sendAction('primaryAction', this.get('item'));
+    }
+  },
+  actions: {
+    secondaryAction: function () {
+      if (this.get('secondaryAction')) {
+        this.sendAction('secondaryAction', this.get('item'));
+      }
+    }
+  }
 });

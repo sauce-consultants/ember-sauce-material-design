@@ -6,6 +6,7 @@ export default Ember.Component.extend({
   // Attributes
   icon: null,
   label: null,
+  action: null,
   // Computed
   hasLabel: Ember.computed.bool('label'),
   hasAction: Ember.computed.bool('icon'),
@@ -17,4 +18,12 @@ export default Ember.Component.extend({
     }
     return classNames.join(' ');
   }),
+  // Actions
+  actions: {
+    buttonAction: function () {
+      if (this.get('action')) {
+        this.sendAction('action');
+      }
+    }
+  }
 });

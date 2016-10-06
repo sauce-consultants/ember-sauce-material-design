@@ -2,5 +2,7 @@
   <span class="smd-item__label">{{label}}</span>
 {{/if}}
 {{#if hasAction}}
-  {{mdl-button icon=icon isColored=false class=actionClassNames}}
+  <div {{action 'buttonAction' bubbles=false}}>
+    {{mdl-button icon=icon isColored=false class=actionClassNames}}
+  </div>
 {{/if}}
