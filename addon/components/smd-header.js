@@ -2,20 +2,30 @@ import Ember from 'ember';
 import layout from '../templates/components/smd-header';
 
 export default Ember.Component.extend({
+  // Component setup
+  layout,
   tagName: 'header',
   classNames: 'smd-header',
   classNameBindings: ['fabClassModifier', 'minimizedClassModifier'],
-  layout,
+  // Attributes
+  item: null,
   title: '',
   backIcon: 'arrow_back',
-  actionOneIcon: null,
-  actionTwoIcon: null,
+  toolbarIconOne: null,
+  toolbarIconTwo: null,
+  toolbarIconThree: null,
   fabIcon: null,
   coverImageClass: null,
   coverImageSrc: null,
   isMiniFab: false,
   isRightFab: false,
   isMinimized: false,
+  hasBack: true,
+  // Actions
+  toolbarActionOne: null,
+  toolbarActionTwo: null,
+  toolbarActionThree: null,
+  // Computed
   fabClassModifier: Ember.computed('hasFab', function () {
     if (this.get('hasFab')) {
       return 'smd-header--with-fab';
@@ -51,8 +61,41 @@ export default Ember.Component.extend({
     return classNames.join(' ');
   }),
   hasFab: Ember.computed.bool('fabIcon'),
-  hasActionOne: Ember.computed.bool('actionOneIcon'),
-  hasActionTwo: Ember.computed.bool('actionTwoIcon'),
+  hasBack: Ember.computed.bool('backIcon'),
+  hasToolbarOne: Ember.computed.bool('toolbarIconOne'),
+  hasToolbarTwo: Ember.computed.bool('toolbarIconTwo'),
+  hasToolbarThree: Ember.computed.bool('toolbarIconThree'),
   hasCoverImageClass: Ember.computed.bool('coverImageClass'),
   hasCoverImageSrc: Ember.computed.bool('coverImageSrc'),
+  // actions
+  actions: {
+    backAction: function () {
+      if (this.get('backAction')) {
+        this.sendAction('backAction', this.get('item'));
+      } else if (this.get('action')) {
+        this.sendAction('action', 'back', this.get('item'));
+      }
+    },
+    toolbarActionOne: function () {
+      if (this.get('toolbarActionOne')) {
+        this.sendAction('toolbarActionOne', this.get('item'));
+      } else if (this.get('action')) {
+        this.sendAction('action', 'toolbarOne', this.get('item'));
+      }
+    },
+    toolbarActionTwo: function () {
+      if (this.get('toolbarActionTwo')) {
+        this.sendAction('toolbarActionTwo', this.get('item'));
+      } else if (this.get('action')) {
+        this.sendAction('action', 'toolbarTwo', this.get('item'));
+      }
+    },
+    toolbarActionThree: function () {
+      if (this.get('toolbarActionThree')) {
+        this.sendAction('toolbarActionThree', this.get('item'));
+      } else if (this.get('action')) {
+        this.sendAction('action', 'toolbarThree', this.get('item'));
+      }
+    }
+  }
 });

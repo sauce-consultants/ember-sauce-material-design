@@ -8,16 +8,22 @@
 
 <div class="smd-header__toolbar smd-header__toolbar--top">
 
-  {{mdl-button icon=backIcon isColored=false class="smd-header__action"}}
+  {{#if hasBack}}
+    {{mdl-button icon=backIcon isColored=false class="smd-header__action" action='backAction'}}
+  {{/if}}
 
   <div class="spacer"></div>
 
-  {{#if hasActionOne}}
-    {{mdl-button icon=actionOneIcon isColored=false class="smd__header__action"}}
+  {{#if hasToolbarOne}}
+    {{mdl-button icon=toolbarIconOne isColored=false action=toolbarActionOne class="smd__header__action" action='toolbarActionOne'}}
   {{/if}}
 
-  {{#if hasActionTwo}}
-    {{mdl-button icon=actionTwoIcon isColored=false class="smd__header__action"}}
+  {{#if hasToolbarTwo}}
+    {{mdl-button icon=toolbarIconTwo isColored=false action=toolbarActionTwo class="smd__header__action" action='toolbarActionTwo'}}
+  {{/if}}
+
+  {{#if hasToolbarThree}}
+    {{mdl-button icon=toolbarIconThree isColored=false action=toolbarActionThree class="smd__header__action" action='toolbarActionThree'}}
   {{/if}}
 
 </div>

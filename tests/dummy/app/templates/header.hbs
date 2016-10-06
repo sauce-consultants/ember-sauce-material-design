@@ -4,50 +4,68 @@
 </header>
 
 <pre class="styleguide__code">
-  <code class="js">&#123;{smd-header title="Standard header" actionOneIcon='search' actionOneIcon='search' actionTwoIcon='more_horizontal'}&#125;</code>
+  <code class="js">&#123;{smd-header
+    title="Standard header"
+    toolbarIconOne='search'
+    toolbarIconTwo='delete'
+    toolbarIconTwo='more_horizontal'
+    action='defaultAction'
+    item='foo'}&#125;</code>
 </pre>
 <div class="styleguide__preview">
-  {{smd-header title="Standard header" actionOneIcon='search' actionOneIcon='search' actionTwoIcon='more_horizontal'}}
+  {{smd-header
+    title="Standard header"
+    toolbarIconOne='search'
+    toolbarIconTwo='delete'
+    toolbarIconThree='more_horizontal'
+    action='defaultAction'
+    item='foo'}}
 </div>
 
 
 <pre class="styleguide__code">
-  <code class="js">&#123;{smd-header title="Minimized header" isMinimized=true actionOneIcon='search' actionOneIcon='search' actionTwoIcon='more_horizontal'}&#125;</code>
+  <code class="js">&#123;{smd-header title="Minimized header" isMinimized=true toolbarIconOne='search' toolbarIconTwo='more_horizontal'}&#125;</code>
 </pre>
 <div class="styleguide__preview">
-  {{smd-header title="Minimized header" isMinimized=true actionOneIcon='search' actionOneIcon='search' actionTwoIcon='more_horizontal'}}
+  {{smd-header
+    title="Minimized header"
+    isMinimized=true
+    toolbarIconOne='search'
+    toolbarIconTwo='more_horizontal'
+    backAction='backAction'
+    item='bar'}}
 </div>
 
 
 <pre class="styleguide__code">
-  <code class="js">&#123;{smd-header title="Header with fab" fabIcon='add' actionOneIcon='search' actionOneIcon='search' actionTwoIcon='more_horizontal'}&#125;</code>
+  <code class="js">&#123;{smd-header title="Header with fab & no back button" backIcon=false  fabIcon='add' toolbarIconOne='search' toolbarIconTwo='more_horizontal'}&#125;</code>
 </pre>
 <div class="styleguide__preview">
-  {{smd-header title="Header with fab" fabIcon='add' actionOneIcon='search' actionOneIcon='search' actionTwoIcon='more_horizontal'}}
+  {{smd-header title="Header with fab & no back button" backIcon=false fabIcon='add' toolbarIconOne='search' toolbarIconTwo='more_horizontal'}}
 </div>
 
 
 <pre class="styleguide__code">
-  <code class="js">&#123;{smd-header title="Header with mini fab and image" fabIcon='add' isMiniFab=true actionOneIcon='search' actionTwoIcon='more_horizontal' coverImageSrc='url(https://unsplash.it/1200/400/?blur)'}&#125;</code>
+  <code class="js">&#123;{smd-header title="Header with mini fab and image" fabIcon='add' isMiniFab=true toolbarIconOne='search' toolbarIconTwo='more_horizontal' coverImageSrc='url(https://unsplash.it/1200/400/?blur)'}&#125;</code>
 </pre>
 <div class="styleguide__preview">
-  {{smd-header title="Header with mini fab and image" fabIcon='add' isMiniFab=true actionOneIcon='search' actionTwoIcon='more_horizontal' coverImageSrc='url(https://unsplash.it/1200/400/?blur)'}}
+  {{smd-header title="Header with mini fab and image" fabIcon='add' isMiniFab=true toolbarIconOne='search' toolbarIconTwo='more_horizontal' coverImageSrc='url(https://unsplash.it/1200/400/?blur)'}}
 </div>
 
 
 <pre class="styleguide__code">
-  <code class="js">&#123;{smd-header title="Header right aligned fab and image class" fabIcon='add' isRightFab=true actionOneIcon='search' actionTwoIcon='more_horizontal' coverImageClass='custom-cover-image-class'}&#125;</code>
+  <code class="js">&#123;{smd-header title="Header right aligned fab and image class" fabIcon='add' isRightFab=true toolbarIconOne='search' toolbarIconTwo='more_horizontal' coverImageClass='custom-cover-image-class'}&#125;</code>
 </pre>
 <div class="styleguide__preview">
-  {{smd-header title="Header right aligned fab and image class" fabIcon='add' isRightFab=true actionOneIcon='search' actionTwoIcon='more_horizontal' coverImageClass='custom-cover-image-class'}}
+  {{smd-header title="Header right aligned fab and image class" fabIcon='add' isRightFab=true toolbarIconOne='search' toolbarIconTwo='more_horizontal' coverImageClass='custom-cover-image-class'}}
 </div>
 
 
 <pre class="styleguide__code">
-  <code class="js">&#123;{smd-header title="Standard header" actionOneIcon='search' actionOneIcon='search' actionTwoIcon='more_horizontal'}&#125;</code>
+  <code class="js">&#123;{smd-header title="Standard header" toolbarIconOne='search' toolbarIconTwo='more_horizontal'}&#125;</code>
 </pre>
 <div class="styleguide__preview">
-  {{smd-header isMiniFab=true title="Header with mini fab right aligned" fabIcon='add' isRightFab=true actionOneIcon='search' actionTwoIcon='more_horizontal'}}
+  {{smd-header isMiniFab=true title="Header with mini fab right aligned" fabIcon='add' isRightFab=true toolbarIconOne='search' toolbarIconTwo='more_horizontal'}}
 </div>
 
 <div class="styleguide__section">
@@ -77,13 +95,13 @@
         <td>'arrow_back'</td>
       </tr>
       <tr>
-        <td>actionOneIcon</td>
+        <td>toolbarIconOne</td>
         <td>Defines the <a href="https://design.google.com/icons/">material design icon</a> used for the first toolbar action button</td>
         <td><em>string</em></td>
         <td>null</td>
       </tr>
       <tr>
-        <td>actionTwoIcon</td>
+        <td>toolbarIconTwo</td>
         <td>Defines the <a href="https://design.google.com/icons/">material design icon</a> used for the second toolbar action button</td>
         <td><em>string</em></td>
         <td>null</td>
