@@ -15,15 +15,15 @@
   <div class="spacer"></div>
 
   {{#if hasToolbarOne}}
-    {{mdl-button icon=toolbarIconOne isColored=false action=toolbarActionOne class="smd__header__action" action='toolbarActionOne'}}
+    {{mdl-button icon=toolbarIconOne isColored=false class="smd__header__action" action='toolbarActionOne'}}
   {{/if}}
 
   {{#if hasToolbarTwo}}
-    {{mdl-button icon=toolbarIconTwo isColored=false action=toolbarActionTwo class="smd__header__action" action='toolbarActionTwo'}}
+    {{mdl-button icon=toolbarIconTwo isColored=false class="smd__header__action" action='toolbarActionTwo'}}
   {{/if}}
 
   {{#if hasToolbarThree}}
-    {{mdl-button icon=toolbarIconThree isColored=false action=toolbarActionThree class="smd__header__action" action='toolbarActionThree'}}
+    {{mdl-button icon=toolbarIconThree isColored=false class="smd__header__action" action='toolbarActionThree'}}
   {{/if}}
 
 </div>
@@ -36,5 +36,5 @@
 </div>
 
 {{#if hasFab}}
-  {{mdl-button icon=fabIcon isMiniFab=isMiniFab isFloating=true class=fabClassNames}}
+  {{mdl-button icon=fabIcon isMiniFab=isMiniFab isFloating=true action='fabAction' class=fabClassNames}}
 {{/if}}

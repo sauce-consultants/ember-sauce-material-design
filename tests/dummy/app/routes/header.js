@@ -7,6 +7,9 @@ export default Route.extend({
     defaultAction: function (action, item) {
       alert("default action called with action "+action+" and "+item);
     },
+    fabAction: function (item) {
+      alert("fab action called with "+item);
+    },
     toolbarActionOne: function (item) {
       alert("toolbar item one action called with "+item);
     },

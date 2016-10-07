@@ -23,13 +23,18 @@ export default Ember.Component.extend({
   hasBack: true,
   // Actions
   backAction: null,
+  fabAction: null,
   toolbarActionOne: null,
   toolbarActionTwo: null,
   toolbarActionThree: null,
   // Computed
   fabClassModifier: Ember.computed('hasFab', function () {
     if (this.get('hasFab')) {
-      return 'smd-header--with-fab';
+      if (this.get('isMiniFab')) {
+        return 'smd-header--with-mini-fab';
+      } else {
+        return 'smd-header--with-fab';
+      }
     }
   }),
   minimizedClassModifier: Ember.computed('isMinimized', function () {
@@ -75,6 +80,13 @@ export default Ember.Component.extend({
         this.sendAction('backAction', this.get('item'));
       } else if (this.get('action')) {
         this.sendAction('action', 'back', this.get('item'));
+      }
+    },
+    fabAction: function () {
+      if (this.get('fabAction')) {
+        this.sendAction('fabAction', this.get('item'));
+      } else if (this.get('action')) {
+        this.sendAction('action', 'fab', this.get('item'));
       }
     },
     toolbarActionOne: function () {
