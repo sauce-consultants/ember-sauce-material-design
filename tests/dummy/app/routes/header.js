@@ -22,5 +22,8 @@ export default Route.extend({
     backAction: function (item) {
       alert("back action called with "+item);
     },
+    searched: function (term) {
+      alert("Search term "+term);
+    },
   },
 });

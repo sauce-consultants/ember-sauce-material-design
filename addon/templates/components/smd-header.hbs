@@ -22,6 +22,10 @@
     {{mdl-button icon=toolbarIconTwo isColored=false class="smd__header__action" action='toolbarActionTwo'}}
   {{/if}}
 
+  {{#if hasSearch}}
+    {{smd-search-widget action='searchAction'}}
+  {{/if}}
+
   {{#if hasToolbarThree}}
     {{mdl-button icon=toolbarIconThree isColored=false class="smd__header__action" action='toolbarActionThree'}}
   {{/if}}

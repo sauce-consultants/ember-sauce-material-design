@@ -6,33 +6,33 @@
 <pre class="styleguide__code">
   <code class="js">&#123;{smd-header
     title="Standard header"
-    toolbarIconOne='search'
+    toolbarIconOne='code'
     toolbarIconTwo='delete'
     toolbarIconTwo='more_horizontal'
+    backIcon='arrow_back'
     action='defaultAction'
     item='foo'}&#125;</code>
 </pre>
 <div class="styleguide__preview">
   {{smd-header
     title="Standard header"
-    toolbarIconOne='search'
+    toolbarIconOne='code'
     toolbarIconTwo='delete'
     toolbarIconThree='more_horizontal'
+    backIcon='arrow_back'
     action='defaultAction'
     item='foo'}}
 </div>
 
 
 <pre class="styleguide__code">
-  <code class="js">&#123;{smd-header title="Minimized header" isMinimized=true toolbarIconOne='search' toolbarIconTwo='more_horizontal'}&#125;</code>
+  <code class="js">&#123;{smd-header title="Minimized header" isMinimized=true searchAction='searched'}&#125;</code>
 </pre>
 <div class="styleguide__preview">
   {{smd-header
     title="Minimized header"
     isMinimized=true
-    toolbarIconOne='search'
-    toolbarIconTwo='more_horizontal'
-    backAction='backAction'
+    searchAction='searched'
     item='bar'}}
 </div>
 
@@ -189,6 +189,11 @@
         <td>toolbarActionThree</td>
         <td>Specific action called on toolbar button three click</td>
         <td><em>item</em></td>
+      </tr>
+      <tr>
+        <td>searchAction</td>
+        <td>Specific action for the search widget. If defined, the smd-search-widget will be used in the toolbar and the action called on key up of the serch box</td>
+        <td><em>term</em></td>
       </tr>
     </tbody>
   </table>

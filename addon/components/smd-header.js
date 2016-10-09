@@ -10,7 +10,7 @@ export default Ember.Component.extend({
   // Attributes
   item: null,
   title: '',
-  backIcon: 'arrow_back',
+  backIcon: null,
   toolbarIconOne: null,
   toolbarIconTwo: null,
   toolbarIconThree: null,
@@ -27,6 +27,7 @@ export default Ember.Component.extend({
   toolbarActionOne: null,
   toolbarActionTwo: null,
   toolbarActionThree: null,
+  searchAction:false,
   // Computed
   fabClassModifier: Ember.computed('hasFab', function () {
     if (this.get('hasFab')) {
@@ -73,6 +74,7 @@ export default Ember.Component.extend({
   hasToolbarThree: Ember.computed.bool('toolbarIconThree'),
   hasCoverImageClass: Ember.computed.bool('coverImageClass'),
   hasCoverImageSrc: Ember.computed.bool('coverImageSrc'),
+  hasSearch: Ember.computed.bool('searchAction'),
   // actions
   actions: {
     backAction: function () {
@@ -109,6 +111,9 @@ export default Ember.Component.extend({
       } else if (this.get('action')) {
         this.sendAction('action', 'toolbarThree', this.get('item'));
       }
+    },
+    searchAction: function (term) {
+      this.sendAction('searchAction', term);
     }
   }
 });
