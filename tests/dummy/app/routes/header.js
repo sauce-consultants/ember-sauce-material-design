@@ -3,6 +3,11 @@ import Ember from 'ember';
 const { Route } = Ember;
 
 export default Route.extend({
+  queryParams: {
+    search: {
+      refreshModel: true
+    }
+  },
   actions: {
     defaultAction: function (action, item) {
       alert("default action called with action "+action+" and "+item);
@@ -24,6 +29,19 @@ export default Route.extend({
     },
     searched: function (term) {
       alert("Search term "+term);
+      if (term) {
+        this.transitionTo('header', {
+          queryParams: {
+            search: term
+          }
+        });
+      } else {
+        this.transitionTo('header', {
+          queryParams: {
+            search: undefined
+          }
+        });
+      }
     },
   },
 });

@@ -8,6 +8,8 @@ export default Ember.Component.extend({
   classNameBindings: ['openClass'],
   action: null,
   isOpen: false,
+  term:null,
+  searchParam: null,
   // Computed
   openClass: Ember.computed('isOpen', function () {
     if (this.get('isOpen')) {
@@ -21,6 +23,8 @@ export default Ember.Component.extend({
     },
     close: function () {
       this.set('isOpen', false);
+      this.set('term', null);
+      this.sendAction('action', null);
       return false;
     },
     keyUp: function (term) {
