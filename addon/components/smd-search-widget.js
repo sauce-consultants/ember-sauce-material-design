@@ -19,6 +19,9 @@ export default Ember.Component.extend({
   actions: {
     open: function () {
       this.set('isOpen', true);
+      setTimeout(function() {
+        this.$('.smd-search-widget__input').focus();
+      }, 50);
       return false;
     },
     close: function () {
