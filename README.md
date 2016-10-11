@@ -20,6 +20,8 @@ sassOptions: {
 ```
   app.import('bower_components/material-design-lite/material.min.js');
 ```
+
+* Add `@import "sauce-material-design.scss";` to your `app.scss`
 * Win
 
 ## Components
