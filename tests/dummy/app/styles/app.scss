@@ -70,6 +70,28 @@ body {
     .mdl-slider__background-flex {
       margin: 0;
     }
+    &--select {
+      &::before {
+        $size: 1.75rem;
+        display: block;
+        color: rgb(97,97,97);
+        content: 'arrow_drop_down';
+        cursor: pointer;
+        height: $size;
+        line-height: $size;
+        font-size: 1.25rem;
+        font-family: 'Material Icons';
+        font-weight: normal;
+        font-style: normal;
+        position: absolute;
+        text-align: center;
+        top: 20px;
+        right: 0;
+        min-width: $size;
+        width: $size;
+        z-index: 1;
+      }
+    }
   }
   &__input {
     &--color {
@@ -83,6 +105,13 @@ body {
     }
     &--range {
       margin: 0!important;
+    }
+    &--select {
+      border-radius: 0;
+      position: relative;
+      z-index: 2;
+      -webkit-appearance: none;
+      -webkit-border-radius: 0px;
     }
   }
   &__label {

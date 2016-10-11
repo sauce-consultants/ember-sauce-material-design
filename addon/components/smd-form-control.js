@@ -20,6 +20,7 @@ export default Ember.Component.extend({
   label: null,
   model: null,
   type: 'text',
+  icon: null,
   tip: null,
   isFloating: true,
   max: null,
@@ -61,6 +62,7 @@ export default Ember.Component.extend({
   isCheckbox: Ember.computed.equal('type', 'checkbox'),
   isRadio: Ember.computed.equal('type', 'radio'),
   isIcon: Ember.computed.equal('type', 'icon'),
+  isSelect: Ember.computed.equal('type', 'select'),
   showErrorClass: Ember.computed.and('notValidating', 'showErrorMessage', 'hasContent', 'validation'),
   showErrorMessage: Ember.computed('validation.isDirty', 'isInvalid', 'didValidate', function() {
     return (this.get('validation.isDirty') || this.get('didValidate')) && this.get('isInvalid');
@@ -103,7 +105,7 @@ export default Ember.Component.extend({
     classNames.push('mdl-textfield__label');
     classNames.push('smd-form__label');
     let type = this.get('type');
-    let types = ['radio', 'date', 'month', 'week', 'time', 'datetime', 'datetime-local', 'range'];
+    let types = ['select', 'radio', 'icon', 'date', 'month', 'week', 'time', 'datetime', 'datetime-local', 'range'];
     if (types.indexOf(type) !== -1) {
       classNames.push('smd-form__label--fixed');
     }
