@@ -62,6 +62,9 @@ export default Ember.Component.extend({
     if (this.get('subTitle')) {
       classNames.push('smd-item__title--with-subtitle');
     }
+    if (!this.get('subTitle') && !this.get('meta')) {
+      classNames.push('smd-item__title--solo');
+    }
     return classNames.join(' ');
   }),
   metaClassNames: Ember.computed('isThreeLines', 'subTitle', function () {
