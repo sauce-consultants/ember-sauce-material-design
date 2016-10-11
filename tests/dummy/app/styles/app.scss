@@ -30,6 +30,11 @@ body {
     line-height: 1;
     margin: 0 0 1rem;
   }
+  &__subtitle {
+    @include typo-title;
+    line-height: 1;
+    margin: 0 0 1rem;
+  }
   &__text {
     @include typo-body-1;
   }
@@ -39,7 +44,7 @@ body {
     margin: 0 2rem;
   }
   &__code {
-    margin: 2rem;
+    margin: 1rem 2rem;
     padding: 0;
     code {
       padding: 2rem;
@@ -85,6 +90,13 @@ body {
       top:4px;
       font-size: .75rem;
       visibility: visible;
+    }
+  }
+  &__group {
+    display: flex;
+    margin:0 .5rem;
+    > * {
+      margin: 0 .5rem;
     }
   }
 }
