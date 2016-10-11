@@ -7,20 +7,20 @@
     rows=rows
     cols=cols}}
 {{else if isSwitch}}
-  {{mdl-switch text='Switch' value=switch}}
+  {{mdl-switch text='Switch' value=value}}
 {{else if isCheckbox}}
-  {{mdl-checkbox text='Checkbox' value=checkbox}}
+  {{mdl-checkbox text='Checkbox' value=value}}
 {{else if isIcon}}
-  {{mdl-icon-toggle icon=icon value=checkbox}}
+  {{mdl-icon-toggle icon=icon value=value}}
 {{else if isRadio}}
   {{#each options as |option|}}
     {{mdl-radio text=option.label value=option.value}}
   {{/each}}
 {{else if isSelect}}
   {{#select-box/native class=inputClasses as |sb|}}
-    {{sb.option value=1 label='One'}}
-    {{sb.option value=2 label='Two'}}
-    {{sb.option value=3 label='Three'}}
+    {{#each options as |option|}}
+      {{sb.option value=option.value label=option.label}}
+    {{/each}}
   {{/select-box/native}}
 {{else}}
   {{input
