@@ -6,6 +6,14 @@
     type=type
     rows=rows
     cols=cols}}
+{{else if isSwitch}}
+  {{mdl-switch text='Switch' value=switch}}
+{{else if isCheckbox}}
+  {{mdl-checkbox text='Checkbox' value=checkbox}}
+{{else if isRadio}}
+  {{#each options as |option|}}
+    {{mdl-radio text=option.label value=option.value}}
+  {{/each}}
 {{else}}
   {{input
     class=inputClasses
@@ -22,15 +30,15 @@
 {{/if}}
 
 {{#if showErrorMessage}}
-  <div class="form__error">{{v-get model name 'message'}}</div>
+  <div class="smd-form__error">{{v-get model name 'message'}}</div>
 {{/if}}
 
 {{#if showWarningMessage}}
-  <div class="form__warning">{{v-get model name 'warningMessage'}}</div>
+  <div class="smd-form__warning">{{v-get model name 'warningMessage'}}</div>
 {{/if}}
 
 {{#if showTip}}
-  <div class="form__tip">{{tip}}</div>
+  <div class="smd-form__tip">{{tip}}</div>
 {{/if}}
 
 {{yield}}

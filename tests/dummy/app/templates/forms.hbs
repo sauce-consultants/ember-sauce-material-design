@@ -4,11 +4,35 @@
 </header>
 
 
+<header class="styleguide__header">
+  <h1 class="styleguide__subtitle">Toggle Controls</h1>
+  <p class="styleguide__text">Various toggle input types</p>
+</header>
+
+<div class="styleguide__preview">
+  {{smd-form-control name="switch" label="Switch" type="switch"}}
+</div>
+
+<div class="styleguide__preview">
+  {{smd-form-control name="checkbox" label="Checkbox" type="checkbox"}}
+</div>
+
+<div class="styleguide__preview">
+  {{smd-form-control name="radio" label="Radio" type="radio" tip="Just the tip mam"}}
+</div>
+
+
+
+<header class="styleguide__header">
+  <h1 class="styleguide__subtitle">Form Controls</h1>
+  <p class="styleguide__text">Various input types</p>
+</header>
+
 <pre class="styleguide__code">
-  <code class="js">&#123;{smd-form-control name="text" label="Text Field"}&#125;</code>
+  <code class="js">&#123;{smd-form-control name="text" label="Text Field" tip="Just the tip mam"}&#125;</code>
 </pre>
 <div class="styleguide__preview">
-  {{smd-form-control name="text" label="Text Field"}}
+  {{smd-form-control name="text" label="Text Field" tip="Just the tip mam"}}
 </div>
 
 <pre class="styleguide__code">
@@ -115,14 +139,45 @@
 </div>
 
 <header class="styleguide__header">
+  <h1 class="styleguide__subtitle">Field Groups</h1>
+  <p class="styleguide__text">Horizontal field groups</p>
+</header>
+
+<pre class="styleguide__code">
+  <code class="js">
+    &lt;fieldset class="smd-fieldset"&gt;
+      &#123;{smd-form-control name="option1" label="Option 1"}&#125;
+      &#123;{smd-form-control name="option2" label="Option 2"}&#125;
+      &#123;{smd-form-control name="option3" label="Option 3"}&#125;
+    &lt;/fieldset&gt;
+  </code>
+</pre>
+
+<header class="styleguide__header">
+  <h1 class="styleguide__subtitle">Fieldsets</h1>
+  <p class="styleguide__text">Vertical field groups</p>
+</header>
+
+<div class="styleguide__preview">
+  <fieldset class="smd-form__fieldset">
+    <legend class="smd-form__legend">Fieldset</legend>
+    {{smd-form-control name="option1" label="Option 1"}}
+    {{smd-form-control name="option2" label="Option 2"}}
+    {{smd-form-control name="option3" label="Option 3"}}
+  </fieldset>
+</div>
+
+<header class="styleguide__header">
 
   <h2 class="styleguide__title">TODO</h2>
 
   <ul>
+    <li><del>Field groups</del></li>
+    <li><del>Fieldsets</del></li>
     <li>Select boxes</li>
-    <li>checkbox</li>
-    <li>radio group</li>
-    <li>checkbox group</li>
+    <li>Checkbox</li>
+    <li>Radio group</li>
+    <li>Checkbox group</li>
   </ul>
 
 </header>

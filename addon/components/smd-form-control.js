@@ -27,15 +27,40 @@ export default Ember.Component.extend({
   step: null,
   cols: null,
   rows: 3,
-
+  options: Ember.A([
+    {
+      label: 'Option 1',
+      value: 1,
+    },
+    {
+      label: 'Option 2',
+      value: 1,
+    },
+    {
+      label: 'Option 3',
+      value: 1,
+    },
+  ]),
   // Computed
-  hasLabel: Ember.computed.bool('label'),
+  hasLabel: Ember.computed('label', 'type', function () {
+    let label = this.get('label'),
+        type  = this.get('type');
+    var noLabel = ['switch', 'checkbox'];
+    if (noLabel.indexOf(type) !== -1) {
+      return false;
+    }
+    return !!type;
+  }),
   notValidating: Ember.computed.not('validation.isValidating'),
   didValidate: Ember.computed.oneWay('targetObject.didValidate'),
   hasContent: Ember.computed.notEmpty('value'),
   isValid: Ember.computed.and('hasContent', 'validation.isValid', 'notValidating'),
   isInvalid: Ember.computed.oneWay('validation.isInvalid'),
   isTextarea: Ember.computed.equal('type', 'textarea'),
+  isSwitch: Ember.computed.equal('type', 'switch'),
+  isCheckbox: Ember.computed.equal('type', 'checkbox'),
+  isRadio: Ember.computed.equal('type', 'radio'),
+  isIcon: Ember.computed.equal('type', 'icon'),
   showErrorClass: Ember.computed.and('notValidating', 'showErrorMessage', 'hasContent', 'validation'),
   showErrorMessage: Ember.computed('validation.isDirty', 'isInvalid', 'didValidate', function() {
     return (this.get('validation.isDirty') || this.get('didValidate')) && this.get('isInvalid');
@@ -78,7 +103,7 @@ export default Ember.Component.extend({
     classNames.push('mdl-textfield__label');
     classNames.push('smd-form__label');
     let type = this.get('type');
-    let types = ['date', 'month', 'week', 'time', 'datetime', 'datetime-local', 'range'];
+    let types = ['radio', 'date', 'month', 'week', 'time', 'datetime', 'datetime-local', 'range'];
     if (types.indexOf(type) !== -1) {
       classNames.push('smd-form__label--fixed');
     }
