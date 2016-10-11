@@ -9,6 +9,7 @@
 html,
 body {
   height: 100%;
+  font-size: 100%;
 }
 
 * {
@@ -52,6 +53,38 @@ body {
     }
     em {
       color: unquote("rgb(#{$color-accent;})");
+    }
+  }
+}
+
+.smd-form {
+  &__control {
+    .mdl-slider__container {
+      height: 27px;
+    }
+    .mdl-slider__background-flex {
+      margin: 0;
+    }
+  }
+  &__input {
+    &--color {
+      $size: 2rem;
+      height: $size;
+      padding: 0;
+      width: $size;
+      border-bottom: none;
+      line-height: 1;
+      display: block;
+    }
+    &--range {
+      margin: 0!important;
+    }
+  }
+  &__label {
+    &--fixed {
+      top:4px;
+      font-size: .75rem;
+      visibility: visible;
     }
   }
 }

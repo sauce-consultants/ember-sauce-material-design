@@ -9,6 +9,7 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('header');
   this.route('item');
+  this.route('forms');
 });
 
 export default Router;

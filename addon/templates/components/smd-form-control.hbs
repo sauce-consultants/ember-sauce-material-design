@@ -1,0 +1,36 @@
+{{#if isTextarea}}
+  {{textarea
+    class=inputClasses
+    name=name
+    value=value
+    type=type
+    rows=rows
+    cols=cols}}
+{{else}}
+  {{input
+    class=inputClasses
+    name=name
+    value=value
+    type=type
+    max=max
+    min=min
+    step=step}}
+{{/if}}
+
+{{#if hasLabel}}
+  <label class="{{labelClasses}}" for="{{name}}">{{label}}</label>
+{{/if}}
+
+{{#if showErrorMessage}}
+  <div class="form__error">{{v-get model name 'message'}}</div>
+{{/if}}
+
+{{#if showWarningMessage}}
+  <div class="form__warning">{{v-get model name 'warningMessage'}}</div>
+{{/if}}
+
+{{#if showTip}}
+  <div class="form__tip">{{tip}}</div>
+{{/if}}
+
+{{yield}}
