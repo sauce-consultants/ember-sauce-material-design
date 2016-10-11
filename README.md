@@ -4,14 +4,33 @@ This README outlines the details of collaborating on this Ember addon.
 
 ## Installation
 
-* `git clone` this repository
-* `npm install`
-* `bower install`
+* `ember install ember-sauce-material-design`
+* Add sass files to `ember-cli-build.js`
 
-## Running
+```
+sassOptions: {
+    includePaths: [
+      'bower_components/material-design-lite/src',
+      'bower_components/sauce-material-design/src'
+    ]
+  },
+```
+* Add js file to `ember-cli-build.js`
 
-* `ember serve`
-* Visit your app at http://localhost:4200.
+```
+  app.import('bower_components/material-design-lite/material.min.js');
+```
+* Win
+
+## Components
+
+* smd-header
+* smd-item
+* smd-form-control
+
+## Docs
+
+Coming soon.. Clone repo and run `ember serve` to view the demo app at http://localhost:4200
 
 ## Running Tests
 
