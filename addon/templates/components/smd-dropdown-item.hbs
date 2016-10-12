@@ -1,0 +1,10 @@
+{{#if hasIcon}}
+  {{mdl-icon icon=icon disabled=disabled class="mdl-menu__item-icon"}}
+  <span>
+    {{text}}
+    {{yield}}
+  </span>
+{{else}}
+  {{text}}
+  {{yield}}
+{{/if}}

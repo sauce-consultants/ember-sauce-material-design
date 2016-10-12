@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('header');
   this.route('item');
   this.route('forms');
+  this.route('dropdown');
 });
 
 export default Router;

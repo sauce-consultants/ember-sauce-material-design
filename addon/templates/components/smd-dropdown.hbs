@@ -1,0 +1,8 @@
+{{#if hasText}}
+  {{#mdl-button id=buttonId}}{{text}}{{/mdl-button}}
+{{else if hasIcon}}
+  {{mdl-button icon=icon id=buttonId}}
+{{/if}}
+<ul class='mdl-menu mdl-js-menu mdl-js-ripple-effect {{alignClass}}' for={{buttonId}}>
+  {{yield}}
+</ul>

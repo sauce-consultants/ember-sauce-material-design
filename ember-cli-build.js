@@ -12,7 +12,7 @@ module.exports = function(defaults) {
       ]
     },
   });
-  
+
   app.import('bower_components/material-design-lite/material.min.js');
 
   app.options.snippetPaths = ['tests/dummy/app/templates/snippets'];
