@@ -53,7 +53,7 @@ export default Ember.Component.extend({
     return !!type;
   }),
   notValidating: Ember.computed.not('validation.isValidating'),
-  didValidate: Ember.computed.oneWay('targetObject.didValidate'),
+  didValidate: false,
   hasContent: Ember.computed.notEmpty('value'),
   isValid: Ember.computed.and('hasContent', 'validation.isValid', 'notValidating'),
   isInvalid: Ember.computed.oneWay('validation.isInvalid'),
