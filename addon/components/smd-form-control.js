@@ -28,24 +28,20 @@ export default Ember.Component.extend({
   step: null,
   cols: null,
   rows: 3,
-  options: Ember.A([
-    {
-      label: 'Option 1',
-      value: 1,
-    },
-    {
-      label: 'Option 2',
-      value: 1,
-    },
-    {
-      label: 'Option 3',
-      value: 1,
-    },
-  ]),
+  options: Ember.A([{
+    label: 'Option 1',
+    value: 1,
+  }, {
+    label: 'Option 2',
+    value: 1,
+  }, {
+    label: 'Option 3',
+    value: 1,
+  }, ]),
   // Computed
-  hasLabel: Ember.computed('label', 'type', function () {
+  hasLabel: Ember.computed('label', 'type', function() {
     let label = this.get('label'),
-        type  = this.get('type');
+      type = this.get('type');
     var noLabel = ['switch', 'checkbox'];
     if (noLabel.indexOf(type) !== -1) {
       return false;
@@ -70,23 +66,29 @@ export default Ember.Component.extend({
   showWarningMessage: Ember.computed('validation.isDirty', 'validation.warnings.[]', 'isValid', 'didValidate', function() {
     return (this.get('validation.isDirty') || this.get('didValidate')) && this.get('isValid') && !Ember.isEmpty(this.get('validation.warnings'));
   }),
-  showTip: Ember.computed('tip', function () {
+  showTip: Ember.computed('tip', function() {
     return (this.get('tip'));
   }),
   // Classes
-  inputTypeModifier: Ember.computed('type', function () {
-    return 'smd-form__control--'+this.get('type');
+  inputTypeModifier: Ember.computed('type', function() {
+    return 'smd-form__control--' + this.get('type');
   }),
-  floatingClass: Ember.computed('isFloating', function () {
-    if (this.get('isFloating')) { return 'mdl-textfield--floating-label'; }
+  floatingClass: Ember.computed('isFloating', function() {
+    if (this.get('isFloating')) {
+      return 'mdl-textfield--floating-label';
+    }
   }),
-  invalidClass: Ember.computed('isInvalid', function () {
-    if ((this.get('validation.isDirty') || this.get('didValidate')) && this.get('isInvalid')) { return 'is-invalid'; }
+  invalidClass: Ember.computed('isInvalid', function() {
+    if ((this.get('validation.isDirty') || this.get('didValidate')) && this.get('isInvalid')) {
+      return 'is-invalid';
+    }
   }),
-  validClass: Ember.computed('isValid', function () {
-    if (this.get('isValid')) { return 'is-valid'; }
+  validClass: Ember.computed('isValid', function() {
+    if (this.get('isValid')) {
+      return 'is-valid';
+    }
   }),
-  inputClasses: Ember.computed('type', function () {
+  inputClasses: Ember.computed('type', function() {
     var classNames = [];
     let type = this.get('type');
 
@@ -96,11 +98,11 @@ export default Ember.Component.extend({
     } else {
       classNames.push('mdl-textfield__input');
     }
-      classNames.push('smd-form__input');
-      classNames.push('smd-form__input--'+type);
+    classNames.push('smd-form__input');
+    classNames.push('smd-form__input--' + type);
     return classNames.join(' ');
   }),
-  labelClasses: Ember.computed('type', function () {
+  labelClasses: Ember.computed('type', function() {
     var classNames = [];
     classNames.push('mdl-textfield__label');
     classNames.push('smd-form__label');
@@ -115,8 +117,7 @@ export default Ember.Component.extend({
   init() {
     this._super(...arguments);
     var propName = this.get('name');
-    if(this.get("model"))
-    {
+    if (this.get("model")) {
       Ember.defineProperty(this, 'validation', Ember.computed.oneWay(`model.validations.attrs.${propName}`));
       Ember.defineProperty(this, 'value', Ember.computed.alias(`model.${propName}`));
     }
@@ -125,5 +126,9 @@ export default Ember.Component.extend({
     this._super(...arguments);
     componentHandler.upgradeElement(this.element);
   },
-
+  actions: {
+    selectedOption(option) {
+      this.set('value', option);
+    }
+  },
 });

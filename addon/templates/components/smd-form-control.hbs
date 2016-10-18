@@ -17,9 +17,9 @@
     {{mdl-radio text=option.label value=option.value}}
   {{/each}}
 {{else if isSelect}}
-  {{#select-box/native class=inputClasses as |sb|}}
+  {{#select-box/native value=value on-select=(action 'selectedOption') class=inputClasses as |sb|}}
     {{#each options as |option|}}
-      {{sb.option value=option.value label=option.label}}
+      {{sb.option value=option label=option.label}}
     {{/each}}
   {{/select-box/native}}
 {{else}}
