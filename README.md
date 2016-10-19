@@ -5,6 +5,11 @@ This README outlines the details of collaborating on this Ember addon.
 ## Installation
 
 * `ember install ember-sauce-material-design`
+* Install dependencies (temporary)
+  * ember install ember-material-lite
+  * ember install ember-select-box
+  * ember install ember-cp-validations
+  * bower install sauce-material-design
 * Add sass files to `ember-cli-build.js`
 
 ```

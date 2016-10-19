@@ -6,9 +6,9 @@
 //@import "material-design-lite";
 @import "sauce-material-design.scss";
 
-html,
-body {
-  height: 100%;
+body,
+html {
+  height   : 100%;
   font-size: 100%;
 }
 
@@ -17,7 +17,7 @@ body {
 }
 
 .custom-cover-image-class {
-  background-image: url(https://unsplash.it/g/1200/400/);
+  background-image: url('https://unsplash.it/g/1200/400/');
 }
 
 .styleguide {
@@ -25,37 +25,47 @@ body {
   &__section {
     padding: 4rem 2rem 1rem;
   }
+
   &__title {
     @include typo-display-1;
     line-height: 1;
-    margin: 0 0 1rem;
+    margin     : 0 0 1rem;
   }
+
   &__subtitle {
     @include typo-title;
     line-height: 1;
-    margin: 0 0 1rem;
+    margin     : 0 0 1rem;
   }
+
   &__text {
     @include typo-body-1;
   }
+
   &__preview {
     border-bottom: 1px solid #DDD;
-    padding: 0 0 2rem;
-    margin: 0 2rem;
+    padding      : 0 0 2rem;
+    margin       : 0 2rem;
   }
+
   &__code {
-    margin: 1rem 2rem;
+    margin : 1rem 2rem;
     padding: 0;
+
     code {
       padding: 2rem;
-      margin: 0;
+      margin : 0;
     }
   }
+
   &__table {
     width: 100%;
-    td, th {
+
+    td,
+    th {
       text-align: left;
     }
+
     em {
       color: unquote("rgb(#{$color-accent;})");
     }

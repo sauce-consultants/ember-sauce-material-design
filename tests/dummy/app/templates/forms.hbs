@@ -4,6 +4,25 @@
 </header>
 
 <header class="styleguide__header">
+  <h1 class="styleguide__subtitle">The Form</h1>
+  <p class="styleguide__text">Wrap your controls in this parent component</p>
+</header>
+
+<pre class="styleguide__code">
+  <code class="js">
+&#123;{#smd-form action="submitForm" model=model }&#125;
+    .. form-controls
+&#123;{/smd-form action="submitForm" }&#125;</code>
+</pre>
+<div class="styleguide__preview">
+  {{#smd-form action="submitForm" model=model}}
+    {{smd-form-control name="text" label="Control 1"}}
+    {{smd-form-control name="text" label="Control 2"}}
+    {{smd-form-control name="text" label="Control 3"}}
+  {{/smd-form}}
+</div>
+
+<header class="styleguide__header">
   <h1 class="styleguide__subtitle">Form Controls</h1>
   <p class="styleguide__text">Various input types</p>
 </header>
@@ -200,10 +219,113 @@
   <ul>
     <li><del>Field groups</del></li>
     <li><del>Fieldsets</del></li>
-    <li>Select boxes</li>
-    <li>Checkbox</li>
-    <li>Radio group</li>
+    <li><del>Select boxes</del></li>
+    <li><del>Checkbox</del></li>
+    <li><del>Radio group</del></li>
     <li>Checkbox group</li>
   </ul>
 
 </header>
+
+
+<div class="styleguide__section">
+
+  <h1 class="styleguide__title">Form Attributes</h1>
+
+  <table class="styleguide__table mdl-data-table mdl-js-data-table">
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Description</th>
+        <th>Type</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>model</td>
+        <td>Defines the model to validate fields from</td>
+        <td><em>object</em></td>
+        <td>null</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<div class="styleguide__section">
+
+  <h1 class="styleguide__title">Form Actions</h1>
+
+  <table class="styleguide__table mdl-data-table mdl-js-data-table">
+    <thead>
+      <tr>
+        <th>Action</th>
+        <th>Description</th>
+        <th>Parameters</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>action</td>
+        <td>The default action when the form is submitted.</td>
+        <td><em>model</em></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="styleguide__section">
+
+  <h1 class="styleguide__title">Form Control Attributes</h1>
+
+  <table class="styleguide__table mdl-data-table mdl-js-data-table">
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Description</th>
+        <th>Type</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>model</td>
+        <td>Defines the model to update</td>
+        <td><em>object</em></td>
+        <td>null</td>
+      </tr>
+      <tr>
+        <td>name</td>
+        <td>Name of the models attribute to bind the control to</td>
+        <td><em>string</em></td>
+        <td>null</td>
+      </tr>
+      <tr>
+        <td>value</td>
+        <td>Inital value of the control</td>
+        <td><em>string</em></td>
+        <td>null</td>
+      </tr>
+      <tr>
+        <td>type</td>
+        <td>The controls input type</td>
+        <td><em>string</em></td>
+        <td>text</td>
+      </tr>
+      <tr>
+        <td>label</td>
+        <td>The controls label</td>
+        <td><em>string</em></td>
+        <td>null</td>
+      </tr>
+      <tr>
+        <td>tip</td>
+        <td>A string to define help text for the control</td>
+        <td><em>string</em></td>
+        <td>null</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
