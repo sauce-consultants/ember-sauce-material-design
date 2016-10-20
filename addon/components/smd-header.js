@@ -114,5 +114,61 @@ export default Ember.Component.extend({
     searchAction: function(term) {
       this.sendAction('searchAction', term);
     }
+  },
+  //
+  didRender: function() {
+    //
+
+    var $parent = Ember.$('body > .ember-view'),
+      $header = Ember.$('.smd-header'),
+      originalHeight = $header.outerHeight(),
+      minHeight = originalHeight - 160,
+      $title = $header.find('.smd-header__title');
+
+    if ($header.hasClass('smd-header--with-fab')) {
+      minHeight = minHeight + 28;
+    }
+
+    //
+    $parent.scroll(function() {
+
+      var scroll = Ember.$(this).scrollTop(),
+        $header = Ember.$('.smd-header'),
+        $body = Ember.$('.smd-body'),
+        height = (originalHeight - scroll);
+
+      if (height < minHeight) {
+        $header.css('height', '');
+        $header
+          .addClass("smd-header--minimized")
+          .addClass("smd-header--fixed")
+          .removeClass("smd-header--transition");
+
+        $title.css('transform', '');
+
+      } else if (scroll > 1) {
+        $header.css('height', height);
+        $header
+          .addClass("smd-header--transition")
+          .removeClass("smd-header--minimized")
+          .removeClass("smd-header--fixed");
+
+        // title scale factor
+        var scale = (height - minHeight) / (originalHeight - minHeight);
+
+        var fact = .75 + (.25 * scale);
+
+        $title.css('transform', 'scale(' + fact + ') translateZ(0px)')
+
+        $parent.css('margin-top', height);
+      } else {
+        $title.css('transform', '');
+        $header.css('height', '')
+          .removeClass("smd-header--transition")
+          .removeClass("smd-header--minimized")
+          .removeClass("smd-header--fixed");
+        $parent.css('margin-top', 0);
+      }
+    });
   }
 });
