@@ -20,6 +20,8 @@ export default Ember.Component.extend({
   isMiniFab: false,
   isRightFab: false,
   isMinimized: false,
+  scrolling: false,
+  scrollContext: 'body > .ember-view',
   // Actions
   backAction: null,
   fabAction: null,
@@ -117,19 +119,21 @@ export default Ember.Component.extend({
   },
   //
   didRender: function() {
-    //
+    if (this.get('scrolling')) {
+      this.initScrollTransition();
+    }
+  },
+  /**
+   * Cluster fuck of jquery to add sticker header scrolling
+   */
+  initScrollTransition: function() {
 
-    var $parent = Ember.$('body > .ember-view'),
+    var $parent = Ember.$(this.get('scrollContext')),
       $header = Ember.$('.smd-header'),
       originalHeight = $header.outerHeight(),
-      minHeight = originalHeight - 160,
+      minHeight = originalHeight - 128,
       $title = $header.find('.smd-header__title');
 
-    if ($header.hasClass('smd-header--with-fab')) {
-      minHeight = minHeight + 28;
-    }
-
-    //
     $parent.scroll(function() {
 
       var scroll = Ember.$(this).scrollTop(),
@@ -138,6 +142,8 @@ export default Ember.Component.extend({
         height = (originalHeight - scroll);
 
       if (height < minHeight) {
+        // We have scrolled all the way
+        // stick the header
         $header.css('height', '');
         $header
           .addClass("smd-header--minimized")
@@ -147,6 +153,8 @@ export default Ember.Component.extend({
         $title.css('transform', '');
 
       } else if (scroll > 1) {
+        // On our way to scrolling the full way
+        // header is in transition
         $header.css('height', height);
         $header
           .addClass("smd-header--transition")
@@ -162,6 +170,8 @@ export default Ember.Component.extend({
 
         $parent.css('margin-top', height);
       } else {
+        // No scroll yet
+        // leave the header alone
         $title.css('transform', '');
         $header.css('height', '')
           .removeClass("smd-header--transition")
