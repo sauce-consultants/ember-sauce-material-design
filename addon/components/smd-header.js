@@ -20,16 +20,15 @@ export default Ember.Component.extend({
   isMiniFab: false,
   isRightFab: false,
   isMinimized: false,
-  hasBack: true,
   // Actions
   backAction: null,
   fabAction: null,
   toolbarActionOne: null,
   toolbarActionTwo: null,
   toolbarActionThree: null,
-  searchAction:false,
+  searchAction: false,
   // Computed
-  fabClassModifier: Ember.computed('hasFab', function () {
+  fabClassModifier: Ember.computed('hasFab', function() {
     if (this.get('hasFab')) {
       if (this.get('isMiniFab')) {
         return 'smd-header--with-mini-fab';
@@ -38,12 +37,12 @@ export default Ember.Component.extend({
       }
     }
   }),
-  minimizedClassModifier: Ember.computed('isMinimized', function () {
+  minimizedClassModifier: Ember.computed('isMinimized', function() {
     if (this.get('isMinimized')) {
       return 'smd-header--minimized';
     }
   }),
-  fabClassNames: Ember.computed('isMiniFab', 'isRightFab', function () {
+  fabClassNames: Ember.computed('isMiniFab', 'isRightFab', function() {
     var classNames = [];
     if (this.get('isMiniFab')) {
       classNames.push('smd-header__mini-fab');
@@ -58,7 +57,7 @@ export default Ember.Component.extend({
     }
     return classNames.join(' ');
   }),
-  searchClassNames: Ember.computed('isMiniFab', function () {
+  searchClassNames: Ember.computed('isMiniFab', function() {
     var classNames = [];
     if (this.get('isMiniFab')) {
       classNames.push('smd-header__mini-search');
@@ -77,42 +76,42 @@ export default Ember.Component.extend({
   hasSearch: Ember.computed.bool('searchAction'),
   // actions
   actions: {
-    backAction: function () {
+    backAction: function() {
       if (this.get('backAction')) {
         this.sendAction('backAction', this.get('item'));
       } else if (this.get('action')) {
         this.sendAction('action', 'back', this.get('item'));
       }
     },
-    fabAction: function () {
+    fabAction: function() {
       if (this.get('fabAction')) {
         this.sendAction('fabAction', this.get('item'));
       } else if (this.get('action')) {
         this.sendAction('action', 'fab', this.get('item'));
       }
     },
-    toolbarActionOne: function () {
+    toolbarActionOne: function() {
       if (this.get('toolbarActionOne')) {
         this.sendAction('toolbarActionOne', this.get('item'));
       } else if (this.get('action')) {
         this.sendAction('action', 'toolbarOne', this.get('item'));
       }
     },
-    toolbarActionTwo: function () {
+    toolbarActionTwo: function() {
       if (this.get('toolbarActionTwo')) {
         this.sendAction('toolbarActionTwo', this.get('item'));
       } else if (this.get('action')) {
         this.sendAction('action', 'toolbarTwo', this.get('item'));
       }
     },
-    toolbarActionThree: function () {
+    toolbarActionThree: function() {
       if (this.get('toolbarActionThree')) {
         this.sendAction('toolbarActionThree', this.get('item'));
       } else if (this.get('action')) {
         this.sendAction('action', 'toolbarThree', this.get('item'));
       }
     },
-    searchAction: function (term) {
+    searchAction: function(term) {
       this.sendAction('searchAction', term);
     }
   }

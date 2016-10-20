@@ -46,7 +46,7 @@ export default Ember.Component.extend({
     if (noLabel.indexOf(type) !== -1) {
       return false;
     }
-    return !!type;
+    return !!label;
   }),
   notValidating: Ember.computed.not('validation.isValidating'),
   didValidate: false,
