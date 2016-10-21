@@ -23,11 +23,15 @@
   {{/if}}
 
   {{#if hasSearch}}
-    {{smd-search-widget action='searchAction'}}
+    {{smd-search-widget action='searchAction' term=searchTerm}}
   {{/if}}
 
   {{#if hasToolbarThree}}
     {{mdl-button icon=toolbarIconThree isColored=false class="smd__header__action" action='toolbarActionThree'}}
+  {{/if}}
+
+  {{#if hasMenu}}
+    {{mdl-button icon='menu' isColored=false class="smd__header__action" action='menuAction'}}
   {{/if}}
 
 </div>

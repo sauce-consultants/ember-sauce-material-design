@@ -21,14 +21,17 @@ export default Ember.Component.extend({
   isRightFab: false,
   isMinimized: false,
   scrolling: false,
-  scrollContext: 'body > .ember-view',
+  scrollContext: '.page-content',
   // Actions
+  hasMenu: false,
   backAction: null,
+  menuAction: null,
   fabAction: null,
   toolbarActionOne: null,
   toolbarActionTwo: null,
   toolbarActionThree: null,
   searchAction: false,
+  searchTerm: null,
   // Computed
   fabClassModifier: Ember.computed('hasFab', function() {
     if (this.get('hasFab')) {
@@ -92,6 +95,17 @@ export default Ember.Component.extend({
         this.sendAction('action', 'fab', this.get('item'));
       }
     },
+    menuAction: function() {
+      var $drawer = Ember.$('.mdl-layout__drawer');
+
+      if ($drawer.hasClass('is-visible')) {
+        $drawer.removeClass('is-visible');
+        $drawer.attr('aria-hidden', false);
+      } else {
+        $drawer.addClass('is-visible');
+        $drawer.attr('aria-hidden', true);
+      }
+    },
     toolbarActionOne: function() {
       if (this.get('toolbarActionOne')) {
         this.sendAction('toolbarActionOne', this.get('item'));
@@ -119,66 +133,106 @@ export default Ember.Component.extend({
   },
   //
   didRender: function() {
+    this._super(...arguments);
+    //Ember.Logger.log('>>> did render');
     if (this.get('scrolling')) {
       this.initScrollTransition();
     }
   },
+  /*
+  didInsertElement: function() {
+    Ember.Logger.log('>>> didInsertElement');
+  },
+  didUpdateAttrs: function() {
+    Ember.Logger.log('>>> didUpdateAttrs');
+  },
+  didUpdate: function() {
+    Ember.Logger.log('>>> didUpdate');
+  },
+  */
   /**
    * Cluster fuck of jquery to add sticker header scrolling
    */
   initScrollTransition: function() {
 
     var $parent = Ember.$(this.get('scrollContext')),
-      $header = Ember.$('.smd-header'),
+      $header = this.$(),
+      $title = $header.find('.smd-header__title'),
       originalHeight = $header.outerHeight(),
-      minHeight = originalHeight - 128,
-      $title = $header.find('.smd-header__title');
+      minHeight = originalHeight - 128;
 
+    //Ember.Logger.log($header);
+    //Ember.Logger.log('first scroll ' + $parent.scrollTop());
+
+    // first run
+    this.onHeaderScroll($parent, $parent.scrollTop(), originalHeight, minHeight);
+
+    var _this = this;
     $parent.scroll(function() {
-
-      var scroll = Ember.$(this).scrollTop(),
-        $header = Ember.$('.smd-header'),
-        $body = Ember.$('.smd-body'),
-        height = (originalHeight - scroll);
-
-      if (height < minHeight) {
-        // We have scrolled all the way
-        // stick the header
-        $header.css('height', '');
-        $header
-          .addClass("smd-header--minimized")
-          .addClass("smd-header--fixed")
-          .removeClass("smd-header--transition");
-
-        $title.css('transform', '');
-
-      } else if (scroll > 1) {
-        // On our way to scrolling the full way
-        // header is in transition
-        $header.css('height', height);
-        $header
-          .addClass("smd-header--transition")
-          .removeClass("smd-header--minimized")
-          .removeClass("smd-header--fixed");
-
-        // title scale factor
-        var scale = (height - minHeight) / (originalHeight - minHeight);
-
-        var fact = .75 + (.25 * scale);
-
-        $title.css('transform', 'scale(' + fact + ') translateZ(0px)')
-
-        $parent.css('margin-top', height);
-      } else {
-        // No scroll yet
-        // leave the header alone
-        $title.css('transform', '');
-        $header.css('height', '')
-          .removeClass("smd-header--transition")
-          .removeClass("smd-header--minimized")
-          .removeClass("smd-header--fixed");
-        $parent.css('margin-top', 0);
-      }
+      var scroll = Ember.$(this).scrollTop();
+      _this.onHeaderScroll($parent, scroll, originalHeight, minHeight);
     });
-  }
+  },
+  /*
+   * Sort scroll positiion
+   */
+  onHeaderScroll: function($parent, scroll, originalHeight, minHeight) {
+
+    //Ember.Logger.log(scroll + ' - ' + originalHeight + ' ' + minHeight);
+
+
+    //Ember.Logger.log(this.elementId);
+    //Ember.Logger.log($header.attr('id'));
+
+    // HACK: need to query the header each time as the component
+    // changes each page transition
+
+    var $header = Ember.$('.smd-header'),
+      $title = $header.find('.smd-header__title'),
+      height = (originalHeight - scroll);
+
+    //Ember.Logger.log('h ' + height);
+
+    if (height < minHeight) {
+      // We have scrolled all the way
+      // stick the header
+      $header.css('height', '');
+      $header
+        .addClass("smd-header--minimized")
+        .addClass("smd-header--fixed")
+        .removeClass("smd-header--transition");
+
+      $title.css('transform', '');
+      $parent.css('margin-top', minHeight);
+
+    } else if (scroll > 1) {
+      // On our way to scrolling the full way
+      // header is in transition
+      $header.css('height', height);
+      $header
+        .addClass("smd-header--transition")
+        .removeClass("smd-header--minimized")
+        .removeClass("smd-header--fixed");
+
+      // title scale factor
+      var scale = (height - minHeight) / (originalHeight - minHeight);
+
+      var fact = .75 + (.25 * scale);
+
+      $title.css('transform', 'scale(' + fact + ') translateZ(0px)')
+
+      //Ember.Logger.log('set top margin to ' + height);
+
+      $parent.css('margin-top', height);
+    } else {
+      // No scroll yet
+      // leave the header alone
+      $title.css('transform', '');
+      $header.css('height', '')
+        .removeClass("smd-header--transition")
+        .removeClass("smd-header--minimized")
+        .removeClass("smd-header--fixed");
+      $parent.css('margin-top', '');
+    }
+  },
 });

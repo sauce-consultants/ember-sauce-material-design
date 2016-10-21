@@ -8,6 +8,5 @@ export default Ember.Component.extend({
   didInsertElement() {
     this._super(...arguments);
     componentHandler.upgradeElement(this.element);
-    this.$('.mdl-tabs__panel').addClass('is-active');
   }
 });
