@@ -15,15 +15,17 @@ export default Ember.Component.extend({
   title: null,
   subTitle: null,
   meta: null,
+  avatarText: null,
   avatarIcon: null,
   avatarSrc: null,
   actionIcon: null,
+  avatarClassModifier: null,
   label: null,
   isRoundedAvatar: true,
   isBordered: false,
   isThreeLines: false,
   isInverted: false,
-  item:null,
+  item: null,
   // Actions
   action: null,
   secondaryAction: null,
@@ -31,10 +33,10 @@ export default Ember.Component.extend({
   hasTitle: Ember.computed.bool('title'),
   hasSubTitle: Ember.computed.bool('subTitle'),
   hasMeta: Ember.computed.bool('meta'),
-  hasAvatar: Ember.computed.or('avatarIcon', 'avatarSrc'),
+  hasAvatar: Ember.computed.or('avatarText', 'avatarIcon', 'avatarSrc'),
   hasActionOrLabel: Ember.computed.or('actionIcon', 'label'),
   // Class methods
-  leftColumnClassNames: Ember.computed('isInverted', function () {
+  leftColumnClassNames: Ember.computed('isInverted', function() {
     var classNames = [];
     classNames.push('smd-item__column');
     classNames.push('smd-item__column--left');
@@ -45,7 +47,7 @@ export default Ember.Component.extend({
     }
     return classNames.join(' ');
   }),
-  rightColumnClassNames: Ember.computed('isInverted', function () {
+  rightColumnClassNames: Ember.computed('isInverted', function() {
     var classNames = [];
     classNames.push('smd-item__column');
     classNames.push('smd-item__column--right');
@@ -56,7 +58,7 @@ export default Ember.Component.extend({
     }
     return classNames.join(' ');
   }),
-  titleClassNames: Ember.computed('subTitle', function () {
+  titleClassNames: Ember.computed('subTitle', function() {
     var classNames = [];
     classNames.push('smd-item__title');
     if (this.get('subTitle')) {
@@ -67,7 +69,7 @@ export default Ember.Component.extend({
     }
     return classNames.join(' ');
   }),
-  metaClassNames: Ember.computed('isThreeLines', 'subTitle', function () {
+  metaClassNames: Ember.computed('isThreeLines', 'subTitle', function() {
     var classNames = [];
     classNames.push('smd-item__meta');
     if (this.get('isThreeLines')) {
@@ -78,12 +80,12 @@ export default Ember.Component.extend({
     }
     return classNames.join(' ');
   }),
-  borderClassModifier: Ember.computed('isBordered', function () {
+  borderClassModifier: Ember.computed('isBordered', function() {
     if (this.get('isBordered')) {
       return 'smd-item--border';
     }
   }),
-  noLeftClassModifier: Ember.computed('isInverted', 'hasActionOrLabel', 'hasAvatar', function () {
+  noLeftClassModifier: Ember.computed('isInverted', 'hasActionOrLabel', 'hasAvatar', function() {
     if (this.get('isInverted')) {
       if (!this.get('hasActionOrLabel')) {
         return 'smd-item--no-left';
@@ -94,7 +96,7 @@ export default Ember.Component.extend({
       }
     }
   }),
-  noRightClassModifier: Ember.computed('isInverted', 'hasActionOrLabel', 'hasAvatar', function () {
+  noRightClassModifier: Ember.computed('isInverted', 'hasActionOrLabel', 'hasAvatar', function() {
     if (this.get('isInverted')) {
       if (!this.get('hasAvatar')) {
         return 'smd-item--no-right';
@@ -112,7 +114,7 @@ export default Ember.Component.extend({
     }
   },
   actions: {
-    secondaryAction: function () {
+    secondaryAction: function() {
       if (this.get('secondaryAction')) {
         this.sendAction('secondaryAction', this.get('item'));
       }

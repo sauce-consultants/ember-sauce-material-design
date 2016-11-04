@@ -6,7 +6,7 @@
     {{/if}}
   {{else}}
     {{#if hasAvatar}}
-      {{smd-item-avatar avatarIcon=avatarIcon avatarSrc=avatarSrc isRounded=isRoundedAvatar}}
+      {{smd-item-avatar avatarText=avatarText avatarIcon=avatarIcon avatarSrc=avatarSrc classModifier=avatarClassModifier isRounded=isRoundedAvatar}}
     {{/if}}
   {{/if}}
 </div>
@@ -25,7 +25,7 @@
 <div class="{{rightColumnClassNames}}">
   {{#if isInverted}}
     {{#if hasAvatar}}
-      {{smd-item-avatar avatarIcon=avatarIcon avatarSrc=avatarSrc isRounded=isRoundedAvatar}}
+      {{smd-item-avatar avatarText=avatarText avatarIcon=avatarIcon avatarSrc=avatarSrc classModifier=avatarClassModifier isRounded=isRoundedAvatar}}
     {{/if}}
   {{else}}
     {{#if hasActionOrLabel}}
