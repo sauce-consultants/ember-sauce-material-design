@@ -73,7 +73,7 @@
     title="Item Title"
     subTitle="Subtitle"
     meta="Elit commodo turpis volutpat risus"
-    avatarSrc="http://i.pravatar.cc/80"
+    avatarText=7
     actionIcon='info_circle'
   }&#125;</code>
 </pre>
@@ -83,14 +83,14 @@
         title="Item Title"
         subTitle="Subtitle"
         meta="Elit commodo turpis volutpat risus"
-        avatarSrc="http://i.pravatar.cc/80"
+        avatarText=7
         actionIcon='info_circle'
     }}
     {{smd-item
         title="Item Title"
         subTitle="Subtitle"
         meta="Elit commodo turpis volutpat risus"
-        avatarSrc="http://i.pravatar.cc/80"
+        avatarText=79
         actionIcon='info_circle'
     }}
   </ul>
@@ -245,6 +245,18 @@
       <tr>
         <td>avatarSrc</td>
         <td>Alternativly you can provider an image src path for the item avatar</td>
+        <td><em>string</em></td>
+        <td>null</td>
+      </tr>
+      <tr>
+        <td>avatarText</td>
+        <td>The avatar may contain dynamic text instead of an image or icon.You can provider a string or number to use as the avatar</td>
+        <td><em>string/int</em></td>
+        <td>null</td>
+      </tr>
+      <tr>
+        <td>avatarClassModifier</td>
+        <td>A modifier class to be added to the avatar component for custom styling. The modifiers 'primary' & 'accent' are already supported by sauce-material design and will alter the background color</td>
         <td><em>string</em></td>
         <td>null</td>
       </tr>
