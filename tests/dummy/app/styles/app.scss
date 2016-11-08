@@ -16,6 +16,10 @@ html {
   box-sizing: border-box;
 }
 
+dd {
+  margin-left: 0;
+}
+
 .custom-cover-image-class {
   background-image: url('https://unsplash.it/g/1200/400/');
 }

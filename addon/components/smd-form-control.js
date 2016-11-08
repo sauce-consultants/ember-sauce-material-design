@@ -34,10 +34,10 @@ export default Ember.Component.extend({
     value: 1,
   }, {
     label: 'Option 2',
-    value: 1,
+    value: 2,
   }, {
     label: 'Option 3',
-    value: 1,
+    value: 3,
   }, ]),
   // Computed
   computedOptions: Ember.computed('options', 'value', function() {
@@ -156,7 +156,7 @@ export default Ember.Component.extend({
   },
   actions: {
     selectedOption(option) {
-      this.set('value', option);
+      this.set('value', option.value);
     },
     checkOption(option) {
       this.set('value', option.value);
