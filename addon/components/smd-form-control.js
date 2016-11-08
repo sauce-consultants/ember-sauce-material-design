@@ -17,6 +17,7 @@ export default Ember.Component.extend({
   ],
   // Attributes
   name: null,
+  disabled: false,
   label: null,
   model: null,
   type: 'text',
@@ -39,6 +40,33 @@ export default Ember.Component.extend({
     value: 1,
   }, ]),
   // Computed
+  computedOptions: Ember.computed('options', 'value', function() {
+    var options = this.get('options'),
+      value = this.get('value');
+
+    var array = [];
+
+    options.forEach(
+      function(o) {
+        var option;
+        if (o.value == value) {
+          option = {
+            label: o.label,
+            value: o.value,
+            checked: true,
+          };
+        } else {
+          var option = {
+            label: o.label,
+            value: o.value,
+            checked: false,
+          };
+        }
+        array.push(option);
+      }
+    );
+    return array;
+  }),
   hasLabel: Ember.computed('label', 'type', function() {
     let label = this.get('label'),
       type = this.get('type');
@@ -129,6 +157,9 @@ export default Ember.Component.extend({
   actions: {
     selectedOption(option) {
       this.set('value', option);
+    },
+    checkOption(option) {
+      this.set('value', option.value);
     }
   },
 });
