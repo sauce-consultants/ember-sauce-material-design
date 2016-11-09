@@ -5,11 +5,11 @@ export default Ember.Component.extend({
   layout,
   classNames: ['smd-list'],
   tagName: 'div',
-  hasSubheadings: false,
+  stickySubheaders: false,
   // Methods
   didRender: function() {
     this._super(...arguments);
-    if (this.get('hasSubheadings')) {
+    if (this.get('stickySubheaders')) {
       this.initStickySubheadings();
     }
   },

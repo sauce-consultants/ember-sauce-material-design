@@ -1,4 +1,48 @@
 <header class="styleguide__header">
+  <h1 class="styleguide__title">List</h1>
+  <p class="styleguide__text">A scrolling list</p>
+</header>
+
+<pre class="styleguide__code">
+  <code class="js">&#123;{smd-list}&#125;</code>
+</pre>
+
+<div class="styleguide__preview">
+  {{#smd-list}}
+    {{smd-item title='Item One'}}
+    {{smd-item title='Item Two'}}
+    {{smd-item title='Item Three'}}
+  {{/smd-list}}
+</div>
+
+<header class="styleguide__header">
+  <h1 class="styleguide__title">List</h1>
+  <p class="styleguide__text">A scrolling list with sticky subheadings</p>
+</header>
+
+<pre class="styleguide__code">
+  <code class="js">&#123;{smd-list}&#125;</code>
+</pre>
+
+<div class="styleguide__preview" style="height:300px;">
+  {{#smd-list stickySubheaders=true }}
+    {{smd-subheader "Section One" 'smd-subheader--bordered'}}
+    {{smd-item title='Item One' isBordered=true}}
+    {{smd-item title='Item Two' isBordered=true}}
+    {{smd-item title='Item Three' isBordered=true}}
+    {{smd-subheader "Section Two"}}
+    {{smd-item title='Item One' isBordered=true}}
+    {{smd-item title='Item Two' isBordered=true}}
+    {{smd-item title='Item Three' isBordered=true}}
+    {{smd-subheader "Section Three"}}
+    {{smd-item title='Item One' isBordered=true}}
+    {{smd-item title='Item Two' isBordered=true}}
+    {{smd-item title='Item Three' isBordered=true}}
+  {{/smd-list}}
+</div>
+
+
+<header class="styleguide__header">
   <h1 class="styleguide__title">Item</h1>
   <p class="styleguide__text">Variations of a material item</p>
 </header>
