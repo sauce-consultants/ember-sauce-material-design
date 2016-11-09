@@ -28,7 +28,7 @@ export default Ember.Component.extend({
 
     formControls.forEach(
       function(formControl) {
-        if (!formControl.get('validation.isValid')) {
+        if (formControl.get('validation') && !formControl.get('validation.isValid')) {
           errorMessages.addObjects(formControl.get('validation.errors').mapBy('message'));
         }
         formControl.set('didValidate', true);
