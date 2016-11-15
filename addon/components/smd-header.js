@@ -217,7 +217,7 @@ export default Ember.Component.extend({
       // title scale factor
       var scale = (height - minHeight) / (originalHeight - minHeight);
 
-      var fact = .75 + (.25 * scale);
+      var fact = 0.75 + (0.25 * scale);
 
       $title.css('transform', 'scale(' + fact + ') translateZ(0px)')
 
