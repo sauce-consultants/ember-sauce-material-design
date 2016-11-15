@@ -22,6 +22,9 @@
       disabled=disabled
       on-change=(action 'checkOption')
       checked=option.checked}}
+    {{#if option.tip}}
+      <div class="smd-form__tip smd-form__tip--radio">{{option.tip}}</div>
+    {{/if}}
   {{/each}}
 {{else if isSelect}}
   {{#select-box/native

@@ -53,12 +53,14 @@ export default Ember.Component.extend({
           option = {
             label: o.label,
             value: o.value,
+            tip: o.tip,
             checked: true,
           };
         } else {
           option = {
             label: o.label,
             value: o.value,
+            tip: o.tip,
             checked: false,
           };
         }
