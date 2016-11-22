@@ -49,18 +49,16 @@ export default Ember.Component.extend({
     options.forEach(
       function(o) {
         var option;
-        if (o.value === value) {
+        if (o.value == value) {
           option = {
             label: o.label,
             value: o.value,
-            tip: o.tip,
             checked: true,
           };
         } else {
-          option = {
+          var option = {
             label: o.label,
             value: o.value,
-            tip: o.tip,
             checked: false,
           };
         }
@@ -158,10 +156,18 @@ export default Ember.Component.extend({
   },
   actions: {
     selectedOption(option) {
-      this.set('value', option.value);
+      if (option.value !== undefined) {
+        this.set('value', option.value);
+      } else {
+        this.set('value', option);
+      }
     },
     checkOption(option) {
-      this.set('value', option.value);
+      if (option.value !== undefined) {
+        this.set('value', option.value);
+      } else {
+        this.set('value', option);
+      }
     }
   },
 });

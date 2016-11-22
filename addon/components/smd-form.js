@@ -18,10 +18,7 @@ export default Ember.Component.extend({
       });
     }
   }),
-  // Events
-  submit(e) {
-    e.preventDefault();
-
+  validate: function() {
     var errorMessages = [];
 
     var formControls = this.get('childFormControls');
@@ -37,11 +34,22 @@ export default Ember.Component.extend({
 
     if (errorMessages.length !== 0) {
       var errorMessage = errorMessages.join(', ');
-      Ember.Logger.log("Errors: " + errorMessage);
+
       this.get('toaster').setMessage(this.get('errorMessage'));
-      return;
+
+      Ember.Logger.log("Errors: " + errorMessage);
+
+      return false;
     }
-    this.sendAction('action', this.get('model'));
+    return true;
+  },
+  // Events
+  submit(e) {
+    e.preventDefault();
+
+    if (this.validate()) {
+      this.sendAction('action', this.get('model'));
+    }
   },
   didInsertElement() {
     this._super(...arguments);
