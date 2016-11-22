@@ -8,9 +8,9 @@
     cols=cols
     disabled=disabled}}
 {{else if isSwitch}}
-  {{mdl-switch text=label value=value disabled=disabled}}
+  {{mdl-switch text='Switch' value=value disabled=disabled}}
 {{else if isCheckbox}}
-  {{mdl-checkbox text=label value=value disabled=disabled}}
+  {{mdl-checkbox text='Checkbox' value=value disabled=disabled}}
 {{else if isIcon}}
   {{mdl-icon-toggle icon=icon value=value disabled=disabled}}
 {{else if isRadio}}
@@ -22,9 +22,6 @@
       disabled=disabled
       on-change=(action 'checkOption')
       checked=option.checked}}
-    {{#if option.tip}}
-      <div class="smd-form__tip smd-form__tip--radio">{{option.tip}}</div>
-    {{/if}}
   {{/each}}
 {{else if isSelect}}
   {{#select-box/native
@@ -32,6 +29,9 @@
     disabled=disabled
     on-select=(action 'selectedOption')
     class=inputClasses as |sb|}}
+    {{#if hasNullOption}}
+      {{sb.option value=null label=nullOption}}
+    {{/if}}
     {{#each options as |option|}}
       {{sb.option value=option label=option.label}}
     {{/each}}

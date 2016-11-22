@@ -39,7 +39,9 @@ export default Ember.Component.extend({
     label: 'Option 3',
     value: 3,
   }, ]),
+  nullOption: null,
   // Computed
+  hasNullOption: Ember.computed.bool('nullOption'),
   computedOptions: Ember.computed('options', 'value', function() {
     var options = this.get('options'),
       value = this.get('value');
