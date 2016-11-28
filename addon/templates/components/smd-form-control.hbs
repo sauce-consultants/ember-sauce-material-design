@@ -36,6 +36,15 @@
       {{sb.option value=option label=option.label}}
     {{/each}}
   {{/select-box/native}}
+{{else if isDate}}
+  {{pikaday-input
+    class=inputClasses
+    name=name
+    value=value
+    disabled=disabled
+    format=format
+    placeholder=placeholder
+    onSelection=(action 'selectedDate')}}
 {{else}}
   {{input
     class=inputClasses

@@ -29,6 +29,8 @@ export default Ember.Component.extend({
   step: null,
   cols: null,
   rows: 3,
+  format: 'DD/MM/YYYY',
+  placeholder: null,
   options: Ember.A([{
     label: 'Option 1',
     value: 1,
@@ -89,6 +91,7 @@ export default Ember.Component.extend({
   isRadio: Ember.computed.equal('type', 'radio'),
   isIcon: Ember.computed.equal('type', 'icon'),
   isSelect: Ember.computed.equal('type', 'select'),
+  isDate: Ember.computed.equal('type', 'date'),
   showErrorClass: Ember.computed.and('notValidating', 'showErrorMessage', 'hasContent', 'validation'),
   showErrorMessage: Ember.computed('validation.isDirty', 'isInvalid', 'didValidate', function() {
     return (this.get('validation.isDirty') || this.get('didValidate')) && this.get('isInvalid');
@@ -170,6 +173,9 @@ export default Ember.Component.extend({
       } else {
         this.set('value', option);
       }
-    }
+    },
+    selectedDate(date) {
+      this.set('value', date);
+    },
   },
 });
