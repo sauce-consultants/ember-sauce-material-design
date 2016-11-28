@@ -8,6 +8,7 @@
     {{#if hasAvatar}}
       {{smd-item-avatar avatarText=avatarText avatarIcon=avatarIcon avatarSrc=avatarSrc classModifier=avatarClassModifier isRounded=isRoundedAvatar}}
     {{/if}}
+    {{yield}}
   {{/if}}
 </div>
 <div class="smd-item__column smd-item__column--middle">
@@ -20,13 +21,13 @@
   {{#if hasMeta}}
   <p class="{{metaClassNames}}">{{meta}}</p>
   {{/if}}
-  {{yield}}
 </div>
 <div class="{{rightColumnClassNames}}">
   {{#if isInverted}}
     {{#if hasAvatar}}
       {{smd-item-avatar avatarText=avatarText avatarIcon=avatarIcon avatarSrc=avatarSrc classModifier=avatarClassModifier isRounded=isRoundedAvatar}}
     {{/if}}
+    {{yield}}
   {{else}}
     {{#if hasActionOrLabel}}
       {{smd-item-action label=label icon=actionIcon action='secondaryAction'}}
