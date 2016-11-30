@@ -142,3 +142,28 @@ test('creates a select input', function(assert) {
   assert.equal($options.length, 0, 'The correct number of options are rendered');
 
 });
+
+
+test('creates a radio input', function(assert) {
+
+  this.render(hbs(`{{smd-form-control type='radio' label='My Radio Field' name='foo'}}`));
+
+  let $control = this.$().find('.smd-form__control'),
+    $label = this.$().find('.smd-form__label');
+  // control test
+  have_class_names(assert, $control, ['mdl-js-textfield', 'mdl-textfield', 'smd-form__control'], 'control'); // base classes
+  have_class_names(assert, $control, ['smd-form__control--radio', 'mdl-textfield--floating-label'], 'control'); // binding classes
+
+  // label tests
+  assert.equal($label.text().trim(), 'My Radio Field', 'The label text is rendered');
+  assert.equal($label.attr('for'), 'foo', 'The for attribute is rendered');
+
+  this.render(hbs(`{{smd-form-control type='radio' label='My Radio Field' name='foo' isInline=true}}`));
+
+  $control = this.$().find('.smd-form__control');
+
+  // control test
+  have_class_names(assert, $control, ['mdl-js-textfield', 'mdl-textfield', 'smd-form__control'], 'control'); // base classes
+  have_class_names(assert, $control, ['smd-form__control--inline-radio', 'smd-form__control--radio', 'mdl-textfield--floating-label'], 'control'); // binding classes
+
+});

@@ -18,6 +18,7 @@ export default Component.extend({
     'floatingClass',
     'invalidClass',
     'validClass',
+    'inlineClass',
   ],
   // Attributes
   name: null,
@@ -28,6 +29,7 @@ export default Component.extend({
   icon: null,
   tip: null,
   isFloating: true,
+  isInline: false,
   max: null,
   min: null,
   step: null,
@@ -163,6 +165,13 @@ export default Component.extend({
       return 'is-valid';
     }
   }),
+  inlineClass: computed('isInline', 'type', function() {
+    if (this.get('type') === 'radio') {
+      if (this.get('isInline')) {
+        return 'smd-form__control--inline-radio';
+      }
+    }
+  }),
   inputClasses: computed('type', function() {
     var classNames = [];
     let type = this.get('type');
@@ -206,11 +215,7 @@ export default Component.extend({
       this.set('value', option);
     },
     checkOption(option) {
-      if (option.value !== undefined) {
-        this.set('value', option.value);
-      } else {
-        this.set('value', option);
-      }
+      this.set('value', option.value);
     },
     selectedDate(date) {
       this.set('value', date);

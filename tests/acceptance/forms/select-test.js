@@ -19,7 +19,7 @@ test('visiting /forms/select', function(assert) {
       $flatSelectedOption = $flatInput.find('option:selected');
 
     assert.equal($flatInput.length, 1, 'form control is present');
-    assert.equal($flatOptions.length, 5, 'select box has 4 options');
+    assert.equal($flatOptions.length, 5, 'select box has 5 options');
     assert.equal($flatFirstOption.text(), '-- Select Color --', 'has null option');
     assert.equal($flatSelectedOption.text(), 'Green', 'correct option is selected');
 

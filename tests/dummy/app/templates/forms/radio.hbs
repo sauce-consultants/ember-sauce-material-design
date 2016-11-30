@@ -1,0 +1,188 @@
+<header class='styleguide__header'>
+  <h1 class='styleguide__title'>Forms: Radio Control</h1>
+  <p class='styleguide__text'>Beautiful Material Design form components</p>
+</header>
+
+<div class='styleguide__section'>
+  <h2 class='styleguide__subtitle'>Basic Radio with flat array</h2>
+  <p class="styleguide__text">Use a simple array of strings or numbers.</p>
+</div>
+
+<pre class='styleguide__code'>
+  <code class='js'>colorOptions = [
+  'Red',
+  'Green',
+  'Blue',
+  'Yellow',
+];
+
+&#123;{smd-form-control
+  type='radio'
+  name='color'
+  model=model.user
+  value=model.user.color
+  label='Fav Color'
+  options=colorOptions
+  tip='Please select your fav color'
+  isInline=true}&#125;</code>
+</pre>
+
+<div class='styleguide__preview'>
+  {{smd-form-control
+      type='radio'
+      name='color'
+      model=model.user
+      value=model.user.color
+      label='Fav Color'
+      options=model.colorOptions
+      tip='Please select your fav color'
+      isInline=true}}
+
+  <p>Selected Value = {{model.user.color}}</p>
+</div>
+
+<div class='styleguide__section'>
+  <h2 class='styleguide__subtitle'>Radio with arbitrary object array</h2>
+  <p class="styleguide__text">Use an array of objects. Each option must have a value for label and value.</p>
+</div>
+
+<pre class='styleguide__code'>
+  <code class='js'>numberOptions = A([
+  {
+    label: 'One',
+    value: 1
+  },
+  //...
+]);
+
+&#123;{smd-form-control
+  type='radio'
+  name='number'
+  model=model.user
+  value=model.user.number
+  label='Fav Number'
+  options=numberOptions
+  tip='Please select your fav number'}&#125;</code>
+</pre>
+<div class='styleguide__preview'>
+  {{smd-form-control
+      type='radio'
+      name='number'
+      model=model.user
+      value=model.user.number
+      label='Fav Number'
+      options=model.numberOptions
+      tip='Please select your fav number'}}
+
+  <p>Selected Value = {{model.user.number}}</p>
+</div>
+
+<div class='styleguide__section'>
+  <h2 class='styleguide__subtitle'>Radio with array of models</h2>
+  <p class="styleguide__text">Use an array of models stright from the store. Suited for belongsTo relationships.</p>
+</div>
+
+<pre class='styleguide__code'>
+  <code class='js'>animalOptions = this.store.findAll('animals')
+
+&#123;{smd-form-control
+  type='radio'
+  name='animal'
+  model=model.user
+  value=model.user.animal
+  label='Fav Animal'
+  modelOptions=animalOptions
+  modelLabel='name'
+  tip='Please select your Fav Animal'}&#125;</code>
+</pre>
+<div class='styleguide__preview'>
+  {{smd-form-control
+      type='radio'
+      name='animal'
+      model=model.user
+      value=model.user.animal
+      label='Fav Animal'
+      modelOptions=model.animalOptions
+      modelLabel='name'
+      tip='Please select your Fav Animal'}}
+
+  <p>Selected Value = {{model.user.animal.name}}</p>
+</div>
+
+<div class='styleguide__section'>
+
+  <h1 class='styleguide__title'>Form Control Attributes</h1>
+
+  <table class='styleguide__table mdl-data-table mdl-js-data-table'>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Description</th>
+        <th>Type</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>model</td>
+        <td>Defines the model to update</td>
+        <td><em>object</em></td>
+        <td>null</td>
+      </tr>
+      <tr>
+        <td>name</td>
+        <td>Name of the models attribute to bind the control to</td>
+        <td><em>string</em></td>
+        <td>null</td>
+      </tr>
+      <tr>
+        <td>value</td>
+        <td>Inital value of the control</td>
+        <td><em>string</em></td>
+        <td>null</td>
+      </tr>
+      <tr>
+        <td>type</td>
+        <td>The controls input type</td>
+        <td><em>string</em></td>
+        <td>text</td>
+      </tr>
+      <tr>
+        <td>label</td>
+        <td>The controls label</td>
+        <td><em>string</em></td>
+        <td>null</td>
+      </tr>
+      <tr>
+        <td>tip</td>
+        <td>A string to define help text for the control</td>
+        <td><em>string</em></td>
+        <td>null</td>
+      </tr>
+      <tr>
+        <td>isInline</td>
+        <td>If true the options are styled inline. Default is vertical</td>
+        <td><em>boolean</em></td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>options</td>
+        <td>An array of options. Can be either an array of Strings or Objects with label and value attributes defined.</td>
+        <td><em>array</em></td>
+        <td>[]</td>
+      </tr>
+      <tr>
+        <td>modelOptions</td>
+        <td>An array of Ember models to use as the radio options. Use in conjunction with the <i>modelLabel</i> attribute.</td>
+        <td><em>array</em></td>
+        <td>null</td>
+      </tr>
+      <tr>
+        <td>modelLabel</td>
+        <td>Spefifies the model attribute to use to get the option labels</td>
+        <td><em>string</em></td>
+        <td>null</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>

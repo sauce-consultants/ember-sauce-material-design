@@ -12,6 +12,7 @@ Router.map(function() {
   this.route('empty');
   this.route('forms', function() {
     this.route('select');
+    this.route('radio');
   });
   this.route('dropdown');
 
