@@ -108,3 +108,81 @@
 
   <p>Selected Value = {{model.user.animal.name}}</p>
 </div>
+
+<div class='styleguide__section'>
+
+  <h1 class='styleguide__title'>Form Control Attributes</h1>
+
+  <table class='styleguide__table mdl-data-table mdl-js-data-table'>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Description</th>
+        <th>Type</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>model</td>
+        <td>Defines the model to update</td>
+        <td><em>object</em></td>
+        <td>null</td>
+      </tr>
+      <tr>
+        <td>name</td>
+        <td>Name of the models attribute to bind the control to</td>
+        <td><em>string</em></td>
+        <td>null</td>
+      </tr>
+      <tr>
+        <td>value</td>
+        <td>Inital value of the control</td>
+        <td><em>string</em></td>
+        <td>null</td>
+      </tr>
+      <tr>
+        <td>type</td>
+        <td>The controls input type</td>
+        <td><em>string</em></td>
+        <td>text</td>
+      </tr>
+      <tr>
+        <td>label</td>
+        <td>The controls label</td>
+        <td><em>string</em></td>
+        <td>null</td>
+      </tr>
+      <tr>
+        <td>tip</td>
+        <td>A string to define help text for the control</td>
+        <td><em>string</em></td>
+        <td>null</td>
+      </tr>
+      <tr>
+        <td>nullOption</td>
+        <td>The text of an initial blank option in a select input</td>
+        <td><em>string</em></td>
+        <td>null</td>
+      </tr>
+      <tr>
+        <td>options</td>
+        <td>An array of options. Can be either an array of Strings or Objects with label and value attributes defined.</td>
+        <td><em>array</em></td>
+        <td>[]</td>
+      </tr>
+      <tr>
+        <td>modelOptions</td>
+        <td>An array of Ember models to use as the select options. Use in conjunction with the <i>modelLabel</i> attribute.</td>
+        <td><em>array</em></td>
+        <td>null</td>
+      </tr>
+      <tr>
+        <td>modelLabel</td>
+        <td>Spefifies the model attribute to use to get the option labels</td>
+        <td><em>string</em></td>
+        <td>null</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>

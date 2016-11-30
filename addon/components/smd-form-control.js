@@ -35,10 +35,11 @@ export default Component.extend({
   rows: 3,
   format: 'DD/MM/YYYY',
   placeholder: null,
+  // Select Attributes
+  nullOption: null,
   options: [],
   modelOptions: null,
-  modelLabel: 'id',
-  nullOption: null,
+  modelLabel: null,
   // Computed
   hasNullOption: computed.bool('nullOption'),
   /**
@@ -53,7 +54,8 @@ export default Component.extend({
     var options = this.get('options'),
       modelOptions = this.get('modelOptions'),
       modelLabel = this.get('modelLabel'),
-      value = this.get('value');
+      value = this.get('value'),
+      name = this.get('name');
 
     var array = [];
 
@@ -68,11 +70,15 @@ export default Component.extend({
         function(obj) {
           var option = {};
 
-          option.label = obj.get(modelLabel);
+          if (modelLabel) {
+            option.label = obj.get(modelLabel);
+          } else {
+            Ember.Logger.warn('Define modelLabel for: ' + name);
+            option.label = obj;
+          }
           option.value = obj;
 
           if (obj.id === value.get('id')) {
-            //if (Ember.isEqual(obj, value)) {
             option.selected = true;
           }
 
