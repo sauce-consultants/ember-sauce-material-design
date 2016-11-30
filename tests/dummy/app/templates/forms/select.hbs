@@ -1,0 +1,118 @@
+<header class='styleguide__header'>
+  <h1 class='styleguide__title'>Forms: Select Control</h1>
+  <p class='styleguide__text'>Beautiful Material Design form components</p>
+</header>
+
+<div class='styleguide__section'>
+  <h2 class='styleguide__subtitle'>Basic Select with flat array</h2>
+  <p class="styleguide__text">Use a simple array of strings or numbers.</p>
+</div>
+
+<pre class='styleguide__code'>
+  <code class='js'>colorOptions = [
+  'Red',
+  'Green',
+  'Blue',
+  'Yellow',
+];
+
+&#123;{smd-form-control
+  type='select'
+  name='color'
+  model=model.user
+  value=model.user.color
+  label='Fav Color'
+  options=colorOptions
+  tip='Please select your fav color'}&#125;</code>
+</pre>
+
+<div class='styleguide__preview'>
+  {{smd-form-control
+      type='select'
+      name='color'
+      model=model.user
+      value=model.user.color
+      label='Fav Color'
+      options=colorOptions
+      tip='Please select your fav color'}}
+
+  <ul>
+    {{#each model.colorOptions as |option|}}
+      <li>{{option}}</li>
+    {{/each}}
+  </ul>
+</div>
+
+<div class='styleguide__section'>
+  <h2 class='styleguide__subtitle'>Select with arbitrary object array</h2>
+  <p class="styleguide__text">Use an array of objects. Each option must have a value for label and value.</p>
+</div>
+
+<pre class='styleguide__code'>
+  <code class='js'>numberOptions = A([
+  {
+    label: 'One',
+    value: 1
+  },
+  //...
+]);
+
+&#123;{smd-form-control
+  type='select'
+  name='number'
+  model=model.user
+  value=model.user.number
+  label='Fav Number'
+  options=numberOptions
+  tip='Please select your fav number'}&#125;</code>
+</pre>
+<div class='styleguide__preview'>
+  {{smd-form-control
+      type='select'
+      name='number'
+      model=model.user
+      value=model.user.number
+      label='Fav Number'
+      options=numberOptions
+      tip='Please select your fav number'}}
+
+      <ul>
+        {{#each model.numberOptions as |option|}}
+          <li>{{option.label}} - {{option.value}}</li>
+        {{/each}}
+      </ul>
+</div>
+
+<div class='styleguide__section'>
+  <h2 class='styleguide__subtitle'>Select with array of models</h2>
+  <p class="styleguide__text">Use an array of models stright from the store. Suited for belongsTo relationships.</p>
+</div>
+
+<pre class='styleguide__code'>
+  <code class='js'>animalOptions = this.store.findAll('animals')
+
+&#123;{smd-form-control
+  type='select'
+  name='animal'
+  model=model.user
+  value=model.user.animal
+  label='Fav Animal'
+  options=animalOptions
+  tip='Please select your Fav Animal'}&#125;</code>
+</pre>
+<div class='styleguide__preview'>
+  {{smd-form-control
+      type='select'
+      name='animal'
+      model=model.user
+      value=model.user.animal
+      label='Fav Animal'
+      options=animalOptions
+      tip='Please select your Fav Animal'}}
+
+  <ul>
+    {{#each model.animalOptions as |option|}}
+      <li>{{option.name}} - {{option}}</li>
+    {{/each}}
+  </ul>
+</div>

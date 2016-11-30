@@ -1,0 +1,359 @@
+<header class='styleguide__header'>
+  <h1 class='styleguide__title'>Forms</h1>
+  <p class='styleguide__text'>Beautiful Material Design form components</p>
+</header>
+
+<header class='styleguide__header'>
+  <h1 class='styleguide__subtitle'>The Form</h1>
+  <p class='styleguide__text'>Wrap your controls in this parent component</p>
+</header>
+
+<pre class='styleguide__code'>
+  <code class='js'>
+&#123;{#smd-form action='submitForm' model=model }&#125;
+    .. form-controls
+&#123;{/smd-form action='submitForm' }&#125;</code>
+</pre>
+<div class='styleguide__preview'>
+  {{#smd-form action='submitForm' model=model}}
+    {{smd-form-control isFloating=false name='control1' model=model value=model.control1 label='Control 1'}}
+    {{smd-form-control name='control2' model=model value=model.control2 label='Control 2'}}
+    {{smd-form-control name='control3' model=model value=model.control3 label='Control 3'}}
+  {{/smd-form}}
+  <dl>
+    <dt>Bindings</dt>
+    <dd>model.control1 = "{{model.control1}}"</dd>
+    <dd>model.control2 = "{{model.control2}}"</dd>
+    <dd>model.control3 = "{{model.control3}}"</dd>
+  </dl>
+</div>
+
+<header class='styleguide__header'>
+  <h1 class='styleguide__subtitle'>Form Controls</h1>
+  <p class='styleguide__text'>Various input types</p>
+</header>
+
+<pre class='styleguide__code'>
+  <code class='js'>&#123;{smd-form-control name='text' model=model value=model.text label='Text Field' tip='Just the tip mam'}&#125;</code>
+</pre>
+<div class='styleguide__preview'>
+  {{smd-form-control name='text' model=model value=model.text label='Text Field' tip='Just the tip mam'}}
+</div>
+
+<pre class='styleguide__code'>
+  <code class='js'>&#123;{smd-form-control name='textarea' label='Textarea Field' type='textarea'}&#125;</code>
+</pre>
+<div class='styleguide__preview'>
+  {{smd-form-control name='textarea' label='Textarea Field' type='textarea'}}
+</div>
+
+<pre class='styleguide__code'>
+  <code class='js'>&#123;{smd-form-control name='password' label='Password Field' type='password'}&#125;</code>
+</pre>
+<div class='styleguide__preview'>
+  {{smd-form-control name='password' label='Password Field' type='password'}}
+</div>
+
+<pre class='styleguide__code'>
+  <code class='js'>&#123;{smd-form-control name='email' label='Email Field' type='email'}&#125;</code>
+</pre>
+<div class='styleguide__preview'>
+  {{smd-form-control name='email' label='Email Field' type='email'}}
+</div>
+
+<pre class='styleguide__code'>
+  <code class='js'>&#123;{smd-form-control name='tel' label='Telephone Field' type='tel'}&#125;</code>
+</pre>
+<div class='styleguide__preview'>
+  {{smd-form-control name='tel' label='Telephone Field' type='tel'}}
+</div>
+
+<pre class='styleguide__code'>
+  <code class='js'>&#123;{smd-form-control name='url' label='URL Field' type='url'}&#125;</code>
+</pre>
+<div class='styleguide__preview'>
+  {{smd-form-control name='url' label='URL Field' type='url'}}
+</div>
+
+<pre class='styleguide__code'>
+  <code class='js'>&#123;{smd-form-control name='url' label='URL Field' type='url'}&#125;</code>
+</pre>
+<div class='styleguide__preview'>
+  {{smd-form-control name='url' label='URL Field' type='url'}}
+</div>
+
+<pre class='styleguide__code'>
+  <code class='js'>&#123;{smd-form-control name='number' label='Numeric Field' type='number' min=1 max=5 step=1}&#125;</code>
+</pre>
+<div class='styleguide__preview'>
+  {{smd-form-control name='number' label='Numeric Field' type='number' min=1 max=5 step=1}}
+</div>
+
+<pre class='styleguide__code'>
+  <code class='js'>&#123;{smd-form-control name='date' label='Date Field' type='date'}&#125;</code>
+</pre>
+<div class='styleguide__preview'>
+  {{smd-form-control name='date' label='Date Field' type='date'}}
+</div>
+
+<pre class='styleguide__code'>
+  <code class='js'>&#123;{smd-form-control name='time' label='Time Field' type='time'}&#125;</code>
+</pre>
+<div class='styleguide__preview'>
+  {{smd-form-control name='time' label='Time Field' type='time'}}
+</div>
+
+<pre class='styleguide__code'>
+  <code class='js'>&#123;{smd-form-control name='datetime' label='Date Time Field' type='datetime'}&#125;</code>
+</pre>
+<div class='styleguide__preview'>
+  {{smd-form-control name='datetime' label='Date Time Field' type='datetime'}}
+</div>
+
+<pre class='styleguide__code'>
+  <code class='js'>&#123;{smd-form-control name='color' label='Color Field' type='color'}&#125;</code>
+</pre>
+<div class='styleguide__preview'>
+  {{smd-form-control name='color' label='Color Field' type='color'}}
+</div>
+
+<pre class='styleguide__code'>
+  <code class='js'>&#123;{smd-form-control name='range' label='Range Field' type='range' min=0 max=100}&#125;</code>
+</pre>
+<div class='styleguide__preview'>
+  {{smd-form-control name='range' label='Range Field' type='range' min=0 max=100}}
+</div>
+
+<header class='styleguide__header'>
+  <h1 class='styleguide__subtitle'>Option Controls</h1>
+  <p class='styleguide__text'>Option driven input types</p>
+</header>
+
+<pre class='styleguide__code'>
+  <code class='js'>&#123;{smd-form-control name='radio' model=model value=model.radio label='Radio' type='radio' options=options tip='Just the tip mam'}&#125;</code>
+</pre>
+<div class='styleguide__preview'>
+  {{smd-form-control name='radio' model=model value=model.radio label='Radio' type='radio' tip='Just the tip mam'}}
+
+  <dl>
+    <dt>Binding</dt>
+    <dd>model.radio = "{{model.radio}}"</dd>
+  </dl>
+</div>
+
+<pre class='styleguide__code'>
+  <code class='js'>&#123;{smd-form-control name='select' label='Select' type='select' tip='Just the tip mam'}&#125;</code>
+</pre>
+<div class='styleguide__preview'>
+  {{smd-form-control name='select' model=model value=model.select label='Select' type='select' tip='Just the tip mam'}}
+
+  <dl>
+    <dt>Binding</dt>
+    <dd>model.select = "{{model.select}}"</dd>
+  </dl>
+</div>
+
+
+<header class='styleguide__header'>
+  <h1 class='styleguide__subtitle'>Toggle Controls</h1>
+  <p class='styleguide__text'>Various toggle input types</p>
+</header>
+
+<pre class='styleguide__code'>
+  <code class='js'>&#123;{smd-form-control name='switch' label='Switch' type='switch'}&#125;</code>
+</pre>
+<div class='styleguide__preview'>
+  {{smd-form-control name='switch' label='Switch' type='switch'}}
+</div>
+
+<pre class='styleguide__code'>
+  <code class='js'>&#123;{smd-form-control name='checkbox' label='Checkbox' type='checkbox'}&#125;</code>
+</pre>
+<div class='styleguide__preview'>
+  {{smd-form-control name='checkbox' label='Checkbox' type='checkbox'}}
+</div>
+
+<pre class='styleguide__code'>
+  <code class='js'>&#123;{smd-form-control icon='flight_takeoff' label='Icon Toggle' type='icon'}&#125;</code>
+</pre>
+<div class='styleguide__preview'>
+  {{smd-form-control icon='flight_takeoff' label='Icon Toggle' type='icon'}}
+</div>
+
+<header class='styleguide__header'>
+  <h1 class='styleguide__subtitle'>Field Groups</h1>
+  <p class='styleguide__text'>Horizontal field groups</p>
+</header>
+<pre class='styleguide__code'>
+  <code class='js'>
+    &lt;div class='smd-field-group'&gt;
+      &#123;{smd-form-control name='min' label='Min'}&#125;
+      &#123;{smd-form-control name='min' label='Min'}&#125;
+    &lt;/div&gt;
+  </code>
+</pre>
+<div class='styleguide__preview'>
+  <div class='smd-form__group'>
+    {{smd-form-control name='min' label='Min'}}
+    {{smd-form-control name='max' label='Max'}}
+  </div>
+</div>
+
+<header class='styleguide__header'>
+  <h1 class='styleguide__subtitle'>Field Groups</h1>
+  <p class='styleguide__text'>Horizontal field groups</p>
+</header>
+
+<pre class='styleguide__code'>
+  <code class='js'>
+    &lt;fieldset class='smd-fieldset'&gt;
+      &#123;{smd-form-control name='option1' label='Option 1'}&#125;
+      &#123;{smd-form-control name='option2' label='Option 2'}&#125;
+      &#123;{smd-form-control name='option3' label='Option 3'}&#125;
+    &lt;/fieldset&gt;
+  </code>
+</pre>
+
+<header class='styleguide__header'>
+  <h1 class='styleguide__subtitle'>Fieldsets</h1>
+  <p class='styleguide__text'>Vertical field groups</p>
+</header>
+
+<div class='styleguide__preview'>
+  <fieldset class='smd-form__fieldset'>
+    <legend class='smd-form__legend'>Fieldset</legend>
+    {{smd-form-control name='option1' label='Option 1'}}
+    {{smd-form-control name='option2' label='Option 2'}}
+    {{smd-form-control name='option3' label='Option 3'}}
+  </fieldset>
+</div>
+
+<header class='styleguide__header'>
+
+  <h2 class='styleguide__title'>TODO</h2>
+
+  <ul>
+    <li><del>Field groups</del></li>
+    <li><del>Fieldsets</del></li>
+    <li><del>Select boxes</del></li>
+    <li><del>Checkbox</del></li>
+    <li><del>Radio group</del></li>
+    <li>Checkbox group</li>
+  </ul>
+
+</header>
+
+
+<div class='styleguide__section'>
+
+  <h1 class='styleguide__title'>Form Attributes</h1>
+
+  <table class='styleguide__table mdl-data-table mdl-js-data-table'>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Description</th>
+        <th>Type</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>model</td>
+        <td>Defines the model to validate fields from</td>
+        <td><em>object</em></td>
+        <td>null</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<div class='styleguide__section'>
+
+  <h1 class='styleguide__title'>Form Actions</h1>
+
+  <table class='styleguide__table mdl-data-table mdl-js-data-table'>
+    <thead>
+      <tr>
+        <th>Action</th>
+        <th>Description</th>
+        <th>Parameters</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>action</td>
+        <td>The default action when the form is submitted.</td>
+        <td><em>model</em></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class='styleguide__section'>
+
+  <h1 class='styleguide__title'>Form Control Attributes</h1>
+
+  <table class='styleguide__table mdl-data-table mdl-js-data-table'>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Description</th>
+        <th>Type</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>model</td>
+        <td>Defines the model to update</td>
+        <td><em>object</em></td>
+        <td>null</td>
+      </tr>
+      <tr>
+        <td>name</td>
+        <td>Name of the models attribute to bind the control to</td>
+        <td><em>string</em></td>
+        <td>null</td>
+      </tr>
+      <tr>
+        <td>value</td>
+        <td>Inital value of the control</td>
+        <td><em>string</em></td>
+        <td>null</td>
+      </tr>
+      <tr>
+        <td>type</td>
+        <td>The controls input type</td>
+        <td><em>string</em></td>
+        <td>text</td>
+      </tr>
+      <tr>
+        <td>label</td>
+        <td>The controls label</td>
+        <td><em>string</em></td>
+        <td>null</td>
+      </tr>
+      <tr>
+        <td>tip</td>
+        <td>A string to define help text for the control</td>
+        <td><em>string</em></td>
+        <td>null</td>
+      </tr>
+      <tr>
+        <td>options</td>
+        <td>An array of options for select or radio components</td>
+        <td><em>array</em></td>
+        <td>null</td>
+      </tr>
+      <tr>
+        <td>nullOption</td>
+        <td>The text of an initial blank option in a select input</td>
+        <td><em>string</em></td>
+        <td>null</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
