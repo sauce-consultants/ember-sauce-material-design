@@ -8,6 +8,36 @@ moduleForComponent('smd-form-control', 'Integration | Component | smd form contr
   integration: true
 });
 
+function have_class_names(assert, $element, classNames, label) {
+  let elementClasses = $element.attr('class').split(/\s+/);
+
+  if (label === undefined) {
+    label = 'element';
+  }
+
+  classNames.forEach(
+    (className) => {
+      let message = label + ' has ' + className + ' class';
+      assert.equal(elementClasses.includes(className), true, message);
+    }
+  );
+}
+
+function does_not_have_class_names(assert, $element, classNames, label) {
+  let elementClasses = $element.attr('class').split(/\s+/);
+
+  if (label === undefined) {
+    label = 'element';
+  }
+
+  classNames.forEach(
+    (className) => {
+      let message = label + ' has ' + className + ' class';
+      assert.equal(elementClasses.includes(className), false, message);
+    }
+  );
+}
+
 test('it renders', function(assert) {
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });
@@ -24,14 +54,64 @@ test('it renders', function(assert) {
 
 test('creates a label', function(assert) {
 
-  this.render(hbs(`{{smd-form-control label='My Label'}}`));
+  this.render(hbs(`{{smd-form-control label='My Label' name='foo'}}`));
 
-  assert.equal(this.$().find('.smd-form__label').text().trim(), 'My Label');
+  let $label = this.$().find('.smd-form__label');
+
+  assert.equal($label.text().trim(), 'My Label', 'The label text is rendered');
+
+  assert.equal($label.attr('for'), 'foo', 'The for attribute is rendered');
 });
 
 test('creates a tip', function(assert) {
 
   this.render(hbs(`{{smd-form-control tip='This is my tip'}}`));
 
-  assert.equal(this.$().find('.smd-form__tip').text().trim(), 'This is my tip');
+  let $tip = this.$().find('.smd-form__tip');
+
+  assert.equal($tip.text().trim(), 'This is my tip', 'The tip text is rendered');
+});
+
+test('creates a text input', function(assert) {
+
+  this.render(hbs(`{{smd-form-control label='My Text Field' name='foo' value='bar'}}`));
+
+  let $control = this.$().find('.smd-form__control'),
+    $label = this.$().find('.smd-form__label'),
+    $input = this.$().find('.smd-form__input');
+
+  // control test
+  have_class_names(assert, $control, ['mdl-js-textfield', 'mdl-textfield', 'smd-form__control'], 'control'); // base classes
+  have_class_names(assert, $control, ['smd-form__control--text', 'mdl-textfield--floating-label'], 'control'); // binding classes
+
+  // label tests
+  assert.equal($label.text().trim(), 'My Text Field', 'The label text is rendered');
+  assert.equal($label.attr('for'), 'foo', 'The for attribute is rendered');
+
+  // input tests
+  assert.equal($input.attr('name'), 'foo', 'The input name is rendered');
+  assert.equal($input.attr('type'), 'text', 'The type attribute is rendered');
+  assert.equal($input.val(), 'bar', 'The value attribute is rendered');
+  assert.equal($input.attr('disabled'), undefined, 'The disabled attribute is missing');
+  have_class_names(assert, $input, ['mdl-textfield__input', 'smd-form__input', 'smd-form__input--text'], 'input');
+});
+
+test('creates a disabled text input', function(assert) {
+
+  this.render(hbs(`{{smd-form-control label='My Text Field' name='foo' value='bar' disabled=true}}`));
+
+  let $control = this.$().find('.smd-form__control'),
+    $input = this.$().find('.smd-form__input');
+
+  have_class_names(assert, $control, ['is-disabled'], 'control');
+  assert.equal($input.attr('disabled'), 'disabled', 'The disabled attribute is rendered');
+});
+
+test('creates an input without a floating label', function(assert) {
+
+  this.render(hbs(`{{smd-form-control label='My Text Field' name='foo' isFloating=false}}`));
+
+  let $control = this.$().find('.smd-form__control');
+
+  does_not_have_class_names(assert, $control, ['mdl-textfield--floating-label'], 'control');
 });
