@@ -25,6 +25,7 @@
   {{/each}}
 {{else if isSelect}}
   {{#select-box/native
+    name=name
     value=value
     disabled=disabled
     on-select=(action 'selectedOption')

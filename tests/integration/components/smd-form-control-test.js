@@ -72,6 +72,26 @@ test('creates a tip', function(assert) {
   assert.equal($tip.text().trim(), 'This is my tip', 'The tip text is rendered');
 });
 
+test('creates a disabled input', function(assert) {
+
+  this.render(hbs(`{{smd-form-control label='My Text Field' name='foo' value='bar' disabled=true}}`));
+
+  let $control = this.$().find('.smd-form__control'),
+    $input = this.$().find('.smd-form__input');
+
+  have_class_names(assert, $control, ['is-disabled'], 'control');
+  assert.equal($input.attr('disabled'), 'disabled', 'The disabled attribute is rendered');
+});
+
+test('creates an input without a floating label', function(assert) {
+
+  this.render(hbs(`{{smd-form-control label='My Text Field' name='foo' isFloating=false}}`));
+
+  let $control = this.$().find('.smd-form__control');
+
+  does_not_have_class_names(assert, $control, ['mdl-textfield--floating-label'], 'control');
+});
+
 test('creates a text input', function(assert) {
 
   this.render(hbs(`{{smd-form-control label='My Text Field' name='foo' value='bar'}}`));
@@ -96,22 +116,29 @@ test('creates a text input', function(assert) {
   have_class_names(assert, $input, ['mdl-textfield__input', 'smd-form__input', 'smd-form__input--text'], 'input');
 });
 
-test('creates a disabled text input', function(assert) {
+test('creates a select input', function(assert) {
 
-  this.render(hbs(`{{smd-form-control label='My Text Field' name='foo' value='bar' disabled=true}}`));
+  this.render(hbs(`{{smd-form-control type='select' label='My Select Field' name='foo'}}`));
 
   let $control = this.$().find('.smd-form__control'),
-    $input = this.$().find('.smd-form__input');
+    $label = this.$().find('.smd-form__label'),
+    $input = this.$().find('.smd-form__input'),
+    $options = this.$().find('option');
 
-  have_class_names(assert, $control, ['is-disabled'], 'control');
-  assert.equal($input.attr('disabled'), 'disabled', 'The disabled attribute is rendered');
-});
+  // control test
+  have_class_names(assert, $control, ['mdl-js-textfield', 'mdl-textfield', 'smd-form__control'], 'control'); // base classes
+  have_class_names(assert, $control, ['smd-form__control--select', 'mdl-textfield--floating-label'], 'control'); // binding classes
 
-test('creates an input without a floating label', function(assert) {
+  // label tests
+  assert.equal($label.text().trim(), 'My Select Field', 'The label text is rendered');
+  assert.equal($label.attr('for'), 'foo', 'The for attribute is rendered');
 
-  this.render(hbs(`{{smd-form-control label='My Text Field' name='foo' isFloating=false}}`));
+  // input tests
+  assert.equal($input.attr('name'), 'foo', 'The input name is rendered');
+  assert.equal($input.attr('disabled'), undefined, 'The disabled attribute is missing');
+  have_class_names(assert, $input, ['mdl-textfield__input', 'smd-form__input', 'smd-form__input--select'], 'input');
 
-  let $control = this.$().find('.smd-form__control');
+  // option tests
+  assert.equal($options.length, 3, 'The correct number of options are rendered');
 
-  does_not_have_class_names(assert, $control, ['mdl-textfield--floating-label'], 'control');
 });
