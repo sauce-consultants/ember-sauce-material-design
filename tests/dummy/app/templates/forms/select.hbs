@@ -22,6 +22,7 @@
   model=model.user
   value=model.user.color
   label='Fav Color'
+  nullOption='-- Select Color --'
   options=colorOptions
   tip='Please select your fav color'}&#125;</code>
 </pre>
@@ -33,14 +34,11 @@
       model=model.user
       value=model.user.color
       label='Fav Color'
-      options=colorOptions
+      nullOption='-- Select Color --'
+      options=model.colorOptions
       tip='Please select your fav color'}}
 
-  <ul>
-    {{#each model.colorOptions as |option|}}
-      <li>{{option}}</li>
-    {{/each}}
-  </ul>
+  <p>Selected Value = {{model.user.color}}</p>
 </div>
 
 <div class='styleguide__section'>
@@ -73,14 +71,10 @@
       model=model.user
       value=model.user.number
       label='Fav Number'
-      options=numberOptions
+      options=model.numberOptions
       tip='Please select your fav number'}}
 
-      <ul>
-        {{#each model.numberOptions as |option|}}
-          <li>{{option.label}} - {{option.value}}</li>
-        {{/each}}
-      </ul>
+  <p>Selected Value = {{model.user.number}}</p>
 </div>
 
 <div class='styleguide__section'>
@@ -97,7 +91,8 @@
   model=model.user
   value=model.user.animal
   label='Fav Animal'
-  options=animalOptions
+  modelOptions=animalOptions
+  modelLabel='name'
   tip='Please select your Fav Animal'}&#125;</code>
 </pre>
 <div class='styleguide__preview'>
@@ -107,12 +102,9 @@
       model=model.user
       value=model.user.animal
       label='Fav Animal'
-      options=animalOptions
+      modelOptions=model.animalOptions
+      modelLabel='name'
       tip='Please select your Fav Animal'}}
 
-  <ul>
-    {{#each model.animalOptions as |option|}}
-      <li>{{option.name}} - {{option}}</li>
-    {{/each}}
-  </ul>
+  <p>Selected Value = {{model.user.animal.name}}</p>
 </div>

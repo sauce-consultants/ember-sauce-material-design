@@ -1,11 +1,12 @@
 import DS from 'ember-data';
-import Ember from 'ember';
 
 const {
   attr,
-  hasMany
+  hasMany,
+  Model
 } = DS;
 
-export default DS.Model.extend({
+export default Model.extend({
   name: attr('string'),
+  users: hasMany('user'),
 });

@@ -1,12 +1,12 @@
 import DS from 'ember-data';
-import Ember from 'ember';
 
 const {
   attr,
-  belongsTo
+  belongsTo,
+  Model
 } = DS;
 
-export default DS.Model.extend({
+export default Model.extend({
   color: attr('string'),
   number: attr('number'),
   animal: belongsTo('animal'),

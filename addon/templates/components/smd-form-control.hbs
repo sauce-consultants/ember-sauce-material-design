@@ -33,8 +33,8 @@
     {{#if hasNullOption}}
       {{sb.option value=null label=nullOption}}
     {{/if}}
-    {{#each options as |option|}}
-      {{sb.option value=option label=option.label}}
+    {{#each computedOptions as |option|}}
+      {{sb.option value=option.value label=option.label selected=option.selected}}
     {{/each}}
   {{/select-box/native}}
 {{else if isDate}}

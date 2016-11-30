@@ -2,8 +2,7 @@ import Ember from 'ember';
 
 const {
   A,
-  Route,
-  RSVP
+  Route
 } = Ember;
 
 export default Route.extend({
@@ -13,35 +12,33 @@ export default Route.extend({
 
     animalOptions.push(this.store.createRecord('animal', {
       id: 1,
-      name: 'Dog'
+      name: 'Dog',
+      longName: 'Big Dog',
     }));
     animalOptions.push(this.store.createRecord('animal', {
       id: 2,
-      name: 'Cat'
+      name: 'Cat',
+      longName: 'Shit Cat',
     }));
     animalOptions.push(this.store.createRecord('animal', {
       id: 3,
-      name: 'Fish'
+      name: 'Fish',
+      longName: 'Smelly Fish',
     }));
     animalOptions.push(this.store.createRecord('animal', {
       id: 4,
-      name: 'Bear'
+      name: 'Bear',
+      longName: 'Hungry Bear',
     }));
     animalOptions.push(this.store.createRecord('animal', {
       id: 5,
-      name: 'Rabbit'
+      name: 'Rabbit',
+      longName: 'Great Rabbit',
     }));
     animalOptions.push(this.store.createRecord('animal', {
       id: 6,
-      name: 'Tiger'
-    }));
-    animalOptions.push(this.store.createRecord('animal', {
-      id: 7,
-      name: 'Chicken'
-    }));
-    animalOptions.push(this.store.createRecord('animal', {
-      id: 8,
-      name: 'Elephant'
+      name: 'Tiger',
+      longName: 'Wimpy Tiger',
     }));
 
     let colorOptions = A([
@@ -76,11 +73,17 @@ export default Route.extend({
         value: 42,
       }]);
 
+    let user = this.store.createRecord('user', {
+      color: 'Green',
+      number: 7,
+    });
+    user.set('animal', animalOptions[4]);
+
     return {
       colorOptions: colorOptions,
       numberOptions: numberOptions,
       animalOptions: animalOptions,
-      user: this.store.createRecord('user'),
+      user: user,
     };
   },
   actions: {

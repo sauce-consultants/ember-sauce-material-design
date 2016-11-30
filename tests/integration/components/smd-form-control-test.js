@@ -139,6 +139,6 @@ test('creates a select input', function(assert) {
   have_class_names(assert, $input, ['mdl-textfield__input', 'smd-form__input', 'smd-form__input--select'], 'input');
 
   // option tests
-  assert.equal($options.length, 3, 'The correct number of options are rendered');
+  assert.equal($options.length, 0, 'The correct number of options are rendered');
 
 });
