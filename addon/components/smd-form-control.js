@@ -53,14 +53,14 @@ export default Ember.Component.extend({
     options.forEach(
       function(o) {
         var option;
-        if (o.value == value) {
+        if (o.value === value) {
           option = {
             label: o.label,
             value: o.value,
             checked: true,
           };
         } else {
-          var option = {
+          option = {
             label: o.label,
             value: o.value,
             checked: false,

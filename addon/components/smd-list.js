@@ -16,7 +16,6 @@ export default Ember.Component.extend({
   initStickySubheadings: function() {
     var $list = this.$(),
       $scroll = $list.find('.smd-list__scroll'),
-      currentScrollTop = 0,
       lastScrollTop = 0;
 
     // When the first header is given a fixed position,
@@ -38,20 +37,21 @@ export default Ember.Component.extend({
 
     $firstSubheader.before($stickyHeader).addClass('smd-subheader--sticky');
 
-    var listPaddingTop = 48;
-
     $scroll.scroll(function() {
       var currentScrollTop = Ember.$(this).scrollTop(),
         $currentSubheader = $list.find('.smd-subheader--sticky'),
         $nextSubheader,
-        $prevSubheader;
+        $prevSubheader,
+        diff,
+        subHeight,
+        top;
 
 
       if (currentScrollTop > lastScrollTop) {
         $nextSubheader = $currentSubheader.nextUntil('.smd-subheader').next('.smd-subheader');
         if ($nextSubheader.length) {
-          var diff = $nextSubheader.offset().top - $list.offset().top,
-            subHeight = $currentSubheader.outerHeight();
+          diff = $nextSubheader.offset().top - $list.offset().top;
+          subHeight = $currentSubheader.outerHeight();
 
           if ($list.offset().top > $nextSubheader.offset().top) {
             $currentSubheader.removeClass('smd-subheader--sticky');
@@ -60,17 +60,20 @@ export default Ember.Component.extend({
           } else if (diff < subHeight) {
             // This is where we make the next subheader push the current
             // subheader off screen
-            var top = diff - subHeight;
+            top = diff - subHeight;
             $currentSubheader.css('top', top);
           }
         }
       } else {
         $prevSubheader = $currentSubheader.prevUntil('.smd-subheader').prev('.smd-subheader');
         $nextSubheader = $currentSubheader.nextUntil('.smd-subheader').next('.smd-subheader');
+
+        subHeight = parseInt($currentSubheader.outerHeight());
+
         var $lastItem = $currentSubheader.next(),
-          subHeight = parseInt($currentSubheader.outerHeight()),
-          lastItemOffset = $lastItem.offset().top - subHeight,
-          diff = $list.offset().top - lastItemOffset;
+          lastItemOffset = $lastItem.offset().top - subHeight;
+
+        diff = $list.offset().top - lastItemOffset;
 
         if ($prevSubheader.length) {
           if ($list.offset().top < lastItemOffset) {

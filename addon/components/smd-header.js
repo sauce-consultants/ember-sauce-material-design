@@ -157,7 +157,7 @@ export default Ember.Component.extend({
 
     var $parent = Ember.$(this.get('scrollContext')),
       $header = this.$(),
-      $title = $header.find('.smd-header__title'),
+      //$title = $header.find('.smd-header__title'),
       originalHeight = $header.outerHeight(),
       minHeight = originalHeight - 128;
 
@@ -219,7 +219,7 @@ export default Ember.Component.extend({
 
       var fact = 0.75 + (0.25 * scale);
 
-      $title.css('transform', 'scale(' + fact + ') translateZ(0px)')
+      $title.css('transform', 'scale(' + fact + ') translateZ(0px)');
 
       //Ember.Logger.log('set top margin to ' + height);
 

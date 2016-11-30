@@ -13,7 +13,7 @@ export default Route.extend({
       text: 'foo',
       radio: 1,
       select: null,
-    }
+    };
   },
   actions: {
     primaryItemAction: function(item) {
