@@ -28,7 +28,7 @@ module.exports = function(environment) {
   };
 
   if (environment === 'development') {
-    ENV.EmberENV.RAISE_ON_DEPRECATION = true;//!process.env['ALLOW_DEPRECATIONS'];
+    ENV.EmberENV.RAISE_ON_DEPRECATION = true; //!process.env['ALLOW_DEPRECATIONS'];
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
@@ -51,9 +51,7 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     ENV.locationType = 'hash';
-    ENV.rootURL = '/ember-sauce-material-design/';
-    ENV.locationType = 'hash';
-    ENV.rootURL = '/ember-material-lite';
+    ENV.rootURL = 'https://sauce-consultants.github.io/ember-sauce-material-design/';
   }
 
   return ENV;
