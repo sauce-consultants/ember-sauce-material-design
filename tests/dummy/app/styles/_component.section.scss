@@ -1,0 +1,63 @@
+.section {
+  $section-text-normal: 1rem;
+  $section-text-large : 1.5rem;
+  background          : #EFEFEF;
+  border-bottom       : 1px solid #BBB;
+  border-top          : 1px solid #FFF;
+  padding             : 4rem 1.5rem 2rem;
+
+  a {
+    text-decoration: none;
+  }
+
+  &__heading {
+    font-size  : 4rem;
+    font-weight: 100;
+    line-height: 1;
+    margin     : 0 0 2rem;
+  }
+
+  &__text {
+    font-size  : $section-text-normal;
+    line-height: 1.5;
+    max-width  : 40rem;
+
+    &--large {
+      font-size    : $section-text-large;
+      font-weight  : 300;
+      text-align   : justify;
+      margin-bottom: 2.25rem;
+    }
+  }
+
+  &__code {
+    font-size  : $section-text-normal;
+    font-family: monospace;
+    font-weight: 700;
+
+    code {
+      background: white;
+      display   : block;
+      padding   : 0.5rem 1rem;
+
+      @include mq ('desktop') {
+        display: inline;
+      }
+    }
+
+    &--large {
+      text-align   : center;
+      font-size    : $section-text-large;
+      margin-bottom: 2.25rem;
+    }
+  }
+
+  &__list {
+    margin             : 0;
+    padding            : 0;
+    font-size          : $section-text-normal;
+    list-style-position: inside;
+  }
+
+  &__list-item {}
+}
