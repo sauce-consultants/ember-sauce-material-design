@@ -2,6 +2,10 @@
 
 This README outlines the details of collaborating on this Ember addon.
 
+## Full Docs
+
+https://sauce-consultants.github.io/ember-sauce-material-design/
+
 ## Installation
 
 * `ember install ember-sauce-material-design`
@@ -9,6 +13,7 @@ This README outlines the details of collaborating on this Ember addon.
   * ember install ember-material-lite
   * ember install ember-select-box
   * ember install ember-cp-validations
+  * ember install ember-pikaday
   * bower install sauce-material-design
 * Add sass files to `ember-cli-build.js`
 
@@ -31,13 +36,15 @@ sassOptions: {
 
 ## Components
 
+The following components are currently available
+
 * smd-header
+* smd-list
 * smd-item
+* smd-form
 * smd-form-control
-
-## Docs
-
-Coming soon.. Clone repo and run `ember serve` to view the demo app at http://localhost:4200
+* smd-empty
+* smd-dropdown
 
 ## Running Tests
 
@@ -50,3 +57,13 @@ Coming soon.. Clone repo and run `ember serve` to view the demo app at http://lo
 * `ember build`
 
 For more information on using ember-cli, visit [http://ember-cli.com/](http://ember-cli.com/).
+
+## Publishing Demo app
+
+The demo app is found in `/tests/dummy/app`. To publish an update to the version of the demo to github you will have to commit a new build to the gh-pages branch and push to github. This can be done easily using the [ember-cli-github-pages addon](https://github.com/poetic/ember-cli-github-pages).
+
+- Make changes to the dummy app in your current branch
+- Commit changes
+- Run the pages build command `ember github-pages:commit --message "Added new docs for foo"` (This will build the dummy app and commit it to the gh-pages branch)
+- Push up the gh-pages branch `git push origin gh-pages:gh-pages`
+- Drop Mic
