@@ -1,10 +1,10 @@
 <header class='styleguide__header'>
-  <h1 class='styleguide__title'>Forms: Switch Control</h1>
+  <h1 class='styleguide__title'>Forms: Icon Control</h1>
   <p class='styleguide__text'>Beautiful Material Design form components</p>
 </header>
 
 <div class='styleguide__section'>
-  <h2 class='styleguide__subtitle'>Basic Switch input (off)</h2>
+  <h2 class='styleguide__subtitle'>Basic Icon input (off)</h2>
   <p class="styleguide__text">Binding to a model value with a tip.</p>
 </div>
 
@@ -12,22 +12,23 @@
   <code class='js'>
 
 &#123;{smd-form-control
-  type='switch'
+  type='icon'
   name='Admin'
   model=model
   value=model.admin
   label='Is Admin'
+  icon='lock'
   tip='Provide administrator rights to a user'}&#125;</code>
 </pre>
 
 <div class='styleguide__preview'>
-  {{smd-form-control type='switch' name='admin' model=model value=model.admin label='Is Admin' tip='Provide administrator rights to a user'}}
+  {{smd-form-control type='icon' name='admin' model=model value=model.admin label='Is Admin' icon='lock' tip='Provide administrator rights to a user'}}
   <p>Selected Value = {{model.admin}}</p>
 </div>
 
 
 <div class='styleguide__section'>
-  <h2 class='styleguide__subtitle'>Basic Switch input (on)</h2>
+  <h2 class='styleguide__subtitle'>Basic Icon input (on)</h2>
   <p class="styleguide__text">Binding to a model value with an on state.</p>
 </div>
 
@@ -35,20 +36,21 @@
   <code class='js'>
 
 &#123;{smd-form-control
-  type='switch'
+  type='icon'
   name='mailingList'
   model=model
   value=model.mailingList
-  label='Subscribed to mailing list'}&#125;</code>
+  label='Subscribed to mailing list'
+  icon='mail_outline'}&#125;</code>
 </pre>
 
 <div class='styleguide__preview'>
-  {{smd-form-control type='switch' name='mailingList' model=model value=model.mailingList label='Subscribed to mailing list'}}
+  {{smd-form-control type='icon' name='mailingList' model=model value=model.mailingList label='Subscribed to mailing list' icon='mail_outline'}}
   <p>Selected Value = {{model.mailingList}}</p>
 </div>
 
 <div class='styleguide__section'>
-  <h2 class='styleguide__subtitle'>Naked Switch input</h2>
+  <h2 class='styleguide__subtitle'>Naked Icon input</h2>
   <p class="styleguide__text">A switch input with no label</p>
 </div>
 
@@ -56,14 +58,14 @@
   <code class='js'>
 
 &#123;{smd-form-control
-  type='switch'
+  type='icon'
   name='mailingList'
   model=model
   value=model.mailingList}&#125;</code>
 </pre>
 
 <div class='styleguide__preview'>
-  {{smd-form-control type='switch' name='mailingList' model=model value=model.mailingList}}
+  {{smd-form-control type='icon' name='mailingList' model=model value=model.mailingList}}
   <p>Selected Value = {{model.mailingList}}</p>
 </div>
 

@@ -17,6 +17,7 @@ Router.map(function() {
     this.route('select');
     this.route('radio');
     this.route('switch');
+    this.route('icon');
   });
   this.route('dropdown');
 
