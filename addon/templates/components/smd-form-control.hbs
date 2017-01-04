@@ -8,9 +8,9 @@
     cols=cols
     disabled=disabled}}
 {{else if isSwitch}}
-  {{mdl-switch text='Switch' value=value disabled=disabled}}
+  {{mdl-switch text=label value=value disabled=disabled}}
 {{else if isCheckbox}}
-  {{mdl-checkbox text='Checkbox' value=value disabled=disabled}}
+  {{mdl-checkbox text=label value=value disabled=disabled}}
 {{else if isIcon}}
   {{mdl-icon-toggle icon=icon value=value disabled=disabled}}
 {{else if isRadio}}

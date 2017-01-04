@@ -16,6 +16,7 @@ Router.map(function() {
   this.route('forms', function() {
     this.route('select');
     this.route('radio');
+    this.route('switch');
   });
   this.route('dropdown');
 

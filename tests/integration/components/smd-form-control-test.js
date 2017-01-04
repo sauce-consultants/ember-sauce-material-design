@@ -32,7 +32,7 @@ function does_not_have_class_names(assert, $element, classNames, label) {
 
   classNames.forEach(
     (className) => {
-      let message = label + ' has ' + className + ' class';
+      let message = label + ' does not have ' + className + ' class';
       assert.equal(elementClasses.includes(className), false, message);
     }
   );
@@ -150,6 +150,7 @@ test('creates a radio input', function(assert) {
 
   let $control = this.$().find('.smd-form__control'),
     $label = this.$().find('.smd-form__label');
+
   // control test
   have_class_names(assert, $control, ['mdl-js-textfield', 'mdl-textfield', 'smd-form__control'], 'control'); // base classes
   have_class_names(assert, $control, ['smd-form__control--radio', 'mdl-textfield--floating-label'], 'control'); // binding classes
@@ -166,4 +167,67 @@ test('creates a radio input', function(assert) {
   have_class_names(assert, $control, ['mdl-js-textfield', 'mdl-textfield', 'smd-form__control'], 'control'); // base classes
   have_class_names(assert, $control, ['smd-form__control--inline-radio', 'smd-form__control--radio', 'mdl-textfield--floating-label'], 'control'); // binding classes
 
+});
+
+
+test('creates a switch input', function(assert) {
+
+  let $control, $input, $label;
+
+  this.set('property1', false);
+  this.set('property2', true);
+
+  //
+  // Test a unchecked switch
+  //
+
+  this.render(hbs(`{{smd-form-control type='switch' label='My Switch Field' value=property1}}`));
+
+  $control = this.$().find('.smd-form__control');
+  $input = $control.find('.mdl-switch');
+  $label = $control.find('.mdl-switch__label');
+
+  // control test
+  have_class_names(assert, $control, ['mdl-js-textfield', 'mdl-textfield', 'smd-form__control'], 'control'); // base classes
+  have_class_names(assert, $control, ['smd-form__control--switch', 'mdl-textfield--floating-label'], 'control'); // binding classes
+  does_not_have_class_names(assert, $input, ['is-checked'], 'switch');
+
+  // label tests
+  assert.equal($label.text().trim(), 'My Switch Field', 'The label text is rendered');
+
+  // toggle input
+  $input.click();
+
+  // element should now be checked
+  have_class_names(assert, $input, ['is-checked'], 'switch');
+
+  // property1 should now be true
+  assert.equal(this.get('property1'), true, 'Bound property is changed');
+
+  //
+  // Now test a checked switch
+  //
+
+  this.render(hbs(`{{smd-form-control type='switch' label='My Switch Field' value=property2}}`));
+
+  $control = this.$().find('.smd-form__control');
+  $input = $control.find('.mdl-switch');
+  $label = $control.find('.mdl-switch__label');
+
+  // control test
+  have_class_names(assert, $control, ['mdl-js-textfield', 'mdl-textfield', 'smd-form__control'], 'control'); // base classes
+  have_class_names(assert, $control, ['smd-form__control--switch', 'mdl-textfield--floating-label'], 'control'); // binding classes
+  have_class_names(assert, $input, ['is-checked'], 'switch');
+
+  // label tests
+  assert.equal($label.text().trim(), 'My Switch Field', 'The label text is rendered');
+
+  // toggle input
+  $input.click();
+
+  // element should now be checked
+  does_not_have_class_names(assert, $input, ['is-checked'], 'switch');
+
+  // property1 should now be true
+  assert.equal(this.get('property2'), false, 'Bound property is changed');
 });
