@@ -80,8 +80,10 @@ export default Component.extend({
           }
           option.value = obj;
 
-          if (obj.id === value.get('id')) {
-            option.selected = true;
+          if(value !== null && typeof(value) === 'object' && value.get) {
+            if (obj.id === value.get('id')) {
+              option.selected = true;
+            }
           }
 
           array.push(option);
