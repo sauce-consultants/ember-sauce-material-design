@@ -11,12 +11,22 @@ export default Ember.Component.extend({
   errorMessage: 'Please correct the errors in the form',
   // Computed
   childFormControls: Ember.computed('childViews', function() {
-    var childViews = this.get('childViews');
-    if (childViews) {
-      return childViews.filter(function(currentChildView) {
-        return currentChildView.constructor.toString().indexOf('smd-form-control') !== -1;
+
+    var findChildFormControls = function(thisComponent) {
+
+      let childViews = thisComponent.get('childViews');
+      var childFormControls = childViews.filter((childView) => {
+        return childView.constructor.toString().indexOf('smd-form-control') !== -1;
       });
-    }
+
+      childViews.forEach(function(childView) {
+        childFormControls.addObjects(findChildFormControls(childView))
+      });
+
+      return childFormControls;
+    };
+
+    return findChildFormControls(this);
   }),
   validate: function() {
     var errorMessages = [];
