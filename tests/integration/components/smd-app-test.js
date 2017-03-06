@@ -50,7 +50,7 @@ test('it renders as with content', function(assert) {
     {{/smd-app}}
   `));
 
-  let $content = this.$('.page-content');
+  let $content = this.$('.ember-view').first();
 
   assert.equal($content.text().trim(), 'template block text', 'it renderes content');
 });
