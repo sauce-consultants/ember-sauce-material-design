@@ -20,7 +20,7 @@ export default Ember.Component.extend({
       });
 
       childViews.forEach(function(childView) {
-        childFormControls.addObjects(findChildFormControls(childView))
+        childFormControls.addObjects(findChildFormControls(childView));
       });
 
       return childFormControls;
