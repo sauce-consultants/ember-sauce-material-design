@@ -18,6 +18,7 @@ export default Component.extend({
     'noShadowClass',
   ],
   tagName: 'header',
+  title: 'App Name',
   scroll: false, // Makes the header scroll with the content
   waterfall: false, // Allows a "waterfall" effect with multiple header lines
   hideTop: false, // Hides the top rather than the bottom rows on a waterfall header	Requires waterfall

@@ -55,7 +55,7 @@ test('it renders with content', function(assert) {
   this.render(hbs(`
     {{#smd-app-header}}
       template block text
-    {{/smd-app}}
+    {{/smd-app-header}}
   `));
 
   let $content = this.$('.ember-view').first();
