@@ -1,0 +1,204 @@
+{{smd-header
+  title="App Layout Components"
+  backIcon='arrow_back'
+}}
+<div class="smd-page">
+
+  <section class="smd-page__body">
+
+    <h2 class="smd-page__subtitle mdl-typography--headline">App Component</h2>
+
+    <p>The <b>smd-app</b> component wraps around your whole application & is normally placed in <i>/templates/application.hbs</i>. It adds the required mdl-layout classes to the html.</p>
+
+    <pre class="styleguide__code"><code class="js">
+&#123;{#smd-app}&#125;
+  &lt;!-- content --&gt;
+&#123;{/smd-app}&#125;
+      </code></pre>
+
+    <h3 class="smd-page__subtitle mdl-typography--subhead-color-contrast">Attributes</h3>
+
+    <table class="styleguide__table mdl-data-table mdl-js-data-table">
+      <thead>
+        <tr>
+          <th>Attribute</th>
+          <th>Description</th>
+          <th>Type</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>fixedDrawer</td>
+          <td>Makes the drawer always visible and open in larger screens</td>
+          <td><em>boolean</em></td>
+          <td>false</td>
+        </tr>
+        <tr>
+          <td>fixedHeader</td>
+          <td>Makes the header always visible, even in small screens</td>
+          <td><em>boolean</em></td>
+          <td>false</td>
+        </tr>
+        <tr>
+          <td>noDrawerButton</td>
+          <td>Does not display a drawer button</td>
+          <td><em>boolean</em></td>
+          <td>false</td>
+        </tr>
+        <tr>
+          <td>noDesktopDrawerButton</td>
+          <td>Does not display a drawer button in desktop mode</td>
+          <td><em>boolean</em></td>
+          <td>false</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 class="smd-page__subtitle mdl-typography--headline">App Header Component</h2>
+
+    <p>The app header component appears on every page. It usually contains the app name and main navigation menu. It can be customised to contain multiple rows</p>
+
+    <pre class="styleguide__code"><code class="js">
+&#123;{#smd-app-header title="My App"}&#125;
+  // content
+&#123;{/smd-app-header}&#125;
+    </code></pre>
+
+    <h3 class="smd-page__subtitle mdl-typography--subhead-color-contrast">Example with multiple rows</h3>
+
+    <pre class="styleguide__code"><code class="js">
+&#123;{#smd-app-header multipleRows=true waterfall=true}&#125;
+  &lt;!-- Top row, always visible --&gt;
+  &lt;div class=&quot;mdl-layout__header-row&quot;&gt;
+    &lt;span class=&quot;mdl-layout-title&quot;&gt;Title&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;!-- Bottom row, not visible on scroll --&gt;
+  &lt;div class=&quot;mdl-layout__header-row&quot;&gt;
+   &lt;!-- content --&gt;
+  &lt;/div&gt;
+&#123;{/smd-app-header}&#125;
+    </code></pre>
+
+    <h3 class="smd-page__subtitle mdl-typography--subhead-color-contrast">Attributes</h3>
+
+    <table class="styleguide__table mdl-data-table mdl-js-data-table">
+      <thead>
+        <tr>
+          <th>Attribute</th>
+          <th>Description</th>
+          <th>Type</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>scroll</td>
+          <td>Makes the header scroll with the content</td>
+          <td><em>boolean</em></td>
+          <td>false</td>
+        </tr>
+        <tr>
+          <td>waterfall</td>
+          <td>Allows a "waterfall" effect with multiple header lines</td>
+          <td><em>boolean</em></td>
+          <td>false</td>
+        </tr>
+        <tr>
+          <td>hideTop</td>
+          <td>Hides the top rather than the bottom rows on a waterfall heade, also triggers waterfall</td>
+          <td><em>boolean</em></td>
+          <td>false</td>
+        </tr>
+        <tr>
+          <td>transparent</td>
+          <td>Makes header transparent (draws on top of layout background)</td>
+          <td><em>boolean</em></td>
+          <td>false</td>
+        </tr>
+        <tr>
+          <td>noShadow</td>
+          <td>Uses a header without a shadow</td>
+          <td><em>boolean</em></td>
+          <td>false</td>
+        </tr>
+        <tr>
+          <td>multipleRows</td>
+          <td>Allows rendering of custom mdl-layout__header-row elements in yield</td>
+          <td><em>boolean</em></td>
+          <td>false</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 class="smd-page__subtitle mdl-typography--headline">Drawer Component</h2>
+
+    <p>The <b>smd-drawer</b> component creates an off screen drawer for hidden navigation.</p>
+
+    <pre class="styleguide__code"><code class="js">
+&#123;{#smd-drawer}&#125;
+  &lt;!-- navigation --&gt;
+&#123;{/smd-drawer}&#125;
+    </code></pre>
+
+    <h2 class="smd-page__subtitle mdl-typography--headline">Content Component</h2>
+
+    <p>The <b>smd-content</b> component holds the main application content. This component will grow to fill the height of the application window and allow content to be scrolled</p>
+
+    <pre class="styleguide__code"><code class="js">
+&#123;{#smd-content}&#125;
+  &lt;!-- navigation --&gt;
+&#123;{/smd-content}&#125;
+    </code></pre>
+
+    <h2 class="smd-page__subtitle mdl-typography--headline">Navigation Component</h2>
+
+    <p>The navigation component should be extended and used with a custom template file in your own applications.</p>
+
+    <pre class="styleguide__code"><code class="js">
+// app/components/app-navigation.js
+import Navigation from 'ember-sauce-material-design/components/smd-navigation';
+
+export default Navigation.extend();
+    </code></pre>
+
+    <pre class="styleguide__code"><code class="js">
+// app/templates/components/app-navigation.hbs
+&#123;{link-to 'Home' 'home' class="mdl-navigation__link"}&#125;
+&#123;{link-to 'Foo' 'foo' class="mdl-navigation__link"}&#125;
+&#123;{link-to 'Bar' 'bar' class="mdl-navigation__link"}&#125;
+    </code></pre>
+
+
+    <h2 class="smd-page__subtitle mdl-typography--headline">Boilerplate Application</h2>
+
+    <p>Here is an example of a full application template ready to go</p>
+
+
+    <pre class="styleguide__code"><code class="js">
+// app/templates/application.hbs
+&#123;{#smd-app}&#125;
+
+  &#123;{#smd-app-header scroll=true}&#125;
+    &#123;{app-navigation}&#125;
+  &#123;{/smd-app-header}&#125;
+
+  &#123;{#smd-drawer}&#125;
+    &#123;{app-navigation}&#125;
+  &#123;{/smd-drawer}&#125;
+
+  &#123;{#smd-content}&#125;
+    &#123;{outlet}&#125;
+  &#123;{/smd-content}&#125;
+
+&#123;{/smd-app}&#125;
+    </code></pre>
+
+
+
+  </section>
+
+  <footer class="smd-page__footer">
+    <p>View on <a href="https://github.com/sauce-consultants/ember-sauce-material-design">github</a></p>
+  </footer>
+</div>

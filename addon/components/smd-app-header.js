@@ -9,7 +9,7 @@ const {
 export default Component.extend({
   // Attributes
   layout,
-  classNames: ['mdl-layout__header'],
+  classNames: ['mdl-layout__header', 'mdl-layout__header--app'],
   classNameBindings: [
     'scrollClass',
     'waterfallClass',

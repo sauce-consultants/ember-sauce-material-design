@@ -23,8 +23,6 @@ export default Component.extend({
   fixedHeader: false, // Makes the header always visible, even in small screens
   noDrawerButton: false, // Does not display a drawer button
   noDesktopDrawerButton: false, // Does not display a drawer button in desktop mode
-  largeScreenHide: false, // Hides an element on smaller screens
-  smallScreenHide: false, // Hides an element on larger screens
   // Computed
   fixedDrawerClass: computed('fixedDrawer', function() {
     if (this.get('fixedDrawer')) {

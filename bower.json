@@ -4,6 +4,7 @@
     "ember": "~2.10.0",
     "ember-cli-shims": "0.1.3",
     "ember-qunit-notifications": "0.1.0",
+    "material-design-lite": "^1.2.1",
     "sauce-material-design": "^0.3.4"
   }
 }
