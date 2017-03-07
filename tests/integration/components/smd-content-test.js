@@ -10,7 +10,7 @@ test('it renders', function(assert) {
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });
 
-  this.render(hbs`{{smd-content}}`);
+  this.render(hbs(`{{smd-content}}`));
 
   assert.equal(this.$().text().trim(), '');
 
