@@ -26,7 +26,7 @@ test('it renders with content', function(assert) {
 
   // Template block usage:
   this.render(hbs(`
-    {{#smd-drawer}}
+    {{#smd-drawer title='Foo'}}
       <div class="content">template block text</div>
     {{/smd-drawer}}
   `));
