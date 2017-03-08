@@ -80,7 +80,7 @@ export default Component.extend({
           }
           option.value = obj;
 
-          if(value !== null && typeof(value) === 'object' && value.get) {
+          if (value !== null && typeof(value) === 'object' && value.get) {
             if (obj.id === value.get('id')) {
               option.selected = true;
             }
@@ -210,7 +210,7 @@ export default Component.extend({
   },
   didInsertElement() {
     this._super(...arguments);
-    componentHandler.upgradeElement(this.element);
+    window.componentHandler.upgradeElement(this.element);
   },
   actions: {
     selectedOption(option) {

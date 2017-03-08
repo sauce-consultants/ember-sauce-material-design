@@ -7,6 +7,6 @@ export default Ember.Component.extend({
   classNames: ['mdl-js-snackbar', 'mdl-snackbar'],
   didInsertElement() {
     this._super(...arguments);
-    componentHandler.upgradeElement(this.element);
+    window.componentHandler.upgradeElement(this.element);
   }
 });
