@@ -167,6 +167,11 @@ export default Component.extend({
     }
   },
   getScrollElement: function() {
-    return this.$().next('.smd-page');
+    let $page = this.$().next('.smd-page');
+    if ($page.length) {
+      return $page;
+    }
+    Ember.Logger.warn('Can not find a sibling element .smd-page for scrollable smd-header');
+    return Ember.$('body');
   }
 });
