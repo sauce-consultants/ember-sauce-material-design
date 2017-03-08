@@ -54,11 +54,11 @@ test('it renders with content', function(assert) {
   // Template block usage:
   this.render(hbs(`
     {{#smd-app-header}}
-      template block text
+      <div id="app-header-nav">template block text</div>
     {{/smd-app-header}}
   `));
 
-  let $content = this.$('.ember-view').first();
+  let $content = this.$('#app-header-nav');
 
   assert.equal($content.text().trim(), 'template block text', 'it renderes content');
 });
