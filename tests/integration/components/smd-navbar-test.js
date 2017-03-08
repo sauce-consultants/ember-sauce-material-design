@@ -4,21 +4,25 @@ import {
 } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('smd-navbar', 'Integration | Component | smd app header', {
+moduleForComponent('smd-navbar', 'Integration | Component | smd navbar', {
   integration: true
 });
 
 test('it renders', function(assert) {
 
+  this.set('title', 'FooBar');
   this.set('scroll', false);
   this.set('waterfall', false);
   this.set('hideTop', false);
   this.set('transparent', false);
   this.set('noShadow', false);
 
-  this.render(hbs(`{{smd-navbar scroll=scroll waterfall=waterfall hideTop=hideTop transparent=transparent noShadow=noShadow}}`));
+  this.render(hbs `{{smd-navbar title=title scroll=scroll waterfall=waterfall hideTop=hideTop transparent=transparent noShadow=noShadow}}`);
 
-  let $component = this.$('.ember-view').first();
+  let $component = this.$('.ember-view'),
+    $title = $component.find('.mdl-layout-title');
+
+  assert.equal($title.text().trim(), 'FooBar', 'title is correct');
 
   assert.equal($component.hasClass('mdl-layout__header--scroll'), false, 'Does not have scroll class');
   assert.equal($component.hasClass('mdl-layout__header--waterfall'), false, 'Does not have waterfall class');
@@ -52,13 +56,16 @@ test('it renders', function(assert) {
 test('it renders with content', function(assert) {
 
   // Template block usage:
-  this.render(hbs(`
-    {{#smd-navbar}}
-      <div id="app-header-nav">template block text</div>
+  this.render(hbs `
+    {{#smd-navbar title="BarFoo"}}
+      <div class="content">template block text</div>
     {{/smd-navbar}}
-  `));
+  `);
 
-  let $content = this.$('#app-header-nav');
+  let $component = this.$('.ember-view').first(),
+    $title = $component.find('.mdl-layout-title'),
+    $content = $component.find('.content');
 
-  assert.equal($content.text().trim(), 'template block text', 'it renderes content');
+  assert.equal($title.text().trim(), 'BarFoo', 'title is correct');
+  assert.equal($content.text().trim(), 'template block text', 'it renders content');
 });

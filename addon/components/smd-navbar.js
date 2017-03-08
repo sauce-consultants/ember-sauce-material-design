@@ -3,7 +3,10 @@ import layout from '../templates/components/smd-navbar';
 
 const {
   Component,
-  computed
+  computed,
+  computed: {
+    bool
+  },
 } = Ember;
 
 export default Component.extend({
@@ -11,13 +14,17 @@ export default Component.extend({
   appState: Ember.inject.service('smd-app-state'),
   // Attributes
   layout,
-  classNames: ['mdl-layout__header', 'mdl-layout__header--app'],
+  classNames: [
+    'smd-navbar',
+    'mdl-layout__header',
+    'mdl-layout__header--app',
+  ],
   classNameBindings: [
-    'scrollClass',
     'waterfallClass',
-    'hideTopClass',
-    'transparentClass',
-    'noShadowClass',
+    'scroll:mdl-layout__header--scroll',
+    'hideTop:mdl-layout__header--waterfall-hide-top',
+    'transparent:mdl-layout__header--transparent',
+    'noShadow:mdl-layout__header--seamed',
   ],
   tagName: 'header',
   title: 'App Name',
@@ -28,30 +35,10 @@ export default Component.extend({
   noShadow: false, // Uses a header without a shadow	Optional; goes on header element
   multipleRows: false,
   // Computed
-  hasMultipleRows: computed.bool('multipleRows'),
-  scrollClass: computed('scroll', function() {
-    if (this.get('scroll')) {
-      return 'mdl-layout__header--scroll';
-    }
-  }),
+  hasMultipleRows: bool('multipleRows'),
   waterfallClass: computed('waterfall', 'hideTop', function() {
     if (this.get('waterfall') || this.get('hideTop')) {
       return 'mdl-layout__header--waterfall';
-    }
-  }),
-  hideTopClass: computed('hideTop', function() {
-    if (this.get('hideTop')) {
-      return 'mdl-layout__header--waterfall-hide-top';
-    }
-  }),
-  transparentClass: computed('transparent', function() {
-    if (this.get('transparent')) {
-      return 'mdl-layout__header--transparent';
-    }
-  }),
-  noShadowClass: computed('noShadow', function() {
-    if (this.get('noShadow')) {
-      return 'mdl-layout__header--seamed';
     }
   }),
   // Actions
