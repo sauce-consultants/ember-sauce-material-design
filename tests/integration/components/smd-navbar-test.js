@@ -4,7 +4,7 @@ import {
 } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('smd-app-header', 'Integration | Component | smd app header', {
+moduleForComponent('smd-navbar', 'Integration | Component | smd app header', {
   integration: true
 });
 
@@ -16,7 +16,7 @@ test('it renders', function(assert) {
   this.set('transparent', false);
   this.set('noShadow', false);
 
-  this.render(hbs(`{{smd-app-header scroll=scroll waterfall=waterfall hideTop=hideTop transparent=transparent noShadow=noShadow}}`));
+  this.render(hbs(`{{smd-navbar scroll=scroll waterfall=waterfall hideTop=hideTop transparent=transparent noShadow=noShadow}}`));
 
   let $component = this.$('.ember-view').first();
 
@@ -53,9 +53,9 @@ test('it renders with content', function(assert) {
 
   // Template block usage:
   this.render(hbs(`
-    {{#smd-app-header}}
+    {{#smd-navbar}}
       <div id="app-header-nav">template block text</div>
-    {{/smd-app-header}}
+    {{/smd-navbar}}
   `));
 
   let $content = this.$('#app-header-nav');

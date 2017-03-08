@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import layout from '../templates/components/smd-app-header';
+import layout from '../templates/components/smd-navbar';
 
 const {
   Component,
