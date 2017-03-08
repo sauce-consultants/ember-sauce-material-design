@@ -1,117 +1,135 @@
-//@import "_color-definitions";
-//$color-primary: $palette-teal-500;
-//$color-accent: $palette-pink-A200;
-//@import "material-design-lite";
+@import "//fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en";
+@import "//fonts.googleapis.com/icon?family=Material+Icons";
 @import "sauce-material-design.scss";
-@import "tools.media";
-@import "component.hero";
-@import "component.section";
+@import "component.layout";
+@import "component.navbar";
+@import "component.page";
 
-body,
-html {
-  height   : 100%;
-  font-size: 100%;
+.sg-flex-row {
+  display        : flex;
+  flex-direction : row;
+  align-items    : flex-start;
+  justify-content: space-around;
 }
 
-* {
-  box-sizing: border-box;
+.sg-code {
+  background: rgba(0,0,0, 0.06);
+  border    : 1px solid rgba(0,0,0, 0.12);
+  color     : rgba(0,0,0, 0.64);
+  margin    : 1rem 0 3rem;
+  padding   : 0 1rem;
+  overflow  : auto;
 }
 
-dd {
-  margin-left: 0;
+.sg-table {
+  position        : relative;
+  border          : 1px solid rgba(0,0,0,.12);
+  border-collapse : collapse;
+  white-space     : auto;
+  font-size       : 13px;
+  line-height     : 24px;
+  background-color: #fff;
+  width           : 100%;
+  /* Zebra striping */
+  tbody tr:nth-of-type(odd) {
+    background: #FAFAFA;
+  }
+
+  th {
+    font-weight: bold;
+  }
+
+  td,
+  th {
+    position     : relative;
+    height       : 48px;
+    border-top   : 1px solid rgba(0,0,0,.12);
+    border-bottom: 1px solid rgba(0,0,0,.12);
+    padding      : 12px 18px;
+    box-sizing   : border-box;
+    text-align   : left;
+  }
+
+  em {
+    color: unquote("rgb(#{$color-accent;})");
+  }
 }
+@media only screen and (max-width: 760px),(min-device-width: 768px) and (max-device-width: 1024px) {
+  /* Force table to not be like tables anymore */
+  .sg-table {
+    display: block;
 
-.custom-cover-image-class {
-  background-image: url('https://unsplash.it/g/1200/400/');
-}
-
-.styleguide {
-  &__header,
-  &__section {
-    padding: 4rem 2rem 1rem;
-  }
-
-  &__title {
-    @include typo-display-1;
-    line-height: 1;
-    margin     : 0 0 1rem;
-  }
-
-  &__subtitle {
-    @include typo-title;
-    line-height: 1;
-    margin     : 0 0 1rem;
-  }
-
-  &__text {
-    @include typo-body-1;
-  }
-
-  &__preview {
-    border-bottom: 1px solid #DDD;
-    padding      : 0 0 2rem;
-    margin       : 0 2rem;
-  }
-
-  &__code {
-    background: #F5F5F5;
-    padding   : 0 1rem;
-
-    code {
-      display: block;
-      padding: 0;
-      margin : 0;
-    }
-  }
-
-  &__table {
-    width: 100%;
-
+    tbody,
     td,
-    th {
-      text-align: left;
+    th,
+    thead,
+    tr {
+      display: block;
+    }
+    /* Hide table headers (but not display: none;, for accessibility) */
+    thead tr {
+      position: absolute;
+      top     : -9999px;
+      left    : -9999px;
     }
 
-    em {
-      color: unquote("rgb(#{$color-accent;})");
+    tr {
+      //border: 1px solid rgba(0,0,0,.12);
     }
-  }
-}
 
-.mdl-layout {
-  &__header {
-    &--app {
-      background: #222;
+    td {
+      /* Behave  like a "row" */
+      border       : none;
+      border-bottom: 1px solid rgba(0,0,0,.12);
+      position     : relative;
+      padding-left : 50%;
+      height       : auto;
+      white-space  : normal;
     }
-  }
 
-  &__content {
-    display       : flex !important;
-    flex-direction: column;
-  }
-}
+    td:before {
+      /* Now like a table header */
+      position     : absolute;
+      /* Top/left values mimic padding */
+      top          : 12px;
+      left         : 18px;
+      width        : 45%;
+      padding-right: 10px;
+      white-space  : nowrap;
+    }
+    /*
+  	Label the data
+  	*/
+    &--attributes {
+      td:nth-of-type(1):before {
+        content: "Attribute";
+      }
 
-.smd-page {
-  display       : flex;
-  flex-direction: column;
-  flex          : 1;
+      td:nth-of-type(2):before {
+        content: "Description";
+      }
 
-  &__header {
-    padding: 3rem 1rem 1rem;
-  }
+      td:nth-of-type(3):before {
+        content: "Type";
+      }
 
-  &__body {
-    flex   : 1;
-    padding: 1rem;
-  }
+      td:nth-of-type(4):before {
+        content: "Default";
+      }
+    }
 
-  &__footer {
-    padding: 1rem;
-  }
+    &--actions {
+      td:nth-of-type(1):before {
+        content: "Action";
+      }
 
-  &__subtitle,
-  &__title {
-    line-height: 1;
-    margin     : 2rem 0 1rem;
+      td:nth-of-type(2):before {
+        content: "Description";
+      }
+
+      td:nth-of-type(3):before {
+        content: "Parameters";
+      }
+    }
   }
 }

@@ -1,0 +1,178 @@
+{{smd-header
+  title="Icons & Badges"
+  backIcon="arrow_back"
+  backAction="back"
+}}
+<div class="smd-page">
+
+  <header class="smd-page__header">
+    <h1 class="smd-page__title">Icons</h1>
+  </header>
+
+  <section class="smd-page__body">
+
+    <h2 class="smd-page__subtitle">Default Icon</h2>
+
+    <div class="sg-flex-row">
+      {{smd-icon icon="add_circle"}}
+    </div>
+
+    <pre class="sg-code"><code class="js">
+&#123;{smd-icon icon="add_circle"}&#125;
+    </code></pre>
+
+    <h2 class="smd-page__subtitle">Icon with Badge</h2>
+
+    <div class="sg-flex-row">
+      {{smd-icon icon="account_box" badge=6}}
+    </div>
+
+    <pre class="sg-code"><code class="js">
+&#123;{smd-icon icon="account_box"}&#125;
+    </code></pre>
+
+
+    <h2 class="smd-page__subtitle">Icon with no Background Badge</h2>
+
+    <div class="sg-flex-row">
+      {{smd-icon icon="photo_camera" badge=8 noBadgeBackground=true}}
+    </div>
+
+    <pre class="sg-code"><code class="js">
+&#123;{smd-icon icon="photo_camera" badge=8 noBadgeBackground=true}&#125;
+    </code></pre>
+
+
+    <h2 class="smd-page__subtitle">Icon with Overlapping Badge</h2>
+
+    <div class="sg-flex-row">
+      {{smd-icon icon="account_box" badge=4 badgeOverlap=true}}
+    </div>
+
+    <pre class="sg-code"><code class="js">
+&#123;{smd-icon icon="account_box" badge=4 badgeOverlap=true}&#125;
+    </code></pre>
+
+    <h2 class="smd-page__subtitle">Attributes</h2>
+
+    <table class="sg-table sg-table--attributes">
+      <thead>
+        <tr>
+          <th>Attribute</th>
+          <th>Description</th>
+          <th>Type</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>icon</td>
+          <td>The material icon name, see <a href="https://material.io/icons">Material Docs</a></td>
+          <td><em>string</em></td>
+          <td>null</td>
+        </tr>
+        <tr>
+          <td>badge</td>
+          <td>Assigns string value to badge</td>
+          <td><em>string</em></td>
+          <td>null</td>
+        </tr>
+        <tr>
+          <td>noBadgeBackground</td>
+          <td>Applies open-circle effect to badge</td>
+          <td><em>boolean</em></td>
+          <td>false</td>
+        </tr>
+        <tr>
+          <td>badgeOverlap</td>
+          <td>Make the badge overlap with its container</td>
+          <td><em>boolean</em></td>
+          <td>false</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <header class="smd-page__header">
+    <h1 class="smd-page__title">Badges</h1>
+  </header>
+
+  <section class="smd-page__body">
+
+    <h2 class="smd-page__subtitle">Default Badge</h2>
+
+    <div class="sg-flex-row">
+      {{smd-badge text="Inbox" badge=4}}
+    </div>
+
+    <pre class="sg-code"><code class="js">
+&#123;{smd-badge text="Inbox" badge=4}&#125;
+    </code></pre>
+
+
+    <h2 class="smd-page__subtitle">Badge with no Background</h2>
+
+    <div class="sg-flex-row">
+      {{smd-badge text="Unread" badge=42 noBadgeBackground=true}}
+    </div>
+
+    <pre class="sg-code"><code class="js">
+&#123;{smd-badge text="Unread" badge=42 noBadgeBackground=true}&#125;
+    </code></pre>
+
+
+    <h2 class="smd-page__subtitle">Overlapping Badge</h2>
+
+    <div class="sg-flex-row">
+      {{smd-badge text="ToDo" badge=2 badgeOverlap=true}}
+    </div>
+
+    <pre class="sg-code"><code class="js">
+&#123;{smd-badge text="ToDo" badge=2 badgeOverlap=true}&#125;
+    </code></pre>
+
+    <h2 class="smd-page__subtitle">Attributes</h2>
+
+    <table class="sg-table sg-table--attributes">
+      <thead>
+        <tr>
+          <th>Attribute</th>
+          <th>Description</th>
+          <th>Type</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>textarea</td>
+          <td>The badges label text</td>
+          <td><em>string</em></td>
+          <td>null</td>
+        </tr>
+        <tr>
+          <td>badge</td>
+          <td>Assigns string value to badge</td>
+          <td><em>string</em></td>
+          <td>null</td>
+        </tr>
+        <tr>
+          <td>noBadgeBackground</td>
+          <td>Applies open-circle effect to badge</td>
+          <td><em>boolean</em></td>
+          <td>false</td>
+        </tr>
+        <tr>
+          <td>badgeOverlap</td>
+          <td>Make the badge overlap with its container</td>
+          <td><em>boolean</em></td>
+          <td>false</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </section>
+
+  <footer class="smd-page__footer">
+    <p>View on <a href="https://github.com/sauce-consultants/ember-sauce-material-design">github</a></p>
+  </footer>
+</div>

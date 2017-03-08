@@ -1,0 +1,136 @@
+{{smd-header
+  title="Buttons"
+  backIcon="arrow_back"
+  backAction="back"
+}}
+<div class="smd-page">
+  <section class="smd-page__body">
+
+    <p>The smd-button component is used to render clickable material buttons. It has a number of variations and each one can be bound to an "action".</p>
+    <p>The instance of the button is passed to the action as the first argument.</p>
+
+    <h2 class="smd-page__subtitle">Default Button</h2>
+
+    <div class="sg-flex-row">
+      {{smd-button text="Default" value=1 action="clickButton"}}
+      {{smd-button text="Primary" isPrimary=true value=2 action="clickButton"}}
+      {{smd-button text="Accent" isAccent=true value=3 action="clickButton"}}
+      {{smd-button text="Disabled" disabled=true value=4 action="clickButton"}}
+    </div>
+
+    <pre class="sg-code"><code class="js">
+&#123;{smd-button text="Default" value=1 action="clickButton"}&#125;
+    </code></pre>
+
+    <h2 class="smd-page__subtitle">Actions</h2>
+
+    <p>The buttons above call the following action in our route. Each button has been assigned a different "value"</p>
+
+    <pre class="sg-code"><code class="js">
+  actions: {
+    clickButton: function(button) {
+      window.alert('button text = ' + button.get('text') + ', value = ' + button.get('value'));
+    },
+  }
+    </code></pre>
+
+    <h2 class="smd-page__subtitle">Raised Button</h2>
+
+    <div class="sg-flex-row">
+      {{smd-button text="Raised" isRaised=true}}
+      {{smd-button text="Primary" isRaised=true isPrimary=true}}
+      {{smd-button text="Accent" isRaised=true isAccent=true}}
+      {{smd-button text="Raised" isRaised=true disabled=true}}
+    </div>
+
+    <pre class="sg-code"><code class="js">
+&#123;{smd-button text="Raised" isRaised=true}&#125;
+    </code></pre>
+
+    <h2 class="smd-page__subtitle">Fab Button</h2>
+
+    <div class="sg-flex-row">
+      {{smd-button icon="add" isFab=true}}
+      {{smd-button icon="add" isFab=true isPrimary=true}}
+      {{smd-button icon="add" isFab=true isAccent=true}}
+      {{smd-button icon="add" isFab=true disabled=true}}
+    </div>
+    <pre class="sg-code"><code class="js">
+&#123;{smd-button icon="add" isFab=true}&#125;
+    </code></pre>
+
+    <h2 class="smd-page__subtitle">Mini Fab Button</h2>
+
+    <div class="sg-flex-row">
+      {{smd-button icon="add" isMiniFab=true}}
+      {{smd-button icon="add" isMiniFab=true isPrimary=true}}
+      {{smd-button icon="add" isMiniFab=true isAccent=true}}
+      {{smd-button icon="add" isMiniFab=true disabled=true}}
+    </div>
+
+    <pre class="sg-code"><code class="js">
+&#123;{smd-button icon="icon" isMiniFab=true}&#125;
+    </code></pre>
+
+
+    <h2 class="smd-page__subtitle">Attributes</h2>
+
+    <table class="sg-table sg-table--attributes">
+      <thead>
+        <tr>
+          <th>Attribute</th>
+          <th>Description</th>
+          <th>Type</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>isRaised</td>
+          <td>Applies raised display effect	Mutually exclusive with fab, mini-fab, and icon</td>
+          <td><em>boolean</em></td>
+          <td>false</td>
+        </tr>
+        <tr>
+          <td>isFab</td>
+          <td>Applies fab (circular) display effect	Mutually exclusive with raised, mini-fab, and icon</td>
+          <td><em>boolean</em></td>
+          <td>false</td>
+        </tr>
+        <tr>
+          <td>isMiniFab</td>
+          <td>Applies mini-fab (small fab circular) display effect	Mutually exclusive with raised, fab, and icon</td>
+          <td><em>boolean</em></td>
+          <td>false</td>
+        </tr>
+        <tr>
+          <td>icon</td>
+          <td>Applies icon(small plain circular) display effect Mutually exclusive with raised, fab, and mini-fab</td>
+          <td><em>string</em></td>
+          <td>null</td>
+        </tr>
+        <tr>
+          <td>isPrimary</td>
+          <td>Applies primary color display effect Colors are defined in material.min.css</td>
+          <td><em>boolean</em></td>
+          <td>false</td>
+        </tr>
+        <tr>
+          <td>isAccent</td>
+          <td>Applies accent color display effect Colors are defined in material.min.css</td>
+          <td><em>boolean</em></td>
+          <td>false</td>
+        </tr>
+        <tr>
+          <td>isColored</td>
+          <td>Applies colored display effect(primary or accent color, depending on the type of button) Colors are defined in material.min.css</td>
+          <td><em>boolean</em></td>
+          <td>false</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <footer class="smd-page__footer">
+    <p>View on <a href="https://github.com/sauce-consultants/ember-sauce-material-design">github</a></p>
+  </footer>
+</div>
