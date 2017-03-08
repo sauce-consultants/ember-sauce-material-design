@@ -1,4 +1,7 @@
-import { moduleForComponent, test } from 'ember-qunit';
+import {
+  moduleForComponent,
+  test
+} from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
 moduleForComponent('smd-navigation', 'Integration | Component | smd navigation', {
@@ -7,19 +10,25 @@ moduleForComponent('smd-navigation', 'Integration | Component | smd navigation',
 
 test('it renders', function(assert) {
 
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
+  this.render(hbs `{{smd-navigation}}`);
 
-  this.render(hbs(`{{smd-navigation}}`));
+  let $component = this.$('.ember-view');
 
-  assert.equal(this.$().text().trim(), '');
+  assert.equal($component.text().trim(), '');
+  assert.equal($component.hasClass('mdl-navigation'), true, 'Has class');
+
+});
+
+test('it renders with content', function(assert) {
 
   // Template block usage:
-  this.render(hbs(`
+  this.render(hbs `
     {{#smd-navigation}}
       template block text
     {{/smd-navigation}}
-  `));
+  `);
 
-  assert.equal(this.$().text().trim(), 'template block text');
+  let $component = this.$('.ember-view');
+
+  assert.equal($component.text().trim(), 'template block text');
 });

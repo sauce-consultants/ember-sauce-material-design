@@ -42,19 +42,19 @@ test('it renders', function(assert) {
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });
 
-  this.render(hbs(`{{smd-form-control}}`));
+  this.render(hbs `{{smd-form-control}}`);
 
   assert.equal(this.$().text().trim(), '');
 
   // Template block usage:
-  this.render(hbs(`{{#smd-form-control}}template block text{{/smd-form-control}}`));
+  this.render(hbs `{{#smd-form-control}}template block text{{/smd-form-control}}`);
 
   assert.equal(this.$().text().trim(), 'template block text');
 });
 
 test('creates a label', function(assert) {
 
-  this.render(hbs(`{{smd-form-control label='My Label' name='foo'}}`));
+  this.render(hbs `{{smd-form-control label='My Label' name='foo'}}`);
 
   let $label = this.$().find('.smd-form__label');
 
@@ -65,7 +65,7 @@ test('creates a label', function(assert) {
 
 test('creates a tip', function(assert) {
 
-  this.render(hbs(`{{smd-form-control tip='This is my tip'}}`));
+  this.render(hbs `{{smd-form-control tip='This is my tip'}}`);
 
   let $tip = this.$().find('.smd-form__tip');
 
@@ -74,7 +74,7 @@ test('creates a tip', function(assert) {
 
 test('creates a disabled input', function(assert) {
 
-  this.render(hbs(`{{smd-form-control label='My Text Field' name='foo' value='bar' disabled=true}}`));
+  this.render(hbs `{{smd-form-control label='My Text Field' name='foo' value='bar' disabled=true}}`);
 
   let $control = this.$().find('.smd-form__control'),
     $input = this.$().find('.smd-form__input');
@@ -85,7 +85,7 @@ test('creates a disabled input', function(assert) {
 
 test('creates an input without a floating label', function(assert) {
 
-  this.render(hbs(`{{smd-form-control label='My Text Field' name='foo' isFloating=false}}`));
+  this.render(hbs `{{smd-form-control label='My Text Field' name='foo' isFloating=false}}`);
 
   let $control = this.$().find('.smd-form__control');
 
@@ -94,7 +94,7 @@ test('creates an input without a floating label', function(assert) {
 
 test('creates a text input', function(assert) {
 
-  this.render(hbs(`{{smd-form-control label='My Text Field' name='foo' value='bar'}}`));
+  this.render(hbs `{{smd-form-control label='My Text Field' name='foo' value='bar'}}`);
 
   let $control = this.$().find('.smd-form__control'),
     $label = this.$().find('.smd-form__label'),
@@ -118,7 +118,7 @@ test('creates a text input', function(assert) {
 
 test('creates a select input', function(assert) {
 
-  this.render(hbs(`{{smd-form-control type='select' label='My Select Field' name='foo'}}`));
+  this.render(hbs `{{smd-form-control type='select' label='My Select Field' name='foo'}}`);
 
   let $control = this.$().find('.smd-form__control'),
     $label = this.$().find('.smd-form__label'),
@@ -146,7 +146,7 @@ test('creates a select input', function(assert) {
 
 test('creates a radio input', function(assert) {
 
-  this.render(hbs(`{{smd-form-control type='radio' label='My Radio Field' name='foo'}}`));
+  this.render(hbs `{{smd-form-control type='radio' label='My Radio Field' name='foo'}}`);
 
   let $control = this.$().find('.smd-form__control'),
     $label = this.$().find('.smd-form__label');
@@ -159,7 +159,7 @@ test('creates a radio input', function(assert) {
   assert.equal($label.text().trim(), 'My Radio Field', 'The label text is rendered');
   assert.equal($label.attr('for'), 'foo', 'The for attribute is rendered');
 
-  this.render(hbs(`{{smd-form-control type='radio' label='My Radio Field' name='foo' isInline=true}}`));
+  this.render(hbs `{{smd-form-control type='radio' label='My Radio Field' name='foo' isInline=true}}`);
 
   $control = this.$().find('.smd-form__control');
 
@@ -181,7 +181,7 @@ test('creates a switch input', function(assert) {
   // Test a unchecked switch
   //
 
-  this.render(hbs(`{{smd-form-control type='switch' label='My Switch Field' value=property1}}`));
+  this.render(hbs `{{smd-form-control type='switch' label='My Switch Field' value=property1}}`);
 
   $control = this.$().find('.smd-form__control');
   $input = $control.find('.mdl-switch');
@@ -208,7 +208,7 @@ test('creates a switch input', function(assert) {
   // Now test a checked switch
   //
 
-  this.render(hbs(`{{smd-form-control type='switch' label='My Switch Field' value=property2}}`));
+  this.render(hbs `{{smd-form-control type='switch' label='My Switch Field' value=property2}}`);
 
   $control = this.$().find('.smd-form__control');
   $input = $control.find('.mdl-switch');
@@ -244,7 +244,7 @@ test('creates a icon input', function(assert) {
   // Test a unchecked switch
   //
 
-  this.render(hbs(`{{smd-form-control type='icon' label='My Icon Field' icon='email' value=property1}}`));
+  this.render(hbs `{{smd-form-control type='icon' label='My Icon Field' icon='email' value=property1}}`);
 
   $control = this.$().find('.smd-form__control');
   $input = $control.find('.mdl-icon-toggle');
@@ -271,7 +271,7 @@ test('creates a icon input', function(assert) {
   // Now test a checked switch
   //
 
-  this.render(hbs(`{{smd-form-control type='icon' label='My Icon Field' icon='email' value=property2}}`));
+  this.render(hbs `{{smd-form-control type='icon' label='My Icon Field' icon='email' value=property2}}`);
 
   $control = this.$().find('.smd-form__control');
   $input = $control.find('.mdl-icon-toggle');
