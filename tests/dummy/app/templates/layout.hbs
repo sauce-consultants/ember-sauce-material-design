@@ -55,20 +55,20 @@
       </tbody>
     </table>
 
-    <h2 class="smd-page__subtitle mdl-typography--headline">App Header Component</h2>
+    <h2 class="smd-page__subtitle mdl-typography--headline">Navbar Component</h2>
 
-    <p>The app header component appears on every page. It usually contains the app name and main navigation menu. It can be customised to contain multiple rows</p>
+    <p>The navbar component appears on every page. It usually contains the app name and main navigation menu. It can be customised to contain multiple rows</p>
 
     <pre class="styleguide__code"><code class="js">
-&#123;{#smd-app-header title="My App"}&#125;
+&#123;{#smd-navbar title="My App"}&#125;
   // content
-&#123;{/smd-app-header}&#125;
+&#123;{/smd-navbar}&#125;
     </code></pre>
 
     <h3 class="smd-page__subtitle mdl-typography--subhead-color-contrast">Example with multiple rows</h3>
 
     <pre class="styleguide__code"><code class="js">
-&#123;{#smd-app-header multipleRows=true waterfall=true}&#125;
+&#123;{#smd-navbar multipleRows=true waterfall=true}&#125;
   &lt;!-- Top row, always visible --&gt;
   &lt;div class=&quot;mdl-layout__header-row&quot;&gt;
     &lt;span class=&quot;mdl-layout-title&quot;&gt;Title&lt;/span&gt;
@@ -77,7 +77,7 @@
   &lt;div class=&quot;mdl-layout__header-row&quot;&gt;
    &lt;!-- content --&gt;
   &lt;/div&gt;
-&#123;{/smd-app-header}&#125;
+&#123;{/smd-navbar}&#125;
     </code></pre>
 
     <h3 class="smd-page__subtitle mdl-typography--subhead-color-contrast">Attributes</h3>
@@ -179,9 +179,9 @@ export default Navigation.extend();
 // app/templates/application.hbs
 &#123;{#smd-app}&#125;
 
-  &#123;{#smd-app-header scroll=true}&#125;
+  &#123;{#smd-navbar scroll=true}&#125;
     &#123;{app-navigation}&#125;
-  &#123;{/smd-app-header}&#125;
+  &#123;{/smd-navbar}&#125;
 
   &#123;{#smd-drawer}&#125;
     &#123;{app-navigation}&#125;
