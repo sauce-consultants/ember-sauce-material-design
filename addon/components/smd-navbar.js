@@ -8,7 +8,7 @@ const {
 
 export default Component.extend({
   // Services
-  drawer: Ember.inject.service('smd-drawer-state'),
+  appState: Ember.inject.service('smd-app-state'),
   // Attributes
   layout,
   classNames: ['mdl-layout__header', 'mdl-layout__header--app'],
@@ -57,7 +57,8 @@ export default Component.extend({
   // Actions
   actions: {
     toggleDrawer: function() {
-      this.toggleProperty('drawer.isVisible');
+      console.log(this.get('appState.isDrawerVisible'));
+      this.toggleProperty('appState.isDrawerVisible');
     }
   }
 });

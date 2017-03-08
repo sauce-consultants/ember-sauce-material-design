@@ -11,15 +11,15 @@ const {
 export default Ember.Component.extend(ClickOutside, {
   layout,
   // Services
-  drawer: service('smd-drawer-state'),
+  appState: service('smd-app-state'),
   // Properties
   classNames: ['mdl-layout__drawer'],
   toggleButtonClass: 'mdl-layout__drawer-button',
   // Computed
-  classNameBindings: ['drawer.visibilityModifier'],
+  classNameBindings: ['appState.drawerVisibilityModifier'],
   // Methods
   clickOutside() {
-    this.set('drawer.isVisible', false);
+    this.set('appState.isDrawerVisible', false);
   },
   didInsertElement() {
     this._super(...arguments);
@@ -30,7 +30,7 @@ export default Ember.Component.extend(ClickOutside, {
       let targetIsWithinVisibleDrawer = this.$(e.target).closest('.mdl-navigation').closest('.mdl-layout__drawer').hasClass('is-visible');
       if (targetIsNavigationLink && targetIsWithinVisibleDrawer) {
         Ember.run.next(() => {
-          this.set('drawer.isVisible', false);
+          this.set('appState.isDrawerVisible', false);
         });
       }
     });
