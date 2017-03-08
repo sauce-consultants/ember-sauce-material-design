@@ -125,4 +125,48 @@ export default Component.extend({
       this.sendAction('searchAction', term);
     }
   },
+  // Methods
+  didInsertElement: function() {
+    Ember.Logger.log("did insert " + this.elementId);
+    if (this.get('scrolling')) {
+      Ember.Logger.log('scroll ' + this.elementId);
+      this.initScrollEvent();
+    }
+  },
+  initScrollEvent: function() {
+    let $header = this.$(),
+      $body = this.getScrollElement(),
+      height = parseInt($header.outerHeight());
+
+    $body.addClass('smd-page--scrollable');
+    $body.scroll(() => {
+      this.onScroll($header, $body, $body.scrollTop(), height);
+    });
+  },
+  onScroll: function($header, $body, scrollAmount, maxHeight) {
+
+    $header.addClass('smd-header--transition');
+
+    let height = maxHeight - scrollAmount,
+      minHeight = parseInt($header.css('min-height')),
+      maxPadding = maxHeight - minHeight;
+
+    if (height > minHeight) {
+      // mid transition
+      $header.css('height', height);
+      $body.css('padding-top', scrollAmount);
+
+      $header.removeClass('smd-header--minimized');
+    } else {
+      // minimized
+      $header.css('height', minHeight);
+      $body.css('padding-top', maxPadding);
+
+      $header.addClass('smd-header--minimized');
+      $header.removeClass('smd-header--transition');
+    }
+  },
+  getScrollElement: function() {
+    return this.$().next('.smd-page');
+  }
 });

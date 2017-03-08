@@ -5,6 +5,31 @@
 @import "component.navbar";
 @import "component.page";
 
+.smd-header {
+  &--transition {
+    position: relative;
+    top     : auto;
+    left    : auto;
+    right   : auto;
+  }
+
+  &--minimized.smd-header--with-fab &__toolbar--bottom {
+    bottom: 1.75rem;
+  }
+
+  &--minimized.smd-header--with-mini-fab &__toolbar--bottom {
+    bottom: 1.25;
+  }
+
+  &--transition.smd-header--with-mini-fab .smd-header__toolbar--bottom {
+    bottom: 1.25;
+  }
+
+  &__title {
+    @include trans;
+  }
+}
+
 .sg-flex-row {
   display        : flex;
   flex-direction : row;
