@@ -3,7 +3,6 @@ import layout from '../templates/components/smd-app';
 
 const {
   Component,
-  computed,
 } = Ember;
 
 export default Component.extend({
@@ -11,38 +10,16 @@ export default Component.extend({
   layout,
   classNames: [
     'mdl-layout',
-    // 'mdl-js-layout'
-    // 'mdl-layout--no-drawer-button'
+    'mdl-js-layout',
   ],
   classNameBindings: [
-    'fixedDrawerClass',
-    'fixedHeaderClass',
-    'noDrawerButtonClass',
-    'noDesktopDrawerButtonClass',
+    'fixedDrawer:mdl-layout--fixed-drawer',
+    'fixedHeader:mdl-layout--fixed-header',
+    'noDrawerButton:mdl-layout--no-drawer-button',
+    'noDesktopDrawerButton:mdl-layout--no-desktop-drawer-button',
   ],
   fixedDrawer: false, // Makes the drawer always visible and open in larger screens
   fixedHeader: false, // Makes the header always visible, even in small screens
   noDrawerButton: false, // Does not display a drawer button
   noDesktopDrawerButton: false, // Does not display a drawer button in desktop mode
-  // Computed
-  fixedDrawerClass: computed('fixedDrawer', function() {
-    if (this.get('fixedDrawer')) {
-      return 'mdl-layout--fixed-drawer';
-    }
-  }),
-  fixedHeaderClass: computed('fixedHeader', function() {
-    if (this.get('fixedHeader')) {
-      return 'mdl-layout--fixed-header';
-    }
-  }),
-  noDrawerButtonClass: computed('noDrawerButton', function() {
-    if (this.get('noDrawerButton')) {
-      return 'mdl-layout--no-drawer-button';
-    }
-  }),
-  noDesktopDrawerButtonClass: computed('noDesktopDrawerButton', function() {
-    if (this.get('noDesktopDrawerButton')) {
-      return 'mdl-layout--no-desktop-drawer-button';
-    }
-  }),
 });

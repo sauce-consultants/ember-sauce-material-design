@@ -15,7 +15,7 @@ test('it renders', function(assert) {
   this.set('noDrawerButton', false);
   this.set('noDesktopDrawerButton', false);
 
-  this.render(hbs(`{{smd-app fixedDrawer=fixedDrawer fixedHeader=fixedHeader noDrawerButton=noDrawerButton noDesktopDrawerButton=noDesktopDrawerButton}}`));
+  this.render(hbs `{{smd-app fixedDrawer=fixedDrawer fixedHeader=fixedHeader noDrawerButton=noDrawerButton noDesktopDrawerButton=noDesktopDrawerButton}}`);
 
   let $component = this.$('.ember-view').first();
 
@@ -44,11 +44,11 @@ test('it renders', function(assert) {
 test('it renders as with content', function(assert) {
 
   // Template block usage:
-  this.render(hbs(`
+  this.render(hbs `
     {{#smd-app}}
       template block text
     {{/smd-app}}
-  `));
+  `);
 
   let $content = this.$('.ember-view').first();
 
