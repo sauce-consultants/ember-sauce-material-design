@@ -11,7 +11,8 @@ export default Component.extend({
   layout,
   classNames: [
     'mdl-layout',
-    'mdl-js-layout',
+    // 'mdl-js-layout'
+    // 'mdl-layout--no-drawer-button'
   ],
   classNameBindings: [
     'fixedDrawerClass',

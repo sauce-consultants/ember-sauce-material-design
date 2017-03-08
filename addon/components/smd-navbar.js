@@ -3,10 +3,12 @@ import layout from '../templates/components/smd-navbar';
 
 const {
   Component,
-  computed,
+  computed
 } = Ember;
 
 export default Component.extend({
+  // Services
+  drawer: Ember.inject.service('smd-drawer-state'),
   // Attributes
   layout,
   classNames: ['mdl-layout__header', 'mdl-layout__header--app'],
@@ -52,4 +54,10 @@ export default Component.extend({
       return 'mdl-layout__header--seamed';
     }
   }),
+  // Actions
+  actions: {
+    toggleDrawer: function() {
+      this.toggleProperty('drawer.isVisible');
+    }
+  }
 });
