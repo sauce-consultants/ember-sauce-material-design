@@ -1,0 +1,15 @@
+{{#if hasMultipleRows}}
+  {{yield}}
+{{else}}
+  <div class="mdl-layout__header-row">
+    <div class="mdl-layout__drawer-button" {{ action "toggleDrawer" }}>
+      <i class="material-icons">menu</i>
+    </div>
+    {{!-- Title --}}
+    <span class="mdl-layout-title">{{title}}</span>
+    {{!-- Add spacer, to align navigation to the right --}}
+    <div class="mdl-layout-spacer"></div>
+    {{!-- Navigation. We hide it in small screens. --}}
+    {{yield}}
+  </div>
+{{/if}}

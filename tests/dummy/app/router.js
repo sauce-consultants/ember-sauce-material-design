@@ -10,7 +10,12 @@ Router.map(function() {
   this.route('home', {
     path: '/'
   });
+  this.route('layout');
   this.route('header');
+  this.route('button');
+  this.route('icon');
+
+  // Old Routes (Days numbered)
   this.route('item');
   this.route('empty');
   this.route('forms', function() {

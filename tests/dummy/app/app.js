@@ -7,6 +7,11 @@ let App;
 
 Ember.MODEL_FACTORY_INJECTIONS = true;
 
+// Change the default 'active' class
+Ember.LinkComponent.reopen({
+  activeClass: 'is-active'
+});
+
 App = Ember.Application.extend({
   modulePrefix: config.modulePrefix,
   podModulePrefix: config.podModulePrefix,

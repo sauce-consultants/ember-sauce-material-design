@@ -1,3 +1,4 @@
+/*
 import {
   test
 } from 'qunit';
@@ -39,3 +40,4 @@ test('visiting /forms/radio', function(assert) {
     assert.equal($modelSelectedOption.text().trim(), 'Rabbit', 'correct option is selected');
   });
 });
+*/

@@ -1,13 +1,13 @@
 import Ember from 'ember';
 
-export default Ember.Route.extend({
+const {
+  Route
+} = Ember;
 
-  activate: function() {
-    Ember.run.next(this, function() {
-      Ember.$('body > .ember-view').addClass('mdl-layout mdl-js-layout mdl-styleguide');
-
-      //componentHandler.upgradeDom();
-    });
+export default Route.extend({
+  actions: {
+    back: function() {
+      this.transitionTo('home');
+    },
   },
-
 });

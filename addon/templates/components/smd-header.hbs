@@ -9,17 +9,17 @@
 <div class="smd-header__toolbar smd-header__toolbar--top">
 
   {{#if hasBack}}
-    {{mdl-button icon=backIcon isColored=false class="smd-header__action" action='backAction'}}
+    {{smd-button icon=backIcon isColored=false class="smd-header__action smd-header__action--back" action='backAction'}}
   {{/if}}
 
   <div class="spacer"></div>
 
   {{#if hasToolbarOne}}
-    {{mdl-button icon=toolbarIconOne isColored=false class="smd__header__action" action='toolbarActionOne'}}
+    {{smd-button icon=toolbarIconOne isColored=false class="smd-header__action" action='toolbarActionOne'}}
   {{/if}}
 
   {{#if hasToolbarTwo}}
-    {{mdl-button icon=toolbarIconTwo isColored=false class="smd__header__action" action='toolbarActionTwo'}}
+    {{smd-button icon=toolbarIconTwo isColored=false class="smd-header__action" action='toolbarActionTwo'}}
   {{/if}}
 
   {{#if hasSearch}}
@@ -27,11 +27,7 @@
   {{/if}}
 
   {{#if hasToolbarThree}}
-    {{mdl-button icon=toolbarIconThree isColored=false class="smd__header__action" action='toolbarActionThree'}}
-  {{/if}}
-
-  {{#if hasMenu}}
-    {{mdl-button icon='menu' isColored=false class="smd__header__action" action='menuAction'}}
+    {{smd-button icon=toolbarIconThree isColored=false class="smd-header__action" action='toolbarActionThree'}}
   {{/if}}
 
 </div>
@@ -44,5 +40,5 @@
 </div>
 
 {{#if hasFab}}
-  {{mdl-button icon=fabIcon isMiniFab=isMiniFab isFloating=true action='fabAction' class=fabClassNames}}
+  {{smd-button icon=fabIcon isFab=true isColored=true isMiniFab=isMiniFab isFloating=true action='fabAction' class=fabClassNames}}
 {{/if}}

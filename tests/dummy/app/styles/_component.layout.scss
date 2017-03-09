@@ -1,0 +1,23 @@
+.mdl-layout {
+  &__content {
+    display       : flex;
+    flex-direction: column;
+  }
+
+  &__liquid {
+    height  : 100%;
+    position: absolute;
+    width   : 100%;
+
+    > .liquid-child {
+      display       : flex;
+      flex-direction: column;
+      height        : 100%;
+      overflow      : auto;
+    }
+  }
+}
+
+body > .ember-view {
+  height: 100%;
+}
