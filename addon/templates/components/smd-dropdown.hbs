@@ -1,8 +1,8 @@
 {{#if hasText}}
-  {{#mdl-button id=buttonId}}{{text}}{{/mdl-button}}
+  {{#smd-button id=buttonId disabled=disabled}}{{text}}{{/smd-button}}
 {{else if hasIcon}}
-  {{mdl-button icon=icon id=buttonId}}
+  {{smd-button icon=icon id=buttonId disabled=disabled}}
 {{/if}}
-<ul class='mdl-menu mdl-js-menu mdl-js-ripple-effect {{alignClass}}' for={{buttonId}}>
+<div class='mdl-menu mdl-js-menu mdl-js-ripple-effect {{alignClass}}' for={{buttonId}}>
   {{yield}}
-</ul>
+</div>

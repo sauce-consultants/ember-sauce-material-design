@@ -14,6 +14,7 @@ Router.map(function() {
   this.route('header');
   this.route('button');
   this.route('icon');
+  this.route('dropdown');
 
   // Old Routes (Days numbered)
   this.route('item');
