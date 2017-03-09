@@ -12,13 +12,41 @@
   justify-content: space-around;
 }
 
-.sg-code {
-  background: rgba(0,0,0, 0.06);
-  border    : 1px solid rgba(0,0,0, 0.12);
-  color     : rgba(0,0,0, 0.64);
-  margin    : 1rem 0 3rem;
-  padding   : 0 1rem;
-  overflow  : auto;
+.smd-header {
+  &--transition {
+    position: relative;
+    top     : auto;
+    left    : auto;
+    right   : auto;
+  }
+
+  &--minimized.smd-header--with-fab &__toolbar--bottom {
+    bottom: 1.75rem;
+  }
+
+  &--minimized.smd-header--with-mini-fab &__toolbar--bottom {
+    bottom: 1.25;
+  }
+
+  &--transition.smd-header--with-mini-fab .smd-header__toolbar--bottom {
+    bottom: 1.25;
+  }
+
+  &__title {
+    @include trans;
+  }
+}
+
+.sg-flex-row {
+  display        : flex;
+  flex-direction : row;
+  align-items    : flex-start;
+  justify-content: space-around;
+}
+
+pre {
+  border: 1px solid rgba(0,0,0, 0.12);
+  margin: 1rem 0 3rem;
 }
 
 .sg-table {
@@ -29,6 +57,7 @@
   font-size       : 13px;
   line-height     : 24px;
   background-color: #fff;
+  margin          : 1rem 0 3rem;
   width           : 100%;
   /* Zebra striping */
   tbody tr:nth-of-type(odd) {

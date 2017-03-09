@@ -3,6 +3,10 @@
   flex-direction: column;
   flex          : 1;
 
+  &--scrollable {
+    overflow: auto;
+  }
+
   &__header {
     padding      : 3rem 1rem 1rem;
     background   : rgba(0,0,0,0.06);

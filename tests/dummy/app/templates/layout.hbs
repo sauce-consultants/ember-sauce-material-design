@@ -2,24 +2,29 @@
   title="App Layout Components"
   backIcon='arrow_back'
   backAction="back"
+  scrolling=true
+  toolbarIconOne='code'
+  toolbarActionOne='jumpToTop'
+  toolbarIconTwo='bookmark'
+  toolbarActionTwo='jumpToAttributes'
+  toolbarIconThree='touch_app'
+  toolbarActionThree='jumpToActions'
 }}
 <div class="smd-page">
 
-  <section class="smd-page__body">
+  <header class="smd-page__header" id="top">
+    <h1 class="smd-page__title">App Component</h1>
+  </header>
 
-    <h2 class="smd-page__subtitle mdl-typography--headline">App Component</h2>
+  <section class="smd-page__body">
 
     <p>The <b>smd-app</b> component wraps around your whole application & is normally placed in <i>/templates/application.hbs</i>. It adds the required mdl-layout classes to the html.</p>
 
-    <pre class="styleguide__code"><code class="js">
-&#123;{#smd-app}&#125;
-  &lt;!-- content --&gt;
-&#123;{/smd-app}&#125;
-      </code></pre>
+    {{code-snippet name="smd-app.hbs"}}
 
     <h3 class="smd-page__subtitle mdl-typography--subhead-color-contrast">Attributes</h3>
 
-    <table class="styleguide__table mdl-data-table mdl-js-data-table">
+    <table class="sg-table sg-table--attributes">
       <thead>
         <tr>
           <th>Attribute</th>
@@ -55,35 +60,25 @@
         </tr>
       </tbody>
     </table>
+  </section>
 
-    <h2 class="smd-page__subtitle mdl-typography--headline">Navbar Component</h2>
+  <header class="smd-page__header" id="top">
+    <h1 class="smd-page__title">Navbar Component</h1>
+  </header>
+
+  <section class="smd-page__body">
 
     <p>The navbar component appears on every page. It usually contains the app name and main navigation menu. It can be customised to contain multiple rows</p>
 
-    <pre class="styleguide__code"><code class="js">
-&#123;{#smd-navbar title="My App"}&#125;
-  // content
-&#123;{/smd-navbar}&#125;
-    </code></pre>
+    {{code-snippet name="smd-navbar.hbs"}}
 
     <h3 class="smd-page__subtitle mdl-typography--subhead-color-contrast">Example with multiple rows</h3>
 
-    <pre class="styleguide__code"><code class="js">
-&#123;{#smd-navbar multipleRows=true waterfall=true}&#125;
-  &lt;!-- Top row, always visible --&gt;
-  &lt;div class=&quot;mdl-layout__header-row&quot;&gt;
-    &lt;span class=&quot;mdl-layout-title&quot;&gt;Title&lt;/span&gt;
-  &lt;/div&gt;
-  &lt;!-- Bottom row, not visible on scroll --&gt;
-  &lt;div class=&quot;mdl-layout__header-row&quot;&gt;
-   &lt;!-- content --&gt;
-  &lt;/div&gt;
-&#123;{/smd-navbar}&#125;
-    </code></pre>
+    {{code-snippet name="smd-navbar-rows.hbs"}}
 
     <h3 class="smd-page__subtitle mdl-typography--subhead-color-contrast">Attributes</h3>
 
-    <table class="styleguide__table mdl-data-table mdl-js-data-table">
+    <table class="sg-table sg-table--attributes">
       <thead>
         <tr>
           <th>Attribute</th>
@@ -93,6 +88,12 @@
         </tr>
       </thead>
       <tbody>
+        <tr>
+          <td>title</td>
+          <td>Title text that will be rendered in mdl-layout-title</td>
+          <td><em>string</em></td>
+          <td>App Name</td>
+        </tr>
         <tr>
           <td>scroll</td>
           <td>Makes the header scroll with the content</td>
@@ -131,72 +132,77 @@
         </tr>
       </tbody>
     </table>
+  </section>
 
-    <h2 class="smd-page__subtitle mdl-typography--headline">Drawer Component</h2>
+  <header class="smd-page__header" id="top">
+    <h1 class="smd-page__title">Drawer Component</h1>
+  </header>
+
+  <section class="smd-page__body">
 
     <p>The <b>smd-drawer</b> component creates an off screen drawer for hidden navigation.</p>
 
-    <pre class="styleguide__code"><code class="js">
-&#123;{#smd-drawer}&#125;
-  &lt;!-- navigation --&gt;
-&#123;{/smd-drawer}&#125;
-    </code></pre>
+    {{code-snippet name="smd-drawer.hbs"}}
 
-    <h2 class="smd-page__subtitle mdl-typography--headline">Content Component</h2>
+    <h3 class="smd-page__subtitle mdl-typography--subhead-color-contrast">Attributes</h3>
+
+    <table class="sg-table sg-table--attributes">
+      <thead>
+        <tr>
+          <th>Attribute</th>
+          <th>Description</th>
+          <th>Type</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>title</td>
+          <td>Title text that will be rendered in mdl-layout-title</td>
+          <td><em>string</em></td>
+          <td>App Name</td>
+        </tr>
+      </tbody>
+    </table>
+
+    </section>
+
+    <header class="smd-page__header" id="top">
+      <h1 class="smd-page__title">Content Component</h1>
+    </header>
+
+    <section class="smd-page__body">
 
     <p>The <b>smd-content</b> component holds the main application content. This component will grow to fill the height of the application window and allow content to be scrolled</p>
 
-    <pre class="styleguide__code"><code class="js">
-&#123;{#smd-content}&#125;
-  &lt;!-- navigation --&gt;
-&#123;{/smd-content}&#125;
-    </code></pre>
+    {{code-snippet name="smd-content.hbs"}}
 
-    <h2 class="smd-page__subtitle mdl-typography--headline">Navigation Component</h2>
+  </section>
+
+  <header class="smd-page__header" id="top">
+    <h1 class="smd-page__title">Navigation Component</h1>
+  </header>
+
+  <section class="smd-page__body">
 
     <p>The navigation component should be extended and used with a custom template file in your own applications.</p>
 
-    <pre class="styleguide__code"><code class="js">
-// app/components/app-navigation.js
-import Navigation from 'ember-sauce-material-design/components/smd-navigation';
+    {{code-snippet name="app-navigation.js"}}
 
-export default Navigation.extend();
-    </code></pre>
+    {{code-snippet name="app-navigation.hbs"}}
 
-    <pre class="styleguide__code"><code class="js">
-// app/templates/components/app-navigation.hbs
-&#123;{link-to 'Home' 'home' class="mdl-navigation__link"}&#125;
-&#123;{link-to 'Foo' 'foo' class="mdl-navigation__link"}&#125;
-&#123;{link-to 'Bar' 'bar' class="mdl-navigation__link"}&#125;
-    </code></pre>
+  </section>
 
+  <header class="smd-page__header" id="top">
+    <h1 class="smd-page__title">Boilerplate Application</h1>
+  </header>
 
-    <h2 class="smd-page__subtitle mdl-typography--headline">Boilerplate Application</h2>
+  <section class="smd-page__body">
 
     <p>Here is an example of a full application template ready to go</p>
 
-
-    <pre class="styleguide__code"><code class="js">
-// app/templates/application.hbs
-&#123;{#smd-app}&#125;
-
-  &#123;{#smd-navbar scroll=true}&#125;
-    &#123;{app-navigation}&#125;
-  &#123;{/smd-navbar}&#125;
-
-  &#123;{#smd-drawer}&#125;
-    &#123;{app-navigation}&#125;
-  &#123;{/smd-drawer}&#125;
-
-  &#123;{#smd-content}&#125;
-    &#123;{outlet}&#125;
-  &#123;{/smd-content}&#125;
-
-&#123;{/smd-app}&#125;
-    </code></pre>
-
-
-
+    {{code-snippet name="boilerplate-app.hbs"}}
+    
   </section>
 
   <footer class="smd-page__footer">
