@@ -4,6 +4,8 @@
 module.exports = {
   name: 'ember-sauce-material-design',
   setupPreprocessorRegistry(type, registry) {
-    this.eachAddonInvoke('setupPreprocessorRegistry', [type, registry]);
+    if (!this.isDevelopingAddon()) {
+      this.eachAddonInvoke('setupPreprocessorRegistry', [type, registry]);
+    }
   },
 };
