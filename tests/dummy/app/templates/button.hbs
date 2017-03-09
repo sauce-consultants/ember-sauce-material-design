@@ -2,9 +2,14 @@
   title="Buttons"
   backIcon="arrow_back"
   backAction="back"
+  scrolling=true
+  toolbarIconOne='code'
+  toolbarActionOne='jumpToTop'
+  toolbarIconTwo='bookmark'
+  toolbarActionTwo='jumpToAttributes'
 }}
 <div class="smd-page">
-  <section class="smd-page__body">
+  <section class="smd-page__body" id="top">
 
     <p>The smd-button component is used to render clickable material buttons. It has a number of variations and each one can be bound to an "action".</p>
     <p>The instance of the button is passed to the action as the first argument.</p>
@@ -18,21 +23,13 @@
       {{smd-button text="Disabled" disabled=true value=4 action="clickButton"}}
     </div>
 
-    <pre class="sg-code"><code class="js">
-&#123;{smd-button text="Default" value=1 action="clickButton"}&#125;
-    </code></pre>
+    {{code-snippet name="smd-button-raised.hbs"}}
 
     <h2 class="smd-page__subtitle">Actions</h2>
 
     <p>The buttons above call the following action in our route. Each button has been assigned a different "value"</p>
 
-    <pre class="sg-code"><code class="js">
-  actions: {
-    clickButton: function(button) {
-      window.alert('button text = ' + button.get('text') + ', value = ' + button.get('value'));
-    },
-  }
-    </code></pre>
+    {{code-snippet name="smd-button-action.js"}}
 
     <h2 class="smd-page__subtitle">Raised Button</h2>
 
@@ -43,9 +40,7 @@
       {{smd-button text="Raised" isRaised=true disabled=true}}
     </div>
 
-    <pre class="sg-code"><code class="js">
-&#123;{smd-button text="Raised" isRaised=true}&#125;
-    </code></pre>
+    {{code-snippet name="smd-button-raised.hbs"}}
 
     <h2 class="smd-page__subtitle">Fab Button</h2>
 
@@ -55,9 +50,8 @@
       {{smd-button icon="add" isFab=true isAccent=true}}
       {{smd-button icon="add" isFab=true disabled=true}}
     </div>
-    <pre class="sg-code"><code class="js">
-&#123;{smd-button icon="add" isFab=true}&#125;
-    </code></pre>
+
+    {{code-snippet name="smd-button-fab.hbs"}}
 
     <h2 class="smd-page__subtitle">Mini Fab Button</h2>
 
@@ -68,12 +62,15 @@
       {{smd-button icon="add" isMiniFab=true disabled=true}}
     </div>
 
-    <pre class="sg-code"><code class="js">
-&#123;{smd-button icon="icon" isMiniFab=true}&#125;
-    </code></pre>
+    {{code-snippet name="smd-button-mini-fab.hbs"}}
 
+  </section>
 
-    <h2 class="smd-page__subtitle">Attributes</h2>
+  <header class="smd-page__header" id="attributes">
+    <h1 class="smd-page__title">Attributes</h1>
+  </header>
+
+  <section class="smd-page__body">
 
     <table class="sg-table sg-table--attributes">
       <thead>
