@@ -3,10 +3,16 @@
   backIcon="arrow_back"
   backAction="back"
   scrolling=true
+  toolbarIconOne='code'
+  toolbarActionOne='jumpToTop'
+  toolbarIconTwo='bookmark'
+  toolbarActionTwo='jumpToAttributes'
+  toolbarIconThree='touch_app'
+  toolbarActionThree='jumpToActions'
 }}
 <div class="smd-page">
 
-  <header class="smd-page__header">
+  <header class="smd-page__header" id="top">
     <h1 class="smd-page__title">Standard Header</h1>
   </header>
 
@@ -16,7 +22,7 @@
 
     {{smd-header title="My Header" action="headerAction"}}
 
-    {{#sg-code}}&#123;{smd-header title="My Header" action="headerAction"}&#125;{{/sg-code}}
+    {{code-snippet name="smd-header.hbs"}}
 
   </section>
 
@@ -30,7 +36,7 @@
 
     {{smd-header title="My Header" backIcon="arrow_back" backAction="goBack"}}
 
-    {{#sg-code}}&#123;{smd-header backIcon="arrow_back" backAction="goBack"}&#125;{{/sg-code}}
+    {{code-snippet name="smd-header-back.hbs"}}
 
   </section>
 
@@ -44,13 +50,13 @@
 
     {{smd-header title="My Header" backIcon="arrow_back" action="headerAction" fabIcon="add" fabAction="goToNew"}}
 
-    {{#sg-code}}&#123;{smd-header fabIcon="add" fabAction="goToNew"}&#125;{{/sg-code}}
+    {{code-snippet name="smd-header-fab.hbs"}}
 
     <p>Adding a mini fab aligned right</p>
 
     {{smd-header title="My Header" backIcon="arrow_back" action="headerAction" fabIcon="add" fabAction="goToNew" isRightFab=true isMiniFab=true}}
 
-    {{#sg-code}}&#123;{smd-header isRightFab=true isMiniFab=true}&#125;{{/sg-code}}
+    {{code-snippet name="smd-header-mini-fab.hbs"}}
 
   </section>
 
@@ -64,7 +70,7 @@
 
     {{smd-header title="My Header" toolbarIconOne="insert_photo" toolbarIconTwo="flag" toolbarIconThree="delete" action="headerAction"}}
 
-    {{#sg-code}}&#123;{smd-header toolbarIconOne="insert_photo" toolbarIconTwo="flag" toolbarIconThree="delete"}&#125;{{/sg-code}}
+    {{code-snippet name="smd-header-toolbar.hbs"}}
 
   </section>
 
@@ -79,11 +85,11 @@
 
     {{smd-header title="My Header" backIcon="arrow_back" toolbarIconOne="insert_photo" toolbarIconTwo="flag" toolbarIconThree="delete" action="headerAction" action="headerAction" isMinimized=true}}
 
-    {{#sg-code}}&#123;{smd-header isMinimized=true}&#125;{{/sg-code}}
+    {{code-snippet name="smd-header-minimized.hbs"}}
 
   </section>
 
-  <header class="smd-page__header">
+  <header class="smd-page__header" id="attributes">
     <h1 class="smd-page__title">Attributes</h1>
   </header>
 
@@ -162,7 +168,7 @@
     </table>
   </section>
 
-  <header class="smd-page__header">
+  <header class="smd-page__header" id="actions">
     <h1 class="smd-page__title">Actions</h1>
   </header>
 
