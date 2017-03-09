@@ -11,6 +11,7 @@ module.exports = function(defaults) {
         'bower_components/sauce-material-design/src'
       ]
     },
+    snippetPaths: ['tests/dummy/app/snippets']
   });
 
   app.import('bower_components/material-design-lite/material.min.js');
