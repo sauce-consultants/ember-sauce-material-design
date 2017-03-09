@@ -20,10 +20,15 @@ export default Route.extend({
     },
   },
   scrollTo: function(element) {
-    let position = $(element).offset().top - 128;
-    Ember.Logger.log(position);
-    $('.smd-page--scrollable').animate({
-      scrollTop: position
-    }, 200);
+    if ($(element).length) {
+
+      let position = $(element).offset().top - 128;
+
+      $('.smd-page--scrollable').animate({
+        scrollTop: position
+      }, 200);
+    } else {
+      Ember.Logger.warn('Could not scroll to element ' + element);
+    }
   }
 });
