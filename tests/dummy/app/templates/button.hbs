@@ -9,12 +9,12 @@
   toolbarActionTwo='jumpToAttributes'
 }}
 <div class="smd-page">
-  <section class="smd-page__body" id="top">
 
-    <p>The smd-button component is used to render clickable material buttons. It has a number of variations and each one can be bound to an "action".</p>
-    <p>The instance of the button is passed to the action as the first argument.</p>
+  <header class="smd-page__header" id="top">
+    <h1 class="smd-page__title">Default</h1>
+  </header>
 
-    <h2 class="smd-page__subtitle">Default Button</h2>
+  <section class="smd-page__body">
 
     <div class="sg-flex-row">
       {{smd-button text="Default" value=1 action="clickButton"}}
@@ -29,9 +29,17 @@
 
     <p>The buttons above call the following action in our route. Each button has been assigned a different "value"</p>
 
+    <p>The instance of the button is passed to the action as the first argument.</p>
+
     {{code-snippet name="smd-button-action.js"}}
 
-    <h2 class="smd-page__subtitle">Raised Button</h2>
+  </section>
+
+  <header class="smd-page__header" id="attributes">
+    <h1 class="smd-page__title">Raised Button</h1>
+  </header>
+
+  <section class="smd-page__body">
 
     <div class="sg-flex-row">
       {{smd-button text="Raised" isRaised=true}}
@@ -42,7 +50,13 @@
 
     {{code-snippet name="smd-button-raised.hbs"}}
 
-    <h2 class="smd-page__subtitle">Fab Button</h2>
+  </section>
+
+  <header class="smd-page__header" id="attributes">
+    <h1 class="smd-page__title">Fab Button</h1>
+  </header>
+
+  <section class="smd-page__body">
 
     <div class="sg-flex-row">
       {{smd-button icon="add" isFab=true}}
@@ -53,7 +67,14 @@
 
     {{code-snippet name="smd-button-fab.hbs"}}
 
-    <h2 class="smd-page__subtitle">Mini Fab Button</h2>
+
+  </section>
+
+  <header class="smd-page__header" id="attributes">
+    <h1 class="smd-page__title">Mini Fab Button</h1>
+  </header>
+
+  <section class="smd-page__body">
 
     <div class="sg-flex-row">
       {{smd-button icon="add" isMiniFab=true}}
