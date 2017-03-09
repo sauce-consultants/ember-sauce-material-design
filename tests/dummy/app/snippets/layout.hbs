@@ -1,0 +1,62 @@
+// BEGIN-SNIPPET smd-app
+{{#smd-app}}
+  <!-- content -->
+{{/smd-app}}
+// END-SNIPPET
+
+// BEGIN-SNIPPET smd-navbar
+{{#smd-navbar title="My App"}}
+  <!-- content -->
+{{/smd-navbar}}
+// END-SNIPPET
+
+// BEGIN-SNIPPET smd-navbar-rows
+{{#smd-navbar multipleRows=true waterfall=true}}
+  <!-- Top row, always visible -->
+  <div class="mdl-layout__header-row">
+    <span class="mdl-layout-title">Title</span>
+  </div>
+  <!-- Bottom row, not visible on scroll -->
+  <div class="mdl-layout__header-row">
+    <!-- content -->
+  </div>
+{{/smd-navbar}}
+// END-SNIPPET
+
+// BEGIN-SNIPPET smd-drawer
+{{#smd-drawer title="My App"}}
+  <!-- navigation -->
+{{/smd-drawer}}
+// END-SNIPPET
+
+// BEGIN-SNIPPET smd-content
+{{#smd-content title="My App"}}
+  <!-- content -->
+{{/smd-content}}
+// END-SNIPPET
+
+// BEGIN-SNIPPET app-navigation
+<!-- app/templates/components/app-navigation.hbs -->
+{{link-to 'Home' 'home' class="mdl-navigation__link"}}
+{{link-to 'Foo' 'foo' class="mdl-navigation__link"}}
+{{link-to 'Bar' 'bar' class="mdl-navigation__link"}}
+// END-SNIPPET
+
+// BEGIN-SNIPPET boilerplate-app
+<!-- app/templates/application.hbs -->
+{{#smd-app}}
+
+  {{#smd-navbar scroll=true}}
+    {{app-navigation}}
+  {{/smd-navbar}}
+
+  {{#smd-drawer}}
+    {{app-navigation}}
+  {{/smd-drawer}}
+
+  {{#smd-content}}
+    {{outlet}}
+  {{/smd-content}}
+
+{{/smd-app}}
+// END-SNIPPET

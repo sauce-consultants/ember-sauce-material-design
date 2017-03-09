@@ -37,13 +37,9 @@
   justify-content: space-around;
 }
 
-.sg-code {
-  background: rgba(0,0,0, 0.06);
-  border    : 1px solid rgba(0,0,0, 0.12);
-  color     : rgba(0,0,0, 0.64);
-  margin    : 1rem 0 3rem;
-  padding   : 0 1rem;
-  overflow  : auto;
+pre {
+  border: 1px solid rgba(0,0,0, 0.12);
+  margin: 1rem 0 3rem;
 }
 
 .sg-table {
@@ -54,6 +50,7 @@
   font-size       : 13px;
   line-height     : 24px;
   background-color: #fff;
+  margin          : 1rem 0 3rem;
   width           : 100%;
   /* Zebra striping */
   tbody tr:nth-of-type(odd) {
