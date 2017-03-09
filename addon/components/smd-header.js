@@ -127,9 +127,7 @@ export default Component.extend({
   },
   // Methods
   didInsertElement: function() {
-    Ember.Logger.log("did insert " + this.elementId);
     if (this.get('scrolling')) {
-      Ember.Logger.log('scroll ' + this.elementId);
       this.initScrollEvent();
     }
   },
