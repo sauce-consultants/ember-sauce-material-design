@@ -15,6 +15,11 @@ Router.map(function() {
   this.route('button');
   this.route('icon');
   this.route('dropdown');
+  this.route('tabs', function() {
+    this.route('two');
+    this.route('three');
+    this.route('four');
+  });
 
   // Old Routes (Days numbered)
   this.route('item');
@@ -25,7 +30,6 @@ Router.map(function() {
     this.route('switch');
     this.route('icon');
   });
-  this.route('dropdown');
 
 });
 

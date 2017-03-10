@@ -18,6 +18,16 @@
   }
 }
 
+.smd-liquid--flex {
+  display       : flex;
+  flex-direction: column;
+  min-height    : 100%;
+
+  > .liquid-child {
+    flex: 1;
+  }
+}
+
 body > .ember-view {
   height: 100%;
 }

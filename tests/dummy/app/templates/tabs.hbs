@@ -1,0 +1,25 @@
+{{smd-header
+  title="Tabs"
+  backIcon="arrow_back"
+  backAction="back"
+  scrolling=true
+}}
+<div class="smd-page">
+
+  <header class="smd-page__header" id="top">
+    <h1 class="smd-page__title">Default Tabs</h1>
+  </header>
+
+   {{#smd-tabs}}
+    {{link-to "Example" "tabs.index" class="mdl-tabs__tab"}}
+    {{link-to "Animation" "tabs.two" class="mdl-tabs__tab"}}
+    {{link-to "Tab 3" "tabs.three" class="mdl-tabs__tab"}}
+    {{link-to "Tab 4" "tabs.four" class="mdl-tabs__tab"}}
+  {{/smd-tabs}}
+
+  <section class="smd-page__body">
+    {{liquid-outlet class="smd-liquid--flex"}}
+  </section>
+
+
+</div>
