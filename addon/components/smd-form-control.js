@@ -82,7 +82,11 @@ export default Component.extend({
 
           if (value !== null && typeof(value) === 'object' && value.get) {
             if (obj.id === value.get('id')) {
-              option.selected = true;
+              if (option.set !== undefined && typeof option.set === 'function') {
+                option.set('selected', true);
+              } else {
+                option.selected = true;
+              }
             }
           }
 
@@ -100,13 +104,21 @@ export default Component.extend({
             option.value = obj;
             // check if selected
             if (obj === value) {
-              option.selected = true;
+              if (option.set !== undefined && typeof option.set === 'function') {
+                option.set('selected', true);
+              } else {
+                option.selected = true;
+              }
             }
           } else {
             option = obj;
             // check if selected
             if (obj.value === value) {
-              option.selected = true;
+              if (option.set !== undefined && typeof option.set === 'function') {
+                option.set('selected', true);
+              } else {
+                option.selected = true;
+              }
             }
           }
 
