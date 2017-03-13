@@ -165,7 +165,7 @@ export default Component.extend({
     }
   },
   getScrollElement: function() {
-    let $page = this.$().next('.smd-page');
+    let $page = this.$().nextAll('.smd-page');
     if ($page.length) {
       return $page;
     }
