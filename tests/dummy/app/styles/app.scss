@@ -4,12 +4,27 @@
 @import "component.layout";
 @import "component.navbar";
 @import "component.page";
+@import "component.tabs";
 
 .sg-flex-row {
   display        : flex;
   flex-direction : row;
   align-items    : flex-start;
   justify-content: space-around;
+}
+@media screen and (max-width: 1024px) {
+  .mdl-layout__header {
+    background: unquote("rgb(#{$color-primary-dark})");
+    display   : flex;
+
+    .mdl-navigation {
+      display: none;
+    }
+  }
+
+  .mdl-layout__drawer-button {
+    color: white;
+  }
 }
 
 .smd-header {

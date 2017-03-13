@@ -1,0 +1,11 @@
+.mdl-tabs {
+  &__tab-bar {
+    &--left {
+      align-items: flex-start;
+    }
+
+    &--right {
+      align-items: flex-end;
+    }
+  }
+}

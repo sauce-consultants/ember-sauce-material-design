@@ -7,6 +7,6 @@ const {
 } = Ember;
 
 export default Component.extend(Badgeable, {
-  classNames: ['icon', 'material-icons'],
+  classNames: ['icon', 'material-icons', 'smd-icon'],
   layout
 });
