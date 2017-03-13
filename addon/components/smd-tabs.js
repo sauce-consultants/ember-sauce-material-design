@@ -10,10 +10,17 @@ export default Component.extend({
   // Attributes
   layout,
   align: 'center', // left, right & center
+  theme: 'default', // default, primary, accent
   tagName: 'nav',
   classNames: ['mdl-tabs', 'mdl-js-tabs', 'mdl-js-ripple-effect'],
+  classNameBindings: [
+    'themeClass'
+  ],
   // Computed
-  tabBarClass: computed('align', function() {
+  themeClass: computed('theme', function() {
+    return 'mdl-tabs--' + this.get('theme');
+  }),
+  tabBarClasses: computed('align', 'theme', function() {
     return 'mdl-tabs__tab-bar--' + this.get('align');
-  })
+  }),
 });

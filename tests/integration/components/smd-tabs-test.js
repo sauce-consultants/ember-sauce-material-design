@@ -45,3 +45,21 @@ test('it renders with alignment class', function(assert) {
   assert.equal($tabContainer.hasClass('mdl-tabs__tab-bar--center'), true);
 
 });
+
+test('it renders with theme class', function(assert) {
+
+  this.set('theme', 'default');
+
+  this.render(hbs `{{smd-tabs theme=theme}}`);
+
+  let $tabs = this.$('.mdl-tabs');
+
+  assert.equal($tabs.hasClass('mdl-tabs--default'), true);
+
+  this.set('theme', 'primary');
+  assert.equal($tabs.hasClass('mdl-tabs--primary'), true);
+
+  this.set('theme', 'accent');
+  assert.equal($tabs.hasClass('mdl-tabs--accent'), true);
+
+});

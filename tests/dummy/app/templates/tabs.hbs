@@ -21,6 +21,35 @@
     {{liquid-outlet class="smd-liquid--flex"}}
   </section>
 
+  <header class="smd-page__header" id="top">
+    <h1 class="smd-page__title">Primary Tab Theme</h1>
+  </header>
+
+  <section class="smd-page__body">
+    {{#smd-tabs theme="primary" align="left"}}
+      <a href="#" class="mdl-tabs__tab mdl-tabs__tab--primary is-active">One</a>
+      <a href="#" class="mdl-tabs__tab mdl-tabs__tab--primary">Two</a>
+      <a href="#" class="mdl-tabs__tab mdl-tabs__tab--primary">Three</a>
+   {{/smd-tabs}}
+
+   {{code-snippet name="smd-tabs-primary.hbs"}}
+
+  </section>
+
+  <header class="smd-page__header" id="top">
+    <h1 class="smd-page__title">Accent Tab Theme</h1>
+  </header>
+
+  <section class="smd-page__body">
+    {{#smd-tabs theme="accent" align="right"}}
+      <a href="#" class="mdl-tabs__tab mdl-tabs__tab--accent">One</a>
+      <a href="#" class="mdl-tabs__tab mdl-tabs__tab--accent is-active">Two</a>
+      <a href="#" class="mdl-tabs__tab mdl-tabs__tab--accent">Three</a>
+   {{/smd-tabs}}
+
+   {{code-snippet name="smd-tabs-accent.hbs"}}
+  </section>
+
   <header class="smd-page__header" id="attributes">
     <h1 class="smd-page__title">Attributes</h1>
   </header>
@@ -41,6 +70,12 @@
           <td>Defines the tab alignment. (left, right & center)</td>
           <td><em>string</em></td>
           <td>center</td>
+        </tr>
+        <tr>
+          <td>theme</td>
+          <td>Defines the tab style. (default, primary & accent)</td>
+          <td><em>string</em></td>
+          <td>default</td>
         </tr>
       </tbody>
     </table>
