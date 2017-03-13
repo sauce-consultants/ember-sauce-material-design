@@ -1,15 +1,30 @@
 import Ember from 'ember';
 import layout from '../templates/components/smd-list';
 
-export default Ember.Component.extend({
+const {
+  Component,
+  computed: {
+    bool
+  },
+} = Ember;
+
+export default Component.extend({
+  // Attributes
   layout,
   classNames: ['smd-list'],
+  classNameBindings: [
+    'scrollable:smd-list--scrollable',
+    'sticky:smd-list--sticky',
+  ],
   tagName: 'div',
-  stickySubheaders: false,
+  scrollable: false,
+  sticky: false,
+  // Component
+  isScrollable: bool('scrollable'),
   // Methods
   didRender: function() {
     this._super(...arguments);
-    if (this.get('stickySubheaders')) {
+    if (this.get('sticky')) {
       this.initStickySubheadings();
     }
   },
@@ -45,7 +60,6 @@ export default Ember.Component.extend({
         diff,
         subHeight,
         top;
-
 
       if (currentScrollTop > lastScrollTop) {
         $nextSubheader = $currentSubheader.nextUntil('.smd-subheader').next('.smd-subheader');

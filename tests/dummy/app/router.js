@@ -20,6 +20,11 @@ Router.map(function() {
     this.route('three');
     this.route('four');
   });
+  this.route('list', function() {
+    this.route('item');
+    this.route('subheading');
+    this.route('empty');
+  });
 
   // Old Routes (Days numbered)
   this.route('item');

@@ -1,0 +1,18 @@
+{{smd-header
+  title="Lists"
+  backIcon='arrow_back'
+  backAction="back"
+  scrolling=true
+}}
+
+{{#smd-tabs theme='primary'}}
+  {{link-to "List" "list.index" class="mdl-tabs__tab mdl-tabs__tab--primary"}}
+  {{link-to "Item" "list.item" class="mdl-tabs__tab mdl-tabs__tab--primary"}}
+  {{link-to "Subheading" "list.subheading" class="mdl-tabs__tab mdl-tabs__tab--primary"}}
+{{/smd-tabs}}
+
+<div class="smd-page">
+
+  {{liquid-outlet class="smd-liquid--grow"}}
+
+</div>

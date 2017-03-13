@@ -4,7 +4,7 @@ import layout from '../templates/components/smd-item';
 export default Ember.Component.extend({
   // Component setup
   layout,
-  tagName: 'li',
+  tagName: 'div',
   classNames: 'smd-item',
   classNameBindings: [
     'borderClassModifier',
