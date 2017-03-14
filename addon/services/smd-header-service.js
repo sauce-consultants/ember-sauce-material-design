@@ -32,6 +32,14 @@ export default Service.extend({
   searchAction: false,
   searchTerm: null,
   // Methods
+  clear: function() {
+    let defaults = copy(this.get('_defaults'));
+    keys(defaults).forEach(
+      (key) => {
+        this.set(key, defaults[key]);
+      }
+    );
+  },
   setup: function(hash) {
     let defaults = copy(this.get('_defaults'));
     merge(defaults, hash);
