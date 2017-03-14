@@ -43,6 +43,9 @@ export default Component.extend({
   searchAction: false,
   searchTerm: null,
   // Computed
+  _action: computed('action', 'service.action', function() {
+    return this._getProperty('action');
+  }),
   _title: computed('title', 'service.title', function() {
     return this._getProperty('title');
   }),
