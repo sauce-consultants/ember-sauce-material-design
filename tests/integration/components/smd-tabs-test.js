@@ -70,7 +70,7 @@ test('it passes theme to child tab', function(assert) {
 
   this.render(hbs `
     {{#smd-tabs theme=theme}}
-      {{smd-tab 'One', 'one'}}
+      {{smd-tab 'One' 'one'}}
     {{/smd-tabs}}
     `);
 
