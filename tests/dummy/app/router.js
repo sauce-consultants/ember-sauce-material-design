@@ -11,7 +11,9 @@ Router.map(function() {
     path: '/'
   });
   this.route('layout');
-  this.route('header');
+  this.route('header', function() {
+    this.route('service');
+  });
   this.route('button');
   this.route('icon');
   this.route('dropdown');

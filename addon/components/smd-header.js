@@ -5,30 +5,36 @@ const {
   Component,
   computed,
   computed: {
-    bool
-  }
+    bool,
+  },
+  inject: {
+    service,
+  },
 } = Ember;
 
 export default Component.extend({
+  // Service
+  service: service('smd-header-service'),
   // Attributes
   layout,
   tagName: 'header',
   classNames: 'smd-header',
   classNameBindings: ['fabClassModifier', 'minimizedClassModifier'],
-  title: '',
+  title: null,
   backIcon: null,
   toolbarIconOne: null,
   toolbarIconTwo: null,
   toolbarIconThree: null,
   fabIcon: null,
-  coverImageClass: null,
-  coverImageSrc: null,
   isMiniFab: false,
   isRightFab: false,
-  isMinimized: false,
-  scrolling: false,
-  scrollContext: '.smd-page',
+  coverImageClass: null,
+  coverImageSrc: null,
+  isMinimized: null,
+  scrolling: null,
+  scrollContext: null,
   // Actions
+  action: null,
   backAction: null,
   fabAction: null,
   toolbarActionOne: null,
@@ -37,6 +43,66 @@ export default Component.extend({
   searchAction: false,
   searchTerm: null,
   // Computed
+  _title: computed('title', 'service.title', function() {
+    return this._getProperty('title');
+  }),
+  _backIcon: computed('backIcon', 'service.backIcon', function() {
+    return this._getProperty('backIcon');
+  }),
+  _backAction: computed('backAction', 'service.backAction', function() {
+    return this._getProperty('backAction');
+  }),
+  _toolbarIconOne: computed('toolbarIconOne', 'service.toolbarIconOne', function() {
+    return this._getProperty('toolbarIconOne');
+  }),
+  _toolbarActionOne: computed('toolbarActionOne', 'service.toolbarActionOne', function() {
+    return this._getProperty('toolbarActionOne');
+  }),
+  _toolbarIconTwo: computed('toolbarIconTwo', 'service.toolbarIconTwo', function() {
+    return this._getProperty('toolbarIconTwo');
+  }),
+  _toolbarActionTwo: computed('toolbarActionTwo', 'service.toolbarActionTwo', function() {
+    return this._getProperty('toolbarActionTwo');
+  }),
+  _toolbarIconThree: computed('toolbarIconThree', 'service.toolbarIconThree', function() {
+    return this._getProperty('toolbarIconThree');
+  }),
+  _toolbarActionThree: computed('toolbarActionThree', 'service.toolbarActionThree', function() {
+    return this._getProperty('toolbarActionThree');
+  }),
+  _fabIcon: computed('fabIcon', 'service.fabIcon', function() {
+    return this._getProperty('fabIcon');
+  }),
+  _isMiniFab: computed('isMiniFab', 'service.isMiniFab', function() {
+    return this._getProperty('isMiniFab', false);
+  }),
+  _isRightFab: computed('isRightFab', 'service.isRightFab', function() {
+    return this._getProperty('isRightFab', false);
+  }),
+  _fabAction: computed('fabAction', 'service.fabAction', function() {
+    return this._getProperty('fabAction');
+  }),
+  _coverImageClass: computed('coverImageClass', 'service.coverImageClass', function() {
+    return this._getProperty('coverImageClass');
+  }),
+  _coverImageSrc: computed('coverImageSrc', 'service.coverImageSrc', function() {
+    return this._getProperty('coverImageSrc');
+  }),
+  _isMinimized: computed('isMinimized', 'service.isMinimized', function() {
+    return this._getProperty('isMinimized', false);
+  }),
+  _scrolling: computed('scrolling', 'service.scrolling', function() {
+    return this._getProperty('scrolling', false);
+  }),
+  _scrollContext: computed('scrollContext', 'service.scrollContext', function() {
+    return this._getProperty('scrollContext', '.smd-page');
+  }),
+  _searchAction: computed('searchAction', 'service.searchAction', function() {
+    return this._getProperty('searchAction', false);
+  }),
+  _searchTerm: computed('searchTerm', 'service.searchTerm', function() {
+    return this._getProperty('searchTerm');
+  }),
   fabClassModifier: computed('hasFab', function() {
     if (this.get('hasFab')) {
       if (this.get('isMiniFab')) {
@@ -51,83 +117,93 @@ export default Component.extend({
       return 'smd-header--minimized';
     }
   }),
-  fabClassNames: computed('isMiniFab', 'isRightFab', function() {
+  fabClassNames: computed('_isMiniFab', '_isRightFab', function() {
     var classNames = [];
-    if (this.get('isMiniFab')) {
+    if (this.get('_isMiniFab')) {
       classNames.push('smd-header__mini-fab');
-      if (this.get('isRightFab')) {
+      if (this.get('_isRightFab')) {
         classNames.push('smd-header__mini-fab--right');
       }
     } else {
       classNames.push('smd-header__fab');
-      if (this.get('isRightFab')) {
+      if (this.get('_isRightFab')) {
         classNames.push('smd-header__fab--right');
       }
     }
     return classNames.join(' ');
   }),
-  searchClassNames: computed('isMiniFab', function() {
+  searchClassNames: computed('_isMiniFab', function() {
     var classNames = [];
-    if (this.get('isMiniFab')) {
+    if (this.get('_isMiniFab')) {
       classNames.push('smd-header__mini-search');
     } else {
       classNames.push('smd-header__search');
     }
     return classNames.join(' ');
   }),
-  hasTitle: bool('title'),
-  hasFab: bool('fabIcon'),
-  hasBack: bool('backIcon'),
-  hasToolbarOne: bool('toolbarIconOne'),
-  hasToolbarTwo: bool('toolbarIconTwo'),
-  hasToolbarThree: bool('toolbarIconThree'),
-  hasCoverImageClass: bool('coverImageClass'),
-  hasCoverImageSrc: bool('coverImageSrc'),
-  hasSearch: bool('searchAction'),
+  hasTitle: bool('_title'),
+  hasFab: bool('_fabIcon'),
+  hasBack: bool('_backIcon'),
+  hasToolbarOne: bool('_toolbarIconOne'),
+  hasToolbarTwo: bool('_toolbarIconTwo'),
+  hasToolbarThree: bool('_toolbarIconThree'),
+  hasCoverImageClass: bool('_coverImageClass'),
+  hasCoverImageSrc: bool('_coverImageSrc'),
+  hasSearch: bool('_searchAction'),
   // Actions
   actions: {
     backAction: function() {
-      if (this.get('backAction')) {
-        this.sendAction('backAction', this);
-      } else if (this.get('action')) {
-        this.sendAction('action', 'back', this);
+      if (this.get('_backAction')) {
+        this.sendAction('_backAction', this);
+      } else if (this.get('_action')) {
+        this.sendAction('_action', 'back', this);
       }
     },
     fabAction: function() {
-      if (this.get('fabAction')) {
-        this.sendAction('fabAction', this);
-      } else if (this.get('action')) {
-        this.sendAction('action', 'fab', this);
+      if (this.get('_fabAction')) {
+        this.sendAction('_fabAction', this);
+      } else if (this.get('_action')) {
+        this.sendAction('_action', 'fab', this);
       }
     },
     toolbarActionOne: function() {
-      if (this.get('toolbarActionOne')) {
-        this.sendAction('toolbarActionOne', this);
-      } else if (this.get('action')) {
-        this.sendAction('action', 'toolbarOne', this);
+      if (this.get('_toolbarActionOne')) {
+        this.sendAction('_toolbarActionOne', this);
+      } else if (this.get('_action')) {
+        this.sendAction('_action', 'toolbarOne', this);
       }
     },
     toolbarActionTwo: function() {
-      if (this.get('toolbarActionTwo')) {
-        this.sendAction('toolbarActionTwo', this);
-      } else if (this.get('action')) {
-        this.sendAction('action', 'toolbarTwo', this);
+      if (this.get('_toolbarActionTwo')) {
+        this.sendAction('_toolbarActionTwo', this);
+      } else if (this.get('_action')) {
+        this.sendAction('_action', 'toolbarTwo', this);
       }
     },
     toolbarActionThree: function() {
-      if (this.get('toolbarActionThree')) {
-        this.sendAction('toolbarActionThree', this);
-      } else if (this.get('action')) {
-        this.sendAction('action', 'toolbarThree', this);
+      if (this.get('_toolbarActionThree')) {
+        this.sendAction('_toolbarActionThree', this);
+      } else if (this.get('_action')) {
+        this.sendAction('_action', 'toolbarThree', this);
       }
     },
     searchAction: function(term) {
-      this.sendAction('searchAction', term);
+      this.sendAction('_searchAction', term);
     }
   },
   // Methods
+  _getProperty: function(key, def) {
+    def = (typeof def !== 'undefined') ? def : null;
+
+    let p = this.get(key) ? this.get(key) : this.get('service.' + key);
+
+    if (p === null) {
+      return def;
+    }
+    return p;
+  },
   didInsertElement: function() {
-    if (this.get('scrolling')) {
+    if (this.get('_scrolling')) {
       this.initScrollEvent();
     }
   },
