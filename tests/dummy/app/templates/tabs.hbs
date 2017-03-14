@@ -4,82 +4,12 @@
   backAction="back"
   scrolling=true
 }}
-<div class="smd-page">
 
-  <header class="smd-page__header" id="top">
-    <h1 class="smd-page__title">Default Tabs</h1>
-  </header>
+{{#smd-tabs theme='primary'}}
+  {{smd-tab "Components" "tabs.index"}}
+  {{smd-tab "Animation" "tabs.two"}}
+  {{smd-tab "Themes" "tabs.three"}}
+  {{smd-tab "Attributes" "tabs.four"}}
+{{/smd-tabs}}
 
-   {{#smd-tabs}}
-    {{smd-tab "Example" "tabs.index"}}
-    {{smd-tab "Animation" "tabs.two"}}
-    {{smd-tab "Tab 3" "tabs.three"}}
-    {{smd-tab "Tab 4" "tabs.four"}}
-  {{/smd-tabs}}
-
-  <section class="smd-page__body">
-    {{liquid-outlet class="smd-liquid--flex"}}
-  </section>
-
-  <header class="smd-page__header" id="top">
-    <h1 class="smd-page__title">Primary Tab Theme</h1>
-  </header>
-
-  <section class="smd-page__body">
-    {{#smd-tabs theme="primary" align="left"}}
-      <a href="#" class="mdl-tabs__tab mdl-tabs__tab--primary is-active">One</a>
-      <a href="#" class="mdl-tabs__tab mdl-tabs__tab--primary">Two</a>
-      <a href="#" class="mdl-tabs__tab mdl-tabs__tab--primary">Three</a>
-   {{/smd-tabs}}
-
-   {{code-snippet name="smd-tabs-primary.hbs"}}
-
-  </section>
-
-  <header class="smd-page__header" id="top">
-    <h1 class="smd-page__title">Accent Tab Theme</h1>
-  </header>
-
-  <section class="smd-page__body">
-    {{#smd-tabs theme="accent" align="right"}}
-      <a href="#" class="mdl-tabs__tab mdl-tabs__tab--accent">One</a>
-      <a href="#" class="mdl-tabs__tab mdl-tabs__tab--accent is-active">Two</a>
-      <a href="#" class="mdl-tabs__tab mdl-tabs__tab--accent">Three</a>
-   {{/smd-tabs}}
-
-   {{code-snippet name="smd-tabs-accent.hbs"}}
-  </section>
-
-  <header class="smd-page__header" id="attributes">
-    <h1 class="smd-page__title">Attributes</h1>
-  </header>
-
-  <section class="smd-page__body">
-    <table class="sg-table sg-table--attributes">
-      <thead>
-        <tr>
-          <th>Attribute</th>
-          <th>Description</th>
-          <th>Type</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>align</td>
-          <td>Defines the tab alignment. (left, right & center)</td>
-          <td><em>string</em></td>
-          <td>center</td>
-        </tr>
-        <tr>
-          <td>theme</td>
-          <td>Defines the tab style. (default, primary & accent)</td>
-          <td><em>string</em></td>
-          <td>default</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
-
-
-</div>
+{{liquid-outlet class="smd-liquid--grow"}}

@@ -1,30 +1,28 @@
 <!-- BEGIN-SNIPPET smd-tabs -->
 {{#smd-tabs}}
- {{link-to "Example" "tabs.index" class="mdl-tabs__tab"}}
- {{link-to "Animation" "tabs.two" class="mdl-tabs__tab"}}
- {{link-to "Tab 3" "tabs.three" class="mdl-tabs__tab"}}
- {{link-to "Tab 4" "tabs.four" class="mdl-tabs__tab"}}
+  {{smd-tab "Components" "tabs.index"}}
+  {{smd-tab "Animation" "tabs.two"}}
+  {{smd-tab "Themes" "tabs.three"}}
+  {{smd-tab "Attributes" "tabs.four"}}
 {{/smd-tabs}}
 
-<section class="smd-page__body">
-  {{liquid-outlet class="smd-liquid--flex"}}
-</section>
+{{liquid-outlet class="smd-liquid--grow"}}
 <!-- END-SNIPPET -->
-
 
 <!-- BEGIN-SNIPPET smd-tabs-primary -->
 {{#smd-tabs theme="primary" align="left"}}
-  <a href="#" class="mdl-tabs__tab mdl-tabs__tab--primary is-active">One</a>
-  <a href="#" class="mdl-tabs__tab mdl-tabs__tab--primary">Two</a>
-  <a href="#" class="mdl-tabs__tab mdl-tabs__tab--primary">Three</a>
+  {{smd-tab "Components" "tabs.index"}}
+  {{smd-tab "Animation" "tabs.two"}}
+  {{smd-tab "Themes" "tabs.three"}}
+  {{smd-tab "Attributes" "tabs.four"}}
 {{/smd-tabs}}
 <!-- END-SNIPPET -->
 
-
 <!-- BEGIN-SNIPPET smd-tabs-accent -->
 {{#smd-tabs theme="accent" align="right"}}
-  <a href="#" class="mdl-tabs__tab mdl-tabs__tab--accent">One</a>
-  <a href="#" class="mdl-tabs__tab mdl-tabs__tab--accent is-active">Two</a>
-  <a href="#" class="mdl-tabs__tab mdl-tabs__tab--accent">Three</a>
+  {{smd-tab "Components" "tabs.index"}}
+  {{smd-tab "Animation" "tabs.two"}}
+  {{smd-tab "Themes" "tabs.three"}}
+  {{smd-tab "Attributes" "tabs.four"}}
 {{/smd-tabs}}
 <!-- END-SNIPPET -->
