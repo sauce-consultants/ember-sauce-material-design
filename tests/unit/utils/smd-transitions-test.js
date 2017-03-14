@@ -10,6 +10,7 @@ module('Unit | Utility | smd transitions');
 
 // Replace this with your real tests.
 test('it works', function(assert) {
-  let result = tabTransitions();
-  assert.ok(result);
+  var scope = {};
+  tabTransitions(scope, []);
+  assert.ok(scope);
 });
