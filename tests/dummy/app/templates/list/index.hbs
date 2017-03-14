@@ -1,80 +1,60 @@
-<header class="smd-page__header">
-  <h1 class="smd-page__title">Default List</h1>
-</header>
+<div class="smd-page">
+  <header class="smd-page__header">
+    <h1 class="smd-page__title">Default List</h1>
+  </header>
 
-<section class="smd-page__body">
+  <section class="smd-page__body">
 
-  <p>A simple component to hold a collection of smd-items.</p>
+    <p>A simple component to hold a collection of smd-items.</p>
 
-  {{#smd-list}}
-    {{#each model as |item|}}
-      {{smd-item
-        title=item.title
-        meta="Elit commodo turpis volutpat risus"
-        avatarSrc=item.avatar
-        actionIcon='info_circle'
-        isBordered=true
-      }}
-    {{/each}}
-  {{/smd-list}}
+    {{#smd-list}}
+      {{#each model as |item|}}
+        {{smd-item
+          title=item.name
+          meta=item.company
+          avatarSrc=item.avatar
+          actionIcon='keyboard_arrow_right'
+          isBordered=true
+        }}
+      {{/each}}
+    {{/smd-list}}
 
-  {{code-snippet name="smd-list.hbs"}}
+    {{code-snippet name="smd-list.hbs"}}
 
-</section>
+  </section>
 
-<header class="smd-page__header">
-  <h1 class="smd-page__title">Scrollable List</h1>
-</header>
+  <header class="smd-page__header" id="attributes">
+    <h1 class="smd-page__title">Attributes</h1>
+  </header>
 
-<section class="smd-page__body">
+  <section class="smd-page__body">
+    <table class="sg-table sg-table--attributes">
+      <thead>
+        <tr>
+          <th>Attribute</th>
+          <th>Description</th>
+          <th>Type</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>scrollable</td>
+          <td>This will give the list a fixed height so the contents can be scrolled</td>
+          <td><em>boolean</em></td>
+          <td>false</td>
+        </tr>
+        <tr>
+          <td>sticky</td>
+          <td>The relevant subheading in the list will stick to the top of the list as it scrolls</td>
+          <td><em>boolean</em></td>
+          <td>false</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
 
-  {{#smd-list scrollable=true class="sg-list--scrollable"}}
-    {{#each model as |item|}}
-      {{smd-item
-        title=item.title
-        meta="Elit commodo turpis volutpat risus"
-        avatarSrc=item.avatar
-        actionIcon='info_circle'
-        isBordered=true
-      }}
-    {{/each}}
-  {{/smd-list}}
-
-  {{code-snippet name="smd-list-scrollable.hbs"}}
-
-</section>
-
-<header class="smd-page__header" id="attributes">
-  <h1 class="smd-page__title">Attributes</h1>
-</header>
-
-<section class="smd-page__body">
-  <table class="sg-table sg-table--attributes">
-    <thead>
-      <tr>
-        <th>Attribute</th>
-        <th>Description</th>
-        <th>Type</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>scrollable</td>
-        <td>This will give the list a fixed height so the contents can be scrolled</td>
-        <td><em>boolean</em></td>
-        <td>false</td>
-      </tr>
-      <tr>
-        <td>sticky</td>
-        <td>The relevant subheading in the list will stick to the top of the list as it scrolls</td>
-        <td><em>boolean</em></td>
-        <td>false</td>
-      </tr>
-    </tbody>
-  </table>
-</section>
-
-<footer class="smd-page__footer">
-  <p>View on <a href="https://github.com/sauce-consultants/ember-sauce-material-design">github</a></p>
-</footer>
+  <footer class="smd-page__footer">
+    <p>View on <a href="https://github.com/sauce-consultants/ember-sauce-material-design">github</a></p>
+  </footer>
+</div>

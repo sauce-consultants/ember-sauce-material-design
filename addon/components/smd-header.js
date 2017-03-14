@@ -165,7 +165,7 @@ export default Component.extend({
     }
   },
   getScrollElement: function() {
-    let $page = this.$().nextAll(this.get('scrollContext'));
+    let $page = this.$().parent().find(this.get('scrollContext'));
     if ($page.length) {
       return $page;
     }

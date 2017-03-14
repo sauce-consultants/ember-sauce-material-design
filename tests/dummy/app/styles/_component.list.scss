@@ -1,9 +1,9 @@
 .smd-list {
   height  : auto;
   overflow: auto;
-  margin  : 0 -1rem;
 
   &--scrollable {
     overflow: hidden;
+    height  : 100%;
   }
 }

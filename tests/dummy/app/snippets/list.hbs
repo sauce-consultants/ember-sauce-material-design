@@ -2,10 +2,10 @@
 {{#smd-list}}
   {{#each model as |item|}}
     {{smd-item
-      title=item.title
-      meta="Elit commodo turpis volutpat risus"
+      title=item.name
+      meta=item.company
       avatarSrc=item.avatar
-      actionIcon='info_circle'
+      actionIcon='keyboard_arrow_right'
       isBordered=true
     }}
   {{/each}}
@@ -17,12 +17,28 @@
 {{#smd-list scrollable=true}}
   {{#each model as |item|}}
     {{smd-item
-      title=item.title
-      meta="Elit commodo turpis volutpat risus"
+      title=item.name
+      meta=item.company
       avatarSrc=item.avatar
-      actionIcon='info_circle'
+      actionIcon='keyboard_arrow_right'
       isBordered=true
     }}
   {{/each}}
 {{/smd-list}}
+// END-SNIPPET
+
+// BEGIN-SNIPPET smd-list-example
+{{#smd-list scrollable=true sticky=true}}
+  {{#each model as |item|}}
+    {{smd-subheader item.lastNameInitial}}
+    {{smd-item
+      title=item.name
+      meta=item.company
+      avatarSrc=item.avatar
+      actionIcon='keyboard_arrow_right'
+      isBordered=true
+    }}
+  {{/each}}
+{{/smd-list}}
+
 // END-SNIPPET
