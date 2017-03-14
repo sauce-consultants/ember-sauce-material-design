@@ -1,52 +1,21 @@
+import {
+  tabTransitions
+} from 'ember-sauce-material-design/utils/smd-transitions';
+
 export default function() {
-  /*
-   * Login
-   */
-  this.transition(
-    this.fromRoute('home'),
-    this.use('toLeft'),
-    this.reverse('toRight')
-  );
 
-  this.transition(
-    this.fromRoute('tabs.index'),
-    this.toRoute('tabs.two'),
-    this.use('toLeft'),
-    this.reverse('toRight')
-  );
+  tabTransitions(this, [
+    'home',
+    'layout',
+    'header',
+    'button',
+    'icon',
+    'dropdown',
+    'tabs',
+    'list',
+  ]);
 
-  this.transition(
-    this.fromRoute('tabs.index'),
-    this.toRoute('tabs.three'),
-    this.use('toLeft'),
-    this.reverse('toRight')
-  );
+  tabTransitions(this, ['tabs.index', 'tabs.two', 'tabs.three', 'tabs.four']);
+  tabTransitions(this, ['list.index', 'list.item', 'list.subheading', 'list.empty', 'list.scrollable', 'list.example']);
 
-  this.transition(
-    this.fromRoute('tabs.index'),
-    this.toRoute('tabs.four'),
-    this.use('toLeft'),
-    this.reverse('toRight')
-  );
-
-  this.transition(
-    this.fromRoute('tabs.two'),
-    this.toRoute('tabs.three'),
-    this.use('toLeft'),
-    this.reverse('toRight')
-  );
-
-  this.transition(
-    this.fromRoute('tabs.two'),
-    this.toRoute('tabs.four'),
-    this.use('toLeft'),
-    this.reverse('toRight')
-  );
-
-  this.transition(
-    this.fromRoute('tabs.three'),
-    this.toRoute('tabs.four'),
-    this.use('toLeft'),
-    this.reverse('toRight')
-  );
 }

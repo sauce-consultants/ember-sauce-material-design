@@ -1,0 +1,33 @@
+{{smd-header
+  title="Animations"
+  backIcon="arrow_back"
+  backAction="back"
+  scrolling=true
+}}
+<div class="smd-page">
+
+  <header class="smd-page__header" id="top">
+    <h1 class="smd-page__title">Tab Transitions</h1>
+  </header>
+
+  <section class="smd-page__body">
+
+    <p>SMD contains a helper function to create ember liquid fire transitions for tabbed routes.</p>
+
+    <p>
+      Import the utils at the top of your ember liqud fire transition.js file.
+    </p>
+
+    {{code-snippet name="smd-transitions-tab-import.js"}}
+
+    <p>Pass in an ordered list of route names and it will generate the relevant transitions to animate left/right between routes.</p>
+
+    {{code-snippet name="smd-transitions-tab.js"}}
+
+    <p>This is a quick way of generating the following transitions</p>
+
+    {{code-snippet name="smd-transitions-tab-manual.js"}}
+
+  </section>
+
+</div>
