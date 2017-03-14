@@ -1,0 +1,44 @@
+// BEGIN-SNIPPET smd-list
+{{#smd-list}}
+  {{#each model as |item|}}
+    {{smd-item
+      title=item.name
+      meta=item.company
+      avatarSrc=item.avatar
+      actionIcon='keyboard_arrow_right'
+      isBordered=true
+    }}
+  {{/each}}
+{{/smd-list}}
+// END-SNIPPET
+
+
+// BEGIN-SNIPPET smd-list-scrollable
+{{#smd-list scrollable=true}}
+  {{#each model as |item|}}
+    {{smd-item
+      title=item.name
+      meta=item.company
+      avatarSrc=item.avatar
+      actionIcon='keyboard_arrow_right'
+      isBordered=true
+    }}
+  {{/each}}
+{{/smd-list}}
+// END-SNIPPET
+
+// BEGIN-SNIPPET smd-list-example
+{{#smd-list scrollable=true sticky=true}}
+  {{#each model as |item|}}
+    {{smd-subheader item.lastNameInitial}}
+    {{smd-item
+      title=item.name
+      meta=item.company
+      avatarSrc=item.avatar
+      actionIcon='keyboard_arrow_right'
+      isBordered=true
+    }}
+  {{/each}}
+{{/smd-list}}
+
+// END-SNIPPET

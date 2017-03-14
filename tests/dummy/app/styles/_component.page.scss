@@ -18,9 +18,13 @@
     flex         : 1;
     padding      : 1rem;
 
-    p {
+    > p {
       margin: 0 0 1rem;
     }
+  }
+
+  &__list {
+    flex: 1;
   }
 
   &__footer {

@@ -1,0 +1,17 @@
+{{smd-header
+  title="Lists"
+  backIcon='arrow_back'
+  backAction="back"
+  scrolling=true
+  scrollContext='.smd-liquid--grow, .smd-list__scroll'
+}}
+
+{{#smd-tabs theme='primary'}}
+  {{smd-tab "List" "list.index"}}
+  {{smd-tab "Item" "list.item"}}
+  {{smd-tab "Subheading" "list.subheading"}}
+  {{smd-tab "Scrollable" "list.scrollable"}}
+  {{smd-tab "Example" "list.example"}}
+{{/smd-tabs}}
+
+{{liquid-outlet class="smd-liquid--grow"}}

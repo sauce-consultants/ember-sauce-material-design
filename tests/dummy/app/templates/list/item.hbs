@@ -1,0 +1,216 @@
+<header class="smd-page__header">
+  <h1 class="smd-page__title">Standard Item</h1>
+</header>
+
+<section class="smd-page__body">
+
+  <p>A standard material list item has a title, meta text, an avatar and action icon.</p>
+
+  {{smd-item
+    title="Item Title"
+    meta="Elit commodo turpis volutpat risus"
+    avatarSrc="http://i.pravatar.cc/80?r=1"
+    actionIcon="info_circle"
+    isBordered=true
+  }}
+
+  {{code-snippet name="smd-item.hbs"}}
+
+</section>
+
+<header class="smd-page__header">
+  <h1 class="smd-page__title">Inverted Item</h1>
+</header>
+
+<section class="smd-page__body">
+
+  <p>This item inverts the order of the action icon and avatar.</p>
+
+  {{smd-item
+    title="Item Title"
+    meta="Elit commodo turpis volutpat risus"
+    avatarSrc="http://i.pravatar.cc/80?r=2"
+    actionIcon="star"
+    isInverted=true
+  }}
+
+  {{code-snippet name="smd-item-inverted.hbs"}}
+
+</section>
+
+<header class="smd-page__header">
+  <h1 class="smd-page__title">Item with a subtitle</h1>
+</header>
+
+<section class="smd-page__body">
+
+  <p>Items can have a subtitle and the avatar can contain text.</p>
+
+  {{smd-item
+    title="Item Title"
+    subTitle="Subtitle"
+    meta="Elit commodo turpis volutpat risus"
+    avatarText=8
+    actionIcon="info_circle"
+  }}
+
+  {{code-snippet name="smd-item-subtitle.hbs"}}
+
+</section>
+
+<header class="smd-page__header">
+  <h1 class="smd-page__title">Item with two lines of meta text</h1>
+</header>
+
+<section class="smd-page__body">
+
+  <p>Items can contain two lines of meta text</p>
+
+  {{smd-item
+    title="Item Title"
+    meta="Ut lorem condimentum eu praesent parturient hac dictumst tristique ultrices eget at vestibulum gravida a lectus magna a per urna a.Scelerisque fringilla ullamcorper condimentum vitae ad feugiat hac torquent condimentum at."
+    avatarIcon="person"
+    actionIcon="info_circle"
+    isThreeLines=true
+  }}
+
+  {{code-snippet name="smd-item-lines.hbs"}}
+
+</section>
+
+<header class="smd-page__header">
+  <h1 class="smd-page__title">Item with custom content</h1>
+</header>
+
+<section class="smd-page__body">
+
+  <p>Custom item body content can be added to the yield</p>
+
+  {{#smd-item avatarSrc="http://i.pravatar.cc/80?r=4" actionIcon="keyboard_arrow_right"}}
+    <h1 class="smd-item__title">Brunch this weekend?</h1>
+    <p class="smd-item__meta"><strong>Ali Connors</strong> - I"ll be in your neighborhood parturient in elit commodo turpis volutpat risus montes arcu rutrum turpis malesuada ac consectetur quam a.</p>
+  {{/smd-item}}
+  {{#smd-item avatarSrc="http://i.pravatar.cc/80r=5" actionIcon="keyboard_arrow_right"}}
+    <h1 class="smd-item__title">What time today?</h1>
+    <p class="smd-item__meta"><strong>Jane Smith</strong> - Elit commodo turpis volutpat risus montes arcu rutrum turpis malesuada ac consectetur quam a.</p>
+  {{/smd-item}}
+
+  {{code-snippet name="smd-item-custom.hbs"}}
+
+</section>
+
+<header class="smd-page__header" id="attributes">
+  <h1 class="smd-page__title">Attributes</h1>
+</header>
+
+
+<section class="smd-page__body">
+  <table class="sg-table sg-table--attributes">
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Description</th>
+        <th>Type</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>title</td>
+        <td>The main title text for the item</td>
+        <td><em>string</em></td>
+        <td>null</td>
+      </tr>
+      <tr>
+        <td>subTitle</td>
+        <td>Sub title text, if required</td>
+        <td><em>string</em></td>
+        <td>null</td>
+      </tr>
+      <tr>
+        <td>meta</td>
+        <td>Secondary text for the item</td>
+        <td><em>string</em></td>
+        <td>null</td>
+      </tr>
+      <tr>
+        <td>avatarUrl</td>
+        <td>Path to an avatar image</td>
+        <td><em>url</em></td>
+        <td>null</td>
+      </tr>
+      <tr>
+        <td>avatarText</td>
+        <td>Instead of an image, you may also use text in the avatar e.g. a count</td>
+        <td><em>string</em></td>
+        <td>null</td>
+      </tr>
+      <tr>
+        <td>avatarIcon</td>
+        <td>Defines the <a href="https://design.google.com/icons/">material design icon</a> used for the avatar icon</td>
+        <td><em>string</em></td>
+        <td>null</td>
+      </tr>
+      <tr>
+        <td>actionIcon</td>
+        <td>Defines the <a href="https://design.google.com/icons/">material design icon</a> used for the action item</td>
+        <td><em>string</em></td>
+        <td>null</td>
+      </tr>
+      <tr>
+        <td>isBordered</td>
+        <td>If true, the item has a bottom border</td>
+        <td><em>boolean</em></td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>isInverted</td>
+        <td>Inverts the order of the avatar and icon</td>
+        <td><em>boolean</em></td>
+        <td>false</td>
+      </tr>
+
+      <tr>
+        <td>isThreeLines</td>
+        <td>Allows up to three lines of content. e.g. title + 2 lines of meta</td>
+        <td><em>boolean</em></td>
+        <td>false</td>
+      </tr>
+
+    </tbody>
+  </table>
+
+</section>
+
+
+<header class="smd-page__header" id="actions">
+  <h1 class="smd-page__title">Actions</h1>
+</header>
+
+<section class="smd-page__body">
+  <table class="sg-table sg-table--actions">
+    <thead>
+      <tr>
+        <th>Action</th>
+        <th>Description</th>
+        <th>Params</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>action</td>
+        <td>Called on item click</td>
+        <td><em>item</em> (object)</td>
+      </tr>
+      <tr>
+        <td>secondaryAction</td>
+        <td>If specified this will be called on the action icon click. Else, action is called.</td>
+        <td><em>item</em> (object)</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<footer class="smd-page__footer">
+  <p>View on <a href="https://github.com/sauce-consultants/ember-sauce-material-design">github</a></p>
+</footer>

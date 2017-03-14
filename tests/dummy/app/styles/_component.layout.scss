@@ -28,6 +28,10 @@
   }
 }
 
+.smd-liquid--grow {
+  overflow: auto;
+}
+
 body > .ember-view {
   height: 100%;
 }

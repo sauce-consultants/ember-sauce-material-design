@@ -1,3 +1,7 @@
+{{#if isScrollable}}
 <div class="smd-list__scroll">
   {{yield}}
 </div>
+{{else}}
+{{yield}}
+{{/if}}

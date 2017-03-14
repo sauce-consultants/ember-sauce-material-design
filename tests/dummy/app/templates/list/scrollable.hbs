@@ -1,0 +1,27 @@
+<div class="smd-page">
+
+  <header class="smd-page__header">
+    <h1 class="smd-page__title">Scrollable List</h1>
+  </header>
+
+  <section class="smd-page__body">
+
+    <p>Give a list a height and set scrollable to true to allow a list to be scrolled.</p>
+
+    {{#smd-list scrollable=true class="sg-list--scrollable"}}
+      {{#each model as |item|}}
+        {{smd-item
+          title=item.name
+          meta=item.company
+          avatarSrc=item.avatar
+          actionIcon='keyboard_arrow_right'
+          isBordered=true
+        }}
+      {{/each}}
+    {{/smd-list}}
+
+    {{code-snippet name="smd-list-scrollable.hbs"}}
+
+  </section>
+
+</div>
