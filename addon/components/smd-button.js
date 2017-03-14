@@ -36,7 +36,7 @@ export default Component.extend(Clickable, {
   attributeBindings: [
     'disabled',
     'for',
-    'type:buttonType'
+    'type'
   ],
   // Computed
   _isMiniFabMode: computed('isMiniFab', function() {
