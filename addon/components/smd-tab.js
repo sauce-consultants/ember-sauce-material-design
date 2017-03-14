@@ -5,7 +5,8 @@ const {
   LinkComponent,
   computed,
   computed: {
-    alias
+    alias,
+    bool,
   }
 } = Ember;
 
@@ -19,8 +20,11 @@ export default LinkComponent.extend({
     'themeClass'
   ],
   // Computed
+  hasParentView: bool('parentView'),
   theme: alias('parentView.theme'),
-  themeClass: computed('theme', function() {
-    return 'mdl-tabs__tab--' + this.get('theme');
+  themeClass: computed('hasParentView', 'theme', function() {
+    if (this.get('hasParentView')) {
+      return 'mdl-tabs__tab--' + this.get('theme');
+    }
   }),
 });

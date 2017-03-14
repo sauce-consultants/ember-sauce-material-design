@@ -1,4 +1,7 @@
-import { moduleForComponent, test } from 'ember-qunit';
+import {
+  moduleForComponent,
+  test
+} from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
 moduleForComponent('smd-tab', 'Integration | Component | smd tab', {
@@ -7,19 +10,19 @@ moduleForComponent('smd-tab', 'Integration | Component | smd tab', {
 
 test('it renders', function(assert) {
 
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
+  this.render(hbs `{{smd-tab "Title" "route"}}`);
 
-  this.render(hbs`{{smd-tab}}`);
+  let $tab = this.$('.ember-view');
 
-  assert.equal(this.$().text().trim(), '');
+  assert.equal($tab.text().trim(), 'Title', 'Has link title');
 
-  // Template block usage:
-  this.render(hbs`
-    {{#smd-tab}}
-      template block text
-    {{/smd-tab}}
+  assert.equal($tab.hasClass('mdl-tabs__tab--undefined'), false, 'does not have theme class');
+
+  this.render(hbs `
+    {{#smd-tab "route"}}Link Title{{/smd-tab}}
   `);
 
-  assert.equal(this.$().text().trim(), 'template block text');
+  $tab = this.$('.ember-view');
+
+  assert.equal($tab.text().trim(), 'Link Title', 'Yields content');
 });

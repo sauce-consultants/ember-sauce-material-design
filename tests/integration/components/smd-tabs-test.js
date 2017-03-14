@@ -63,3 +63,26 @@ test('it renders with theme class', function(assert) {
   assert.equal($tabs.hasClass('mdl-tabs--accent'), true);
 
 });
+
+test('it passes theme to child tab', function(assert) {
+
+  this.set('theme', 'default');
+
+  this.render(hbs `
+    {{#smd-tabs theme=theme}}
+      {{smd-tab 'One', 'one'}}
+    {{/smd-tabs}}
+    `);
+
+  let $tabs = this.$('.mdl-tabs'),
+    $tab = $tabs.find('.mdl-tabs__tab');
+
+  assert.equal($tab.hasClass('mdl-tabs__tab--default'), true);
+
+  this.set('theme', 'primary');
+  assert.equal($tab.hasClass('mdl-tabs__tab--primary'), true);
+
+  this.set('theme', 'accent');
+  assert.equal($tab.hasClass('mdl-tabs__tab--accent'), true);
+
+});
