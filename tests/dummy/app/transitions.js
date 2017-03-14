@@ -13,6 +13,7 @@ export default function() {
     'dropdown',
     'tabs',
     'list',
+    'animation',
   ]);
 
   tabTransitions(this, ['tabs.index', 'tabs.two', 'tabs.three', 'tabs.four']);
