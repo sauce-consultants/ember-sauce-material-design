@@ -27,7 +27,7 @@ export default Component.extend({
   isRightFab: false,
   isMinimized: false,
   scrolling: false,
-  scrollContext: '.page-content',
+  scrollContext: '.smd-page',
   // Actions
   backAction: null,
   fabAction: null,
@@ -165,7 +165,7 @@ export default Component.extend({
     }
   },
   getScrollElement: function() {
-    let $page = this.$().nextAll('.smd-page');
+    let $page = this.$().nextAll(this.get('scrollContext'));
     if ($page.length) {
       return $page;
     }
