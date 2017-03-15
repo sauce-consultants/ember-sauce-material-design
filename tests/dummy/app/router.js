@@ -29,6 +29,9 @@ Router.map(function() {
     this.route('scrollable');
     this.route('example');
   });
+  this.route('dialog', function() {
+    this.route('open');
+  });
   this.route('animation');
 
   // Old Routes (Days numbered)

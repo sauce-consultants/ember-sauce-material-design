@@ -1,0 +1,21 @@
+<div class="mdl-layout__obfuscator is-visible"></div>
+<div class="smd-modal__container">
+{{#if hasHeading}}
+  <div class="smd-modal__heading">
+    <h1 class="smd-modal__title">{{title}}</h1>
+  </div>
+{{/if}}
+  <div class="smd-modal__body">
+    {{yield}}
+  </div>
+{{#if hasFooter}}
+  <div class="smd-modal__footer">
+    {{#if hasPrimary}}
+      {{smd-button text=primaryText action='primaryAction'}}
+    {{/if}}
+    {{#if hasSecondary}}
+      {{smd-button text=secondaryText action='secondaryAction'}}
+    {{/if}}
+  </div>
+{{/if}}
+</div>

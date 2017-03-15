@@ -1,12 +1,12 @@
 @import "//fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en";
 @import "//fonts.googleapis.com/icon?family=Material+Icons";
 @import "sauce-material-design.scss";
-$color-primary-light: $palette-indigo-400;
 @import "component.layout";
 @import "component.navbar";
 @import "component.page";
 @import "component.tabs";
 @import "component.list";
+@import "component.modal";
 
 .sg-flex-row {
   display        : flex;
