@@ -1,0 +1,9 @@
+{{#if isIcon}}
+  {{#if linkTitle}}
+    {{smd-icon icon=linkTitle}}
+  {{else}}
+    <i class="icon material-icons smd-icon">{{yield}}</i>
+  {{/if}}
+{{else}}
+  {{#if linkTitle}}{{linkTitle}}{{else}}{{yield}}{{/if}}
+{{/if}}
