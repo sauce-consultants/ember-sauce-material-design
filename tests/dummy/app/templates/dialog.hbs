@@ -7,14 +7,24 @@
 <div class="smd-page">
 
   <header class="smd-page__header">
-    <h1 class="smd-page__title">Dialog Routes</h1>
+    <h1 class="smd-page__title">Modal Routes</h1>
   </header>
 
   <section class="smd-page__body">
 
-    <p>Complex dialogs (modals) should be assigned to routes in smd.</p>
+    <p>Complex dialogs (modals) should be assigned to routes in smd. The route content can then be rendered in a modal via the smd component.</p>
 
-    <p>{{link-to 'Open Modal Route' 'dialog.open'}}</p>
+    <p>Here is an example of a modal with dismiss and action buttons in the header.</p>
+
+    <p>{{link-to 'Open default modal' 'dialog.modal'}}</p>
+
+    {{code-snippet name="smd-modal.hbs"}}
+
+    <p>Here is an example with primary and secondary actions in the footer.</p>
+
+    <p>{{link-to 'Open modal with footer' 'dialog.modal-with-footer'}}</p>
+
+    {{code-snippet name="smd-modal-footer.hbs"}}
 
   </section>
 

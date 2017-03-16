@@ -33,24 +33,44 @@
     }
   }
 
-  &__heading {
-    background: unquote("rgb(#{$color-primary-dark})");
-    color     : unquote("rgb(#{$color-primary-contrast})");
+  &__header {
+    background     : unquote("rgb(#{$color-primary-dark})");
+    color          : unquote("rgb(#{$color-primary-contrast})");
+    display        : flex;
+    flex-direction : row;
+    align-items    : center;
+    justify-content: center;
+    min-height     : 4rem;
+    padding        : 1rem 1.5rem;
+  }
+
+  &__close {
+    margin: 0 1rem 0 -.5rem;
   }
 
   &__title {
-    padding  : 1.5rem 1.5rem 0;
-    margin   : 0;
-    font-size: 2.5rem;
+    display       : inline-block;
+    @include typo-title;
+    text-transform: uppercase;
+    flex          : 1;
+    line-height   : 2rem;
+    margin        : 0;
+  }
+
+  &__action {
+    color : white;
+    margin: 0 0 0 1rem;
   }
 
   &__body {
-    padding: 1.5rem;
-    flex   : 1;
+    padding : 1.5rem;
+    overflow: auto;
+    flex    : 1;
   }
 
   &__footer {
-    padding   : 0 1.5rem 1rem;
+    border-top: 1px solid $c-border;
+    padding   : 1rem 1.5rem;
     text-align: right;
   }
 }

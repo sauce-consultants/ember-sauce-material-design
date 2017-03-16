@@ -30,7 +30,8 @@ Router.map(function() {
     this.route('example');
   });
   this.route('dialog', function() {
-    this.route('open');
+    this.route('modal');
+    this.route('modal-with-footer');
   });
   this.route('animation');
 
