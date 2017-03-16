@@ -1,13 +1,16 @@
 import Ember from 'ember';
 import layout from '../templates/components/smd-button';
 import Clickable from '../mixins/click-support';
+import Ripple from '../mixins/ripple-support';
+
 
 const {
   Component,
   computed
 } = Ember;
 
-export default Component.extend(Clickable, {
+export default Component.extend(Clickable, Ripple, {
+  _baseClass: 'mdl-button',
   layout,
   tagName: 'button',
   isRaised: false, // Applies raised display effect	Mutually exclusive with fab, mini-fab, and icon
