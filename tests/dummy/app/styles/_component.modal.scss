@@ -80,34 +80,12 @@
   @include trans;
   background: transparent;
   border    : none;
-  margin    : auto 2rem;
-  padding   : 0;
   min-width : 17.5rem;
-  width     : auto;
-  @media screen and (min-width: 415px) {
-    margin    : auto;
-    min-height: 80%;
-    min-width : 80%;
-  }
-  @media screen and (min-width: 1025px) {
-    min-width: 70%;
-    max-width: 40rem;
-  }
+  max-width : 32rem;
 
   &__container {
-    background    : white;
-    box-shadow    : 0 9px 46px 8px rgba(0, 0, 0, 0.14), 0 11px 15px -7px rgba(0, 0, 0, 0.12), 0 24px 38px 3px rgba(0, 0, 0, 0.2);
-    display       : flex;
-    flex-direction: column;
-    position      : relative;
-    margin        : auto;
-    z-index       : 5;
-    @media screen and (min-width: 415px) {
-      margin: 2rem auto;
-    }
-    @media screen and (min-width: 1025px) {
-      margin: 4rem auto;
-    }
+    background: white;
+    box-shadow: 0 9px 46px 8px rgba(0, 0, 0, 0.14), 0 11px 15px -7px rgba(0, 0, 0, 0.12), 0 24px 38px 3px rgba(0, 0, 0, 0.2);
   }
 
   &__title {

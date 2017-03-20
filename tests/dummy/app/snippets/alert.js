@@ -7,13 +7,16 @@ const {
   },
 } = Ember;
 
+// BEGIN-SNIPPET smd-alert
 export default Route.extend({
-  // Service
+  // Services
   dialogService: service('smd-dialog-service'),
+  // END-SNIPPET
   // Methods
   model: function() {
     return Ember.Object.create();
   },
+  // BEGIN-SNIPPET smd-alert-show
   // Actions
   actions: {
     showDefaultAlert: function() {
@@ -25,9 +28,13 @@ export default Route.extend({
     showNakedAlert: function() {
       this.get('dialogService').showAlert('nakedAlert');
     },
+    // END-SNIPPET
+
+    // BEGIN-SNIPPET smd-alert-hide
     confirm: function(alert) {
       window.alert('Alert confirmed!');
       this.get('dialogService').hideAlert(alert.elementId);
     },
+    // END-SNIPPET
   },
 });
