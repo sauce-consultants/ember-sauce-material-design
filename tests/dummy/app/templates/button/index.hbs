@@ -1,11 +1,8 @@
+{{#smd-page}}
 
-<div class="smd-page">
+  {{smd-page-header title="Default Button"}}
 
-  <header class="smd-page__header" id="top">
-    <h1 class="smd-page__title">Default Button</h1>
-  </header>
-
-  <section class="smd-page__body">
+  {{#smd-page-body}}
 
     <div class="sg-flex-row">
       {{smd-button text="Default" value=1 action="clickButton"}}
@@ -24,13 +21,11 @@
 
     {{code-snippet name="smd-button-action.js"}}
 
-  </section>
+  {{/smd-page-body}}
 
-  <header class="smd-page__header" id="attributes">
-    <h1 class="smd-page__title">Raised Button</h1>
-  </header>
+  {{smd-page-header title="Raised Button"}}
 
-  <section class="smd-page__body">
+  {{#smd-page-body}}
 
     <div class="sg-flex-row">
       {{smd-button text="Raised" isRaised=true}}
@@ -41,13 +36,11 @@
 
     {{code-snippet name="smd-button-raised.hbs"}}
 
-  </section>
+  {{/smd-page-body}}
 
-  <header class="smd-page__header" id="attributes">
-    <h1 class="smd-page__title">Fab Button</h1>
-  </header>
+  {{smd-page-header title="Fab Button"}}
 
-  <section class="smd-page__body">
+  {{#smd-page-body}}
 
     <div class="sg-flex-row">
       {{smd-button icon="add" isFab=true}}
@@ -58,14 +51,11 @@
 
     {{code-snippet name="smd-button-fab.hbs"}}
 
+  {{/smd-page-body}}
 
-  </section>
+  {{smd-page-header title="Mini Fab Button"}}
 
-  <header class="smd-page__header" id="attributes">
-    <h1 class="smd-page__title">Mini Fab Button</h1>
-  </header>
-
-  <section class="smd-page__body">
+  {{#smd-page-body}}
 
     <div class="sg-flex-row">
       {{smd-button icon="add" isMiniFab=true}}
@@ -76,13 +66,11 @@
 
     {{code-snippet name="smd-button-mini-fab.hbs"}}
 
-  </section>
+  {{/smd-page-body}}
 
-  <header class="smd-page__header" id="attributes">
-    <h1 class="smd-page__title">Icon Button</h1>
-  </header>
+  {{smd-page-header title="Icon Button"}}
 
-  <section class="smd-page__body">
+  {{#smd-page-body}}
 
     <div class="sg-flex-row">
       {{smd-button icon="alarm_add"}}
@@ -93,13 +81,11 @@
 
     {{code-snippet name="smd-button-icon.hbs"}}
 
-  </section>
+  {{/smd-page-body}}
 
-  <header class="smd-page__header" id="attributes">
-    <h1 class="smd-page__title">Attributes</h1>
-  </header>
+  {{smd-page-header title="Attributes"}}
 
-  <section class="smd-page__body">
+  {{#smd-page-body}}
 
     <table class="sg-table sg-table--attributes">
       <thead>
@@ -155,8 +141,10 @@
         </tr>
       </tbody>
     </table>
-  </section>
-  <footer class="smd-page__footer">
+  {{/smd-page-body}}
+
+  {{#smd-page-footer}}
     <p>View on <a href="https://github.com/sauce-consultants/ember-sauce-material-design">github</a></p>
-  </footer>
-</div>
+  {{/smd-page-footer}}
+
+{{/smd-page}}

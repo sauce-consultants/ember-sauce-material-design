@@ -2,6 +2,6 @@
   "name": "ember-sauce-material-design",
   "dependencies": {
     "material-design-lite": "^1.2.1",
-    "sauce-material-design": "#1.0.0rc2"
+    "sauce-material-design": "#1.0.0rc3"
   }
 }

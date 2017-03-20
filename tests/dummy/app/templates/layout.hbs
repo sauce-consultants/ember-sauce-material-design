@@ -1,6 +1,11 @@
-{{smd-header}}
+{{smd-header
+  scrolling=true
+  scrollContext='.smd-liquid--scroll'
+}}
+
 {{#smd-tabs theme='primary'}}
   {{smd-tab "App" "layout.index"}}
   {{smd-tab "Page" "layout.page"}}
 {{/smd-tabs}}
+
 {{liquid-outlet class="smd-liquid--scroll"}}

@@ -3,10 +3,11 @@
   backIcon="arrow_back"
   backAction="back"
   scrolling=true
+  scrollContext='.smd-liquid--scroll'
 }}
 {{#smd-tabs theme='primary'}}
   {{smd-tab "Alerts" "dialog.index"}}
   {{smd-tab "Modals" "dialog.modal"}}
 {{/smd-tabs}}
 
-{{liquid-outlet class="smd-liquid--grow"}}
+{{liquid-outlet class="smd-liquid--scroll"}}

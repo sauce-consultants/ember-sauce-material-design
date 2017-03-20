@@ -14,8 +14,6 @@ export default Route.extend({
       title: "App Layout",
       backIcon: "arrow_back",
       backAction: "back",
-      scrolling: true,
-      scrollContext: ".smd-liquid--scroll"
     };
     this.get("header").setup(hash);
   },

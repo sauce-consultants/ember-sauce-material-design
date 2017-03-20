@@ -1,10 +1,8 @@
-<div class="smd-page">
+{{#smd-page}}
 
-  <header class="smd-page__header">
-    <h1 class="smd-page__title">Scrollable List</h1>
-  </header>
+  {{smd-page-header title="Scrollable List"}}
 
-  <section class="smd-page__body">
+  {{#smd-page-body}}
 
     <p>Give a list a height and set scrollable to true to allow a list to be scrolled.</p>
 
@@ -22,6 +20,6 @@
 
     {{code-snippet name="smd-list-scrollable.hbs"}}
 
-  </section>
+  {{/smd-page-body}}
 
-</div>
+{{/smd-page}}

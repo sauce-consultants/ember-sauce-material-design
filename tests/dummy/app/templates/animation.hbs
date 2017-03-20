@@ -4,13 +4,11 @@
   backAction="back"
   scrolling=true
 }}
-<div class="smd-page">
+{{#smd-page}}
 
-  <header class="smd-page__header" id="top">
-    <h1 class="smd-page__title">Tab Transitions</h1>
-  </header>
+  {{smd-page-header title="Tab Transitions"}}
 
-  <section class="smd-page__body">
+  {{#smd-page-body}}
 
     <p>SMD contains a helper function to create ember liquid fire transitions for tabbed routes.</p>
 
@@ -28,6 +26,6 @@
 
     {{code-snippet name="smd-transitions-tab-manual.js"}}
 
-  </section>
+  {{/smd-page-body}}
 
-</div>
+{{/smd-page}}

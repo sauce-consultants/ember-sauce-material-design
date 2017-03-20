@@ -1,10 +1,8 @@
-<div class="smd-page">
+{{#smd-page}}
 
-  <header class="smd-page__header">
-    <h1 class="smd-page__title">Badges</h1>
-  </header>
+  {{smd-page-header title="Badges"}}
 
-  <section class="smd-page__body">
+  {{#smd-page-body}}
 
     <h2 class="smd-page__subtitle">Default Badge</h2>
 
@@ -30,13 +28,12 @@
 
     {{code-snippet name="smd-badge-overlap.hbs"}}
 
-  </section>
+  {{/smd-page-body}}
 
-  <header class="smd-page__header">
-    <h1 class="smd-page__title">Attributes</h1>
-  </header>
+  {{smd-page-header title="Attributes"}}
 
-  <section class="smd-page__body">
+  {{#smd-page-body}}
+  
     <table class="sg-table sg-table--attributes">
       <thead>
         <tr>
@@ -74,9 +71,10 @@
       </tbody>
     </table>
 
-  </section>
+  {{/smd-page-body}}
 
-  <footer class="smd-page__footer">
+  {{#smd-page-footer}}
     <p>View on <a href="https://github.com/sauce-consultants/ember-sauce-material-design">github</a></p>
-  </footer>
-</div>
+  {{/smd-page-footer}}
+
+{{/smd-page}}

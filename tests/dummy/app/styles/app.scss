@@ -2,13 +2,6 @@
 @import "//fonts.googleapis.com/icon?family=Material+Icons";
 @import "sauce-material-design.scss";
 
-.smd-liquid--scroll {
-  flex    : 1;
-  overflow: auto;
-
-  > .liquid-child {}
-}
-
 .sg-flex-row {
   display        : flex;
   flex-direction : row;

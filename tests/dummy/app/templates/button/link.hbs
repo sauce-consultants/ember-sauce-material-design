@@ -1,11 +1,8 @@
+{{#smd-page}}
 
-<div class="smd-page">
+  {{smd-page-header title="Button Links"}}
 
-  <header class="smd-page__header" id="top">
-    <h1 class="smd-page__title">Button Links</h1>
-  </header>
-
-  <section class="smd-page__body">
+  {{#smd-page-body}}
 
     <p>Ths smd-button-link component is an extension of the link-to helper, with some additional material attributes to style your links as buttons.</p>
 
@@ -18,13 +15,11 @@
 
     {{code-snippet name="smd-button-link-raised.hbs"}}
 
-  </section>
+  {{/smd-page-body}}
 
-  <header class="smd-page__header" id="attributes">
-    <h1 class="smd-page__title">Raised Button</h1>
-  </header>
+  {{smd-page-header title="Raised Button"}}
 
-  <section class="smd-page__body">
+  {{#smd-page-body}}
 
     <div class="sg-flex-row">
       {{smd-button-link "Raised" "home" isRaised=true}}
@@ -35,13 +30,11 @@
 
     {{code-snippet name="smd-button-link-raised.hbs"}}
 
-  </section>
+  {{/smd-page-body}}
 
-  <header class="smd-page__header" id="attributes">
-    <h1 class="smd-page__title">Fab Button</h1>
-  </header>
+  {{smd-page-header title="Fab Button"}}
 
-  <section class="smd-page__body">
+  {{#smd-page-body}}
 
     <div class="sg-flex-row">
       {{smd-button-link "add" "home" isIcon=true isFab=true}}
@@ -52,14 +45,11 @@
 
     {{code-snippet name="smd-button-link-fab.hbs"}}
 
+  {{/smd-page-body}}
 
-  </section>
+  {{smd-page-header title="Mini Fab Button"}}
 
-  <header class="smd-page__header" id="attributes">
-    <h1 class="smd-page__title">Mini Fab Button</h1>
-  </header>
-
-  <section class="smd-page__body">
+  {{#smd-page-body}}
 
     <div class="sg-flex-row">
       {{smd-button-link "add" "home" isIcon=true isMiniFab=true}}
@@ -70,13 +60,11 @@
 
     {{code-snippet name="smd-button-link-mini-fab.hbs"}}
 
-  </section>
+  {{/smd-page-body}}
 
-  <header class="smd-page__header" id="attributes">
-    <h1 class="smd-page__title">Icon Button</h1>
-  </header>
+  {{smd-page-header title="Icon Button"}}
 
-  <section class="smd-page__body">
+  {{#smd-page-body}}
 
     <div class="sg-flex-row">
       {{smd-button-link "alarm_add" "home" isIcon=true}}
@@ -87,13 +75,11 @@
 
     {{code-snippet name="smd-button-link-icon.hbs"}}
 
-  </section>
+  {{/smd-page-body}}
 
-  <header class="smd-page__header" id="attributes">
-    <h1 class="smd-page__title">Attributes</h1>
-  </header>
+  {{smd-page-header title="Attributes"}}
 
-  <section class="smd-page__body">
+  {{#smd-page-body}}
 
     <p>If the component is using inline syntax then the first parameter must be the the textLabel and second the route name. Any unamed arguements after can be route params. If in block syntax then the first argument is the route name.</p>
 
@@ -151,8 +137,10 @@
         </tr>
       </tbody>
     </table>
-  </section>
-  <footer class="smd-page__footer">
+  {{/smd-page-body}}
+
+  {{#smd-page-footer}}
     <p>View on <a href="https://github.com/sauce-consultants/ember-sauce-material-design">github</a></p>
-  </footer>
-</div>
+  {{/smd-page-footer}}
+
+{{/smd-page}}
