@@ -2,7 +2,6 @@ import Ember from 'ember';
 
 const {
   copy,
-  keys,
   merge,
   Service,
 } = Ember;
@@ -34,7 +33,7 @@ export default Service.extend({
   // Methods
   clear: function() {
     let defaults = copy(this.get('_defaults'));
-    keys(defaults).forEach(
+    Object.keys(defaults).forEach(
       (key) => {
         this.set(key, defaults[key]);
       }
@@ -43,7 +42,7 @@ export default Service.extend({
   setup: function(hash) {
     let defaults = copy(this.get('_defaults'));
     merge(defaults, hash);
-    keys(defaults).forEach(
+    Object.keys(defaults).forEach(
       (key) => {
         this.set(key, defaults[key]);
       }
