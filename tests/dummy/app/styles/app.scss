@@ -1,59 +1,12 @@
 @import "//fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en";
 @import "//fonts.googleapis.com/icon?family=Material+Icons";
 @import "sauce-material-design.scss";
-@import "component.layout";
-@import "component.navbar";
-@import "component.page";
-@import "component.tabs";
-@import "component.list";
-@import "component.modal";
 
-.sg-flex-row {
-  display        : flex;
-  flex-direction : row;
-  align-items    : flex-start;
-  justify-content: space-around;
-}
+.smd-liquid--scroll {
+  flex    : 1;
+  overflow: auto;
 
-.mdl-layout__header {
-  background: unquote("rgb(#{$color-primary-dark})");
-  @media screen and (max-width: 1024px) {
-    display: flex;
-
-    .mdl-navigation {
-      display: none;
-    }
-  }
-}
-@media screen and (max-width: 1024px) {
-  .mdl-layout__drawer-button {
-    color: white;
-  }
-}
-
-.smd-header {
-  &--transition {
-    position: relative;
-    top     : auto;
-    left    : auto;
-    right   : auto;
-  }
-
-  &--minimized.smd-header--with-fab &__toolbar--bottom {
-    bottom: 1.75rem;
-  }
-
-  &--minimized.smd-header--with-mini-fab &__toolbar--bottom {
-    bottom: 1.25;
-  }
-
-  &--transition.smd-header--with-mini-fab .smd-header__toolbar--bottom {
-    bottom: 1.25;
-  }
-
-  &__title {
-    @include trans;
-  }
+  > .liquid-child {}
 }
 
 .sg-flex-row {

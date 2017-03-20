@@ -244,11 +244,12 @@ export default Component.extend({
     }
   },
   getScrollElement: function() {
-    let $page = this.$().parent().find(this.get('scrollContext'));
+    let selector = this.get('_scrollContext'),
+      $page = this.$().parent().find(selector);
     if ($page.length) {
       return $page;
     }
-    Ember.Logger.warn('Can not find a sibling element .smd-page for scrollable smd-header');
+    Ember.Logger.warn('Can not find a sibling element ' + selector + ' for scrollable smd-header');
     return Ember.$('body');
   }
 });

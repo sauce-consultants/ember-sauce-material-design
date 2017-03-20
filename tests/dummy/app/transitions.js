@@ -18,6 +18,7 @@ export default function() {
   ]);
 
   // Tab Transitions
+  tabTransitions(this, ['layout.index', 'layout.page']);
   tabTransitions(this, ['tabs.index', 'tabs.two', 'tabs.three', 'tabs.four']);
   tabTransitions(this, ['list.index', 'list.item', 'list.subheading', 'list.empty', 'list.scrollable', 'list.example']);
   tabTransitions(this, ['header.index', 'header.service']);

@@ -1,17 +1,6 @@
-{{smd-header
-  title="App Layout Components"
-  backIcon='arrow_back'
-  backAction="back"
-  scrolling=true
-  toolbarIconOne='code'
-  toolbarActionOne='jumpToTop'
-  toolbarIconTwo='bookmark'
-  toolbarActionTwo='jumpToAttributes'
-  toolbarIconThree='touch_app'
-  toolbarActionThree='jumpToActions'
-}}
+{{smd-header}}
 {{#smd-tabs theme='primary'}}
   {{smd-tab "App" "layout.index"}}
   {{smd-tab "Page" "layout.page"}}
 {{/smd-tabs}}
-{{liquid-outlet class="smd-liquid--grow"}}
+{{liquid-outlet class="smd-liquid--scroll"}}
