@@ -4,6 +4,7 @@ import {
 
 export default function() {
 
+  // Top Level Transitions
   tabTransitions(this, [
     'home',
     'layout',
@@ -16,7 +17,17 @@ export default function() {
     'animation',
   ]);
 
+  // Tab Transitions
   tabTransitions(this, ['tabs.index', 'tabs.two', 'tabs.three', 'tabs.four']);
   tabTransitions(this, ['list.index', 'list.item', 'list.subheading', 'list.empty', 'list.scrollable', 'list.example']);
   tabTransitions(this, ['header.index', 'header.service']);
+  tabTransitions(this, ['dialog.index', 'dialog.modal']);
+
+  // Modal Transitions
+  this.transition(
+    this.fromRoute('dialog.index'),
+    this.toRoute('dialog.open'),
+    this.use('fade'),
+    this.reverse('fade')
+  );
 }

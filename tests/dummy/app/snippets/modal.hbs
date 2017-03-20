@@ -1,0 +1,65 @@
+// BEGIN-SNIPPET smd-modal
+{{#smd-modal
+  title="Modal Title"
+  actionText="save"
+  headingAction="save"
+  closeIcon="close"
+  closeAction="dismiss"
+}}
+  <!-- content-->
+{{/smd-modal}}
+// END-SNIPPET
+
+// BEGIN-SNIPPET smd-modal-footer
+{{#smd-modal
+  title="Modal Title"
+  primaryText="Agree"
+  primaryAction="save"
+  secondaryText="Disagree"
+  secondaryAction="dismiss"
+}}
+  <!-- content -->
+{{/smd-modal}}
+// END-SNIPPET
+
+// BEGIN-SNIPPET smd-modal-form
+{{#smd-modal
+  title="Modal Form"
+  primaryText="Save"
+  primaryAction="save"
+  closeIcon="close"
+  closeAction="dismiss"
+}}
+  {{#smd-form}}
+    {{smd-form-control label="Title" name="title" value=model.title model=model}}
+    {{smd-form-control label="Slug" name="slug" value=model.slug model=model}}
+    {{smd-form-control label="Age" name="age" value=model.age model=model type="number"}}
+    {{smd-form-control label="Job Title" name="job" value=model.age model=model}}
+    {{smd-form-control label="Sex" name="sex" value=model.sex model=model}}
+    {{smd-form-control label="City of Birth" name="birth_city" value=model.birth_city model=model}}
+    {{smd-form-control label="Summary" name="summary" value=model.summary model=model type="textarea"}}
+  {{/smd-form}}
+{{/smd-modal}}
+// END-SNIPPET
+
+
+// BEGIN-SNIPPET smd-modal-no-header
+{{#smd-modal outsideAction="dismiss"}}
+  <!-- content -->
+{{/smd-modal}}
+// END-SNIPPET
+
+// BEGIN-SNIPPET smd-modal-route
+<!-- templates/cars.hbs -->
+<div class="smd-page">
+  <header class="smd-page__header">
+    <h1 class="smd-page__title">Cars</h1>
+  </header>
+  <section class="smd-page__body">
+    {{smd-button-link 'New Car' 'cars.new' }}
+    <!-- List of cars... -->
+  </section>
+</div>
+
+{{outlet}}
+// END-SNIPPET

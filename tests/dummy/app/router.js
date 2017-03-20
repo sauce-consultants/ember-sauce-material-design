@@ -14,7 +14,9 @@ Router.map(function() {
   this.route('header', function() {
     this.route('service');
   });
-  this.route('button');
+  this.route('button', function() {
+    this.route('link');
+  });
   this.route('icon');
   this.route('dropdown');
   this.route('tabs', function() {
@@ -28,6 +30,14 @@ Router.map(function() {
     this.route('subheading');
     this.route('scrollable');
     this.route('example');
+  });
+  this.route('dialog', function() {
+    this.route('modal', function() {
+      this.route('default');
+      this.route('with-footer');
+      this.route('with-form');
+      this.route('no-header');
+    });
   });
   this.route('animation');
 

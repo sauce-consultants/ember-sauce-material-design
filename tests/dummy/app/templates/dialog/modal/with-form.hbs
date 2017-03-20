@@ -1,0 +1,17 @@
+{{#smd-modal
+  title="Modal Form"
+  primaryText="Save"
+  primaryAction="save"
+  closeIcon="close"
+  closeAction="dismiss"
+}}
+  {{#smd-form}}
+    {{smd-form-control label="Title" name="title" value=model.title model=model}}
+    {{smd-form-control label="Slug" name="slug" value=model.slug model=model}}
+    {{smd-form-control label="Age" name="age" value=model.age model=model type="number"}}
+    {{smd-form-control label="Job Title" name="job" value=model.age model=model}}
+    {{smd-form-control label="Sex" name="sex" value=model.sex model=model}}
+    {{smd-form-control label="City of Birth" name="birth_city" value=model.birth_city model=model}}
+    {{smd-form-control label="Summary" name="summary" value=model.summary model=model type="textarea"}}
+  {{/smd-form}}
+{{/smd-modal}}

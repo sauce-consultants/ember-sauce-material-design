@@ -1,0 +1,18 @@
+<div class="smd-alert__container">
+{{#if hasTitle}}
+  <h1 class="smd-alert__title">{{title}}</h1>
+{{/if}}
+  <div class="smd-alert__body">
+    {{yield}}
+  </div>
+{{#if hasFooter}}
+  <div class="smd-alert__footer">
+    {{#if hasDismissive}}
+      {{smd-button text=dismissiveText isPrimary=true action="dismissiveAction" class="smd-alert__dismissive"}}
+    {{/if}}
+    {{#if hasAffirmative}}
+      {{smd-button text=affirmativeText isPrimary=true action="affirmativeAction" class="smd-alert__affirmative"}}
+    {{/if}}
+  </div>
+{{/if}}
+</div>

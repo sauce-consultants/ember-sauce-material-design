@@ -1,0 +1,24 @@
+// BEGIN-SNIPPET smd-button-link
+{{smd-button-link "Default" "home"}}
+{{#smd-button-link "home" isPrimary=true}}Primary{{/smd-button-link}}
+// END-SNIPPET
+
+// BEGIN-SNIPPET smd-button-link-raised
+{{smd-button-link "Raised" "home" isRaised=true}}
+{{#smd-button-link "home" isRaised=true isPrimary=true}}Primary{{/smd-button-link}}
+// END-SNIPPET
+
+// BEGIN-SNIPPET smd-button-link-fab
+{{smd-button-link "add" "home" isIcon=true isFab=true}}
+{{#smd-button-link "home" isIcon=true isFab=true isPrimary=true}}add{{/smd-button-link}}
+// END-SNIPPET
+
+// BEGIN-SNIPPET smd-button-link-mini-fab
+{{smd-button-link "add" "home" isIcon=true isMiniFab=true}}
+{{#smd-button-link "home" isIcon=true isMiniFab=true isPrimary=true}}add{{/smd-button-link}}
+// END-SNIPPET
+
+// BEGIN-SNIPPET smd-button-link-icon
+{{smd-button-link "alarm_add" "home" isIcon=true}}
+{{#smd-button-link "home" isIcon=true isPrimary=true}}accessibility{{/smd-button-link}}
+// END-SNIPPET

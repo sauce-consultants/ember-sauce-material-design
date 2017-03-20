@@ -1,0 +1,28 @@
+<div class="smd-modal__container">
+{{#if hasHeader}}
+  <div class="smd-modal__header">
+  {{#if hasClose}}
+    {{smd-button icon=closeIcon action="closeAction" class="smd-modal__close"}}
+  {{/if}}
+  {{#if hasTitle}}
+    <h1 class="smd-modal__title">{{title}}</h1>
+  {{/if}}
+  {{#if hasAction}}
+    {{smd-button text=actionText action="headingAction" class="smd-modal__action"}}
+  {{/if}}
+  </div>
+{{/if}}
+  <div class="smd-modal__body">
+    {{yield}}
+  </div>
+{{#if hasFooter}}
+  <div class="smd-modal__footer">
+    {{#if hasSecondary}}
+      {{smd-button text=secondaryText action="secondaryAction" class="smd-modal__secondary"}}
+    {{/if}}
+    {{#if hasPrimary}}
+      {{smd-button text=primaryText action="primaryAction" class="smd-modal__primary"}}
+    {{/if}}
+  </div>
+{{/if}}
+</div>
