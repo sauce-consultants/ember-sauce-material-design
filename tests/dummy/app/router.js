@@ -32,10 +32,12 @@ Router.map(function() {
     this.route('example');
   });
   this.route('dialog', function() {
-    this.route('modal');
-    this.route('modal-with-footer');
-    this.route('modal-with-form');
-    this.route('modal-no-header');
+    this.route('modal', function() {
+      this.route('default');
+      this.route('with-footer');
+      this.route('with-form');
+      this.route('no-header');
+    });
   });
   this.route('animation');
 

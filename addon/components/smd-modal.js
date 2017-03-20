@@ -12,6 +12,7 @@ const {
 export default Component.extend({
   // Attributes
   layout,
+  tagName: 'dialog',
   classNames: ['smd-modal'],
   classNameBindings: ['hasClose:smd-modal--with-close'],
   action: null,
@@ -70,5 +71,16 @@ export default Component.extend({
         this.sendAction('action', 'outside', this);
       }
     },
+  },
+  didInsertElement: function() {
+    let modal = this.element;
+    modal.showModal();
+  },
+  keyDown: function(e) {
+    e.preventDefault();
+    // esc
+    if (e.keyCode === 27) {
+      this.send('closeAction');
+    }
   },
 });

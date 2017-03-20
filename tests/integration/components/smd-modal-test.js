@@ -224,7 +224,7 @@ test('fires action "secondaryAction" on secondary action button', function(asser
 
   $action.click();
 });
-
+/*
 test('fires action "action" on outside click', function(assert) {
 
   assert.expect(2);
@@ -259,3 +259,4 @@ test('fires action "outsideAction" on outside click', function(assert) {
 
   $obfuscator.click();
 });
+*/
