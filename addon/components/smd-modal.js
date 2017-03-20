@@ -20,8 +20,11 @@ export default Component.extend({
   closeIcon: null,
   primaryText: null,
   secondaryText: null,
+  closeAction: null,
+  headingAction: null,
   primaryAction: null,
   secondaryAction: null,
+  outsideAction: null,
   // Computed
   hasHeader: or('hasTitle', 'hasClose', 'hasAction'),
   hasClose: bool('closeIcon'),
@@ -54,13 +57,17 @@ export default Component.extend({
       }
     },
     secondaryAction: function() {
-      Ember.Logger.log(this.get('secondaryAction'));
       if (this.get('secondaryAction')) {
-        Ember.Logger.log('send secondaryAction ' + this.get('secondaryAction'));
         this.sendAction('secondaryAction', this);
       } else {
-        Ember.Logger.log('send action');
         this.sendAction('action', 'secondary', this);
+      }
+    },
+    outsideAction: function() {
+      if (this.get('outsideAction')) {
+        this.sendAction('outsideAction', this);
+      } else {
+        this.sendAction('action', 'outside', this);
       }
     },
   },

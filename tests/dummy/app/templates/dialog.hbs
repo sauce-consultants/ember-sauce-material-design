@@ -32,6 +32,128 @@
 
     {{code-snippet name="smd-modal-form.hbs"}}
 
+    <p>Here is an example with no header.</p>
+
+    <p>{{link-to 'Open modal with no header' 'dialog.modal-no-header'}}</p>
+
+    {{code-snippet name="smd-modal-no-header.hbs"}}
+
+  </section>
+
+  <header class="smd-page__header">
+    <h1 class="smd-page__title">Modal Outlets</h1>
+  </header>
+
+  <section class="smd-page__body">
+
+    <p>Modal routes should be placed as child routes of the route they will be linked from.</p>
+
+    <p>In this example we use a modal to create a new car. The modal route is loaded in the liquid-outlet of /cars. The <em>smd-liquid--fixed</em> class ensurs the modal is loaded over the top of the parent routes content.</p>
+
+    {{code-snippet name="smd-modal-route.hbs"}}
+
+    <h2 class="smd-page__subtitle">Opening and closing modals</h2>
+
+    <p>To open and close modal routes simply transition to and from the route in your ember actions.</p>
+
+  </section>
+
+  <header class="smd-page__header" id="attributes">
+    <h1 class="smd-page__title">Attributes</h1>
+  </header>
+
+  <section class="smd-page__body">
+    <table class="sg-table sg-table--attributes">
+      <thead>
+        <tr>
+          <th>Attribute</th>
+          <th>Description</th>
+          <th>Type</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>title</td>
+          <td>The main title text for the item</td>
+          <td><em>string</em></td>
+          <td>null</td>
+        </tr>
+        <tr>
+          <td>closeIcon</td>
+          <td>The material icon name for the close icon, see <a href="https://material.io/icons">Material Docs</a></td>
+          <td><em>string</em></td>
+          <td>null</td>
+        </tr>
+        <tr>
+          <td>actionText</td>
+          <td>Text for the header action</td>
+          <td><em>string</em></td>
+          <td>null</td>
+        </tr>
+        <tr>
+          <td>primaryText</td>
+          <td>Text for the primary footer action</td>
+          <td><em>string</em></td>
+          <td>null</td>
+        </tr>
+        <tr>
+          <td>secondaryText</td>
+          <td>Text for the secondary footer action</td>
+          <td><em>string</em></td>
+          <td>null</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+
+  <header class="smd-page__header" id="actions">
+    <h1 class="smd-page__title">Actions</h1>
+  </header>
+
+  <section class="smd-page__body">
+    <table class="sg-table sg-table--actions">
+      <thead>
+        <tr>
+          <th>Action</th>
+          <th>Description</th>
+          <th>Params</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>action</td>
+          <td>Default action called when an event is fired and a event specific action has not been defined. The type param will describe what event was fired e.g. "close" if the close button was clicked. Possible types are: close, headeing, primary, secondary & outside.</td>
+          <td><em>type</em> (string), <em>modal</em> (object)</td>
+        </tr>
+        <tr>
+          <td>closeAction</td>
+          <td>If specified this will be called on the heating close icon click. Else, action is called.</td>
+          <td><em>modal</em> (object)</td>
+        </tr>
+        <tr>
+          <td>headingAction</td>
+          <td>If specified this will be called on the heading action click. Else, action is called.</td>
+          <td><em>modal</em> (object)</td>
+        </tr>
+        <tr>
+          <td>primaryAction</td>
+          <td>If specified this will be called on the primary action in the footer. Else, action is called.</td>
+          <td><em>modal</em> (object)</td>
+        </tr>
+        <tr>
+          <td>secondaryAction</td>
+          <td>If specified this will be called on the secondary action in the footer. Else, action is called.</td>
+          <td><em>modal</em> (object)</td>
+        </tr>
+        <tr>
+          <td>outsideAction</td>
+          <td>If specified this will be called on clicking outside of the modal.</td>
+          <td><em>modal</em> (object)</td>
+        </tr>
+      </tbody>
+    </table>
   </section>
 
   <footer class="smd-page__footer">

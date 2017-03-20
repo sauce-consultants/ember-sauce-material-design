@@ -41,3 +41,25 @@
   {{/smd-form}}
 {{/smd-modal}}
 // END-SNIPPET
+
+
+// BEGIN-SNIPPET smd-modal-no-header
+{{#smd-modal outsideAction="dismiss"}}
+  <!-- content -->
+{{/smd-modal}}
+// END-SNIPPET
+
+// BEGIN-SNIPPET smd-modal-route
+<!-- templates/cars.hbs -->
+<div class="smd-page">
+  <header class="smd-page__header">
+    <h1 class="smd-page__title">Cars</h1>
+  </header>
+  <section class="smd-page__body">
+    {{smd-button-link 'New Car' 'cars.new' }}
+    <!-- List of cars... -->
+  </section>
+</div>
+
+{{liquid-outlet class="smd-liquid--fixed"}}
+// END-SNIPPET
