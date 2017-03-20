@@ -8,6 +8,7 @@
   flex-direction : column;
   justify-content: center;
   align-items    : center;
+  pointer-events : auto;
 
   &__container {
     @include trans;

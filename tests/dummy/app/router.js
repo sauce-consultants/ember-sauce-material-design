@@ -34,6 +34,7 @@ Router.map(function() {
   this.route('dialog', function() {
     this.route('modal');
     this.route('modal-with-footer');
+    this.route('modal-with-form');
   });
   this.route('animation');
 

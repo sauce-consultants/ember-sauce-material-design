@@ -5,12 +5,15 @@ const {
 } = Ember;
 
 export default Route.extend({
+  model: function() {
+    return Ember.Object.create();
+  },
   actions: {
-    save: function(button) {
+    save: function( /*button*/ ) {
       Ember.Logger.log('save');
       window.alert('Save Dialog');
     },
-    dismiss: function(button) {
+    dismiss: function( /*button*/ ) {
       Ember.Logger.log('dismiss');
       this.transitionTo('dialog.index');
     },
