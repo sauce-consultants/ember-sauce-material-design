@@ -28,21 +28,6 @@
   }
 }
 
-.smd-liquid--fixed {
-  display       : flex;
-  flex-direction: column;
-  pointer-events: none;
-  position      : static;
-  height        : 100%;
-  width         : 100%;
-  top           : 0;
-  left          : 0;
-
-  > .liquid-child {
-    flex: 1;
-  }
-}
-
 .smd-liquid--grow {
   overflow: auto;
 }

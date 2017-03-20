@@ -1,0 +1,42 @@
+<div class="smd-page">
+
+  <header class="smd-page__header">
+    <h1 class="smd-page__title">Dialogs</h1>
+  </header>
+
+  <section class="smd-page__body">
+
+    <p>Here is an example of a alert with dismiss and action buttons in the header.</p>
+
+    <p>{{smd-button text='Open alert' action="showDefaultAlert"}}</p>
+
+    {{code-snippet name="smd-alert.hbs"}}
+
+    <p>Here is an example of a alert with dismiss and action buttons in the header.</p>
+
+    <p>{{smd-button text='Open alert' action="showTitleAlert"}}</p>
+
+    {{code-snippet name="smd-alert.hbs"}}
+
+    <p>Here is an example of a alert with dismiss and action buttons in the header.</p>
+
+    <p>{{smd-button text='Open alert' action="showNakedAlert"}}</p>
+
+    {{code-snippet name="smd-alert.hbs"}}
+
+  </section>
+
+</div>
+
+{{#smd-alert id="alert" affirmativeText="Delete" dismissiveText="Cancel"}}
+  <p>Delete thing?</p>
+{{/smd-alert}}
+
+{{#smd-alert id="titleAlert" title="Use Googles location service?" affirmativeText="Agree" dismissiveText="Disagree"}}
+<p>Let Google help apps determin location. This means sending anonomus location data to Google, even when no apps are running.</p>
+{{/smd-alert}}
+
+{{#smd-alert id="nakedAlert"}}
+<p>I am here to alert you.</p>
+<p>Are you alerted?</p>
+{{/smd-alert}}

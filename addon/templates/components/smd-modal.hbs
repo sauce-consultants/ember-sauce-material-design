@@ -17,11 +17,11 @@
   </div>
 {{#if hasFooter}}
   <div class="smd-modal__footer">
-    {{#if hasPrimary}}
-      {{smd-button text=primaryText action="primaryAction" class="smd-modal__primary"}}
-    {{/if}}
     {{#if hasSecondary}}
       {{smd-button text=secondaryText action="secondaryAction" class="smd-modal__secondary"}}
+    {{/if}}
+    {{#if hasPrimary}}
+      {{smd-button text=primaryText action="primaryAction" class="smd-modal__primary"}}
     {{/if}}
   </div>
 {{/if}}
