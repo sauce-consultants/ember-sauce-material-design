@@ -16,8 +16,9 @@ Router.map(function() {
   });
   this.route('button', function() {
     this.route('link');
+    this.route('icon');
+    this.route('badge');
   });
-  this.route('icon');
   this.route('dropdown');
   this.route('tabs', function() {
     this.route('two');
