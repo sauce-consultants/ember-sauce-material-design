@@ -1,0 +1,99 @@
+{{#smd-page}}
+
+  {{smd-page-header title="Page Components"}}
+
+  {{#smd-page-body}}
+
+    <p>The following page components can be used to layout basic page data.</p>
+
+    {{code-snippet name="smd-page.hbs"}}
+
+  {{/smd-page-body}}
+
+  {{smd-page-header title="Styles"}}
+
+  {{#smd-page-body}}
+    <table class="sg-table sg-table--classes">
+      <thead>
+        <tr>
+          <th>Class</th>
+          <th>Effect</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>.smd-page</td>
+          <td>A general wrapper for page content.</td>
+        </tr>
+        <tr>
+          <td>.smd-page__header</td>
+          <td>Header section for page content.</td>
+        </tr>
+        <tr>
+          <td>.smd-page__body</td>
+          <td>Body section form page content.</td>
+        </tr>
+        <tr>
+          <td>.smd-page__footer</td>
+          <td>Footer section for page content.</td>
+        </tr>
+        <tr>
+          <td>.smd-page__title</td>
+          <td>Styled title heading.</td>
+        </tr>
+        <tr>
+          <td>.smd-page__subtitle</td>
+          <td>Styled subtitle heading.</td>
+        </tr>
+      </tbody>
+    </table>
+  {{/smd-page-body}}
+
+
+  {{smd-page-header title="Attributes"}}
+
+  {{#smd-page-body}}
+
+    <p>These components are mainly used to generate consistent markup and allow you to yield your custom html within. They have a few attributes you can use.</p>
+
+    <table class="sg-table sg-table--attributes">
+      <thead>
+        <tr>
+          <th>Attribute</th>
+          <th>Description</th>
+          <th>Type</th>
+          <th>Default</th>
+        </tr>
+          <tr>
+            <th colspan="4">Page Header</th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>title</td>
+          <td>String for the headers title</td>
+          <td><em>string</em></td>
+          <td>null</td>
+        </tr>
+      </tbody>
+      <thead>
+        <tr>
+          <th colspan="4">Page Footer</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>text</td>
+          <td>String for the footer text</td>
+          <td><em>string</em></td>
+          <td>null</td>
+        </tr>
+      </tbody>
+    </table>
+  {{/smd-page-body}}
+
+  {{#smd-page-footer}}
+    <p>View on <a href="https://github.com/sauce-consultants/ember-sauce-material-design">github</a></p>
+  {{/smd-page-footer}}
+
+{{/smd-page}}

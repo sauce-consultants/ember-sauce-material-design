@@ -10,7 +10,9 @@ Router.map(function() {
   this.route('home', {
     path: '/'
   });
-  this.route('layout');
+  this.route('layout', function() {
+    this.route('page');
+  });
   this.route('header', function() {
     this.route('service');
   });
