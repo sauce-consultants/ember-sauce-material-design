@@ -1,9 +1,9 @@
-<div class="mdl-layout__obfuscator is-visible" {{action "outsideAction"}}></div>
+<div class="smd-modal__obfuscator mdl-layout__obfuscator is-visible" {{action "outsideAction"}}></div>
 <div class="smd-modal__container">
 {{#if hasHeader}}
   <div class="smd-modal__header">
   {{#if hasClose}}
-    {{smd-button icon="close" action="closeAction" class="smd-modal__close"}}
+    {{smd-button icon=closeIcon action="closeAction" class="smd-modal__close"}}
   {{/if}}
   {{#if hasTitle}}
     <h1 class="smd-modal__title">{{title}}</h1>
@@ -19,10 +19,10 @@
 {{#if hasFooter}}
   <div class="smd-modal__footer">
     {{#if hasPrimary}}
-      {{smd-button text=primaryText action="primaryAction"}}
+      {{smd-button text=primaryText action="primaryAction" class="smd-modal__primary"}}
     {{/if}}
     {{#if hasSecondary}}
-      {{smd-button text=secondaryText action="secondaryAction"}}
+      {{smd-button text=secondaryText action="secondaryAction" class="smd-modal__secondary"}}
     {{/if}}
   </div>
 {{/if}}
