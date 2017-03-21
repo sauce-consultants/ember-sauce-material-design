@@ -43,6 +43,7 @@ Router.map(function() {
     });
   });
   this.route('animation');
+  this.route('data-list');
 
   // Old Routes (Days numbered)
   this.route('item');

@@ -1,0 +1,35 @@
+{{smd-header
+  title="Data List"
+  backIcon='arrow_back'
+  backAction='back'
+  scrolling=true
+  scrollContext='.smd-liquid--scroll'
+}}
+
+{{#smd-page}}
+
+  {{smd-page-header title="Default Data List"}}
+
+  {{#smd-page-body}}
+
+    <p>Data lists are used to present read only data to the user.</p>
+
+    {{code-snippet name="smd-data-list.hbs"}}
+
+    {{#smd-data-list}}
+      {{smd-data-item label="Birth name" value=model.name icon=model.avatar }}
+      {{smd-data-item label="Also known as" value=model.alias}}
+      {{smd-data-item label="Born" value=model.dob}}
+      {{smd-data-item label="Birthplace" value=model.birthplace}}
+      {{smd-data-item label="Genres" value=model.genres isMultiLine=true}}
+      {{smd-data-item label="Occupation(s)" value=model.occupation isMultiLine=true}}
+      {{smd-data-item label="Instruments" value=model.instruments isMultiLine=true}}
+      {{smd-data-item label="Years active" value=model.yearsActive}}
+      {{smd-data-item label="Labels" value=model.labels isSmall=true}}
+      {{smd-data-item label="Associated acts" value=model.associatedActs isSmall=true isMultiLine=true}}
+      {{smd-data-item label="Website" url=model.website}}
+    {{/smd-data-list}}
+
+  {{/smd-page-body}}
+
+{{/smd-page}}
