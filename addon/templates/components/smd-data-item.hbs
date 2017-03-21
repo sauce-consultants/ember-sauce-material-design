@@ -1,0 +1,16 @@
+{{#if hasIcon}}
+  <img src="{{icon}}" alt="{{value}}" class="smd-data-list__icon"/>
+{{/if}}
+{{#if hasLabel}}
+  <div class="smd-data-list__label">{{label}}</div>
+{{/if}}
+{{#if hasValue}}
+  <div class="{{valueClasses}}">{{value}}</div>
+{{/if}}
+{{#if hasUrl}}
+  <div class="{{valueClasses}}">
+    <a href="{{url}}" class="smd-data-list__url" targe="_blank">{{niceUrl}}</a>
+  </div>
+{{/if}}
+
+{{yield}}

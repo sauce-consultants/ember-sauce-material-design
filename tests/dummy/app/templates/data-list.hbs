@@ -1,0 +1,91 @@
+{{smd-header
+  title="Data List"
+  backIcon='arrow_back'
+  backAction='back'
+  scrolling=true
+  scrollContext='.smd-liquid--scroll'
+}}
+
+{{#smd-page}}
+
+  {{smd-page-header title="Default Data List"}}
+
+  {{#smd-page-body}}
+
+    <p>Data lists are used to present read only data to the user.</p>
+
+    {{code-snippet name="smd-data-list.hbs"}}
+
+    {{#smd-data-list}}
+      {{smd-data-item label="Birth name" value=model.name icon=model.avatar }}
+      {{smd-data-item label="Also known as" value=model.alias}}
+      {{smd-data-item label="Born" value=model.dob}}
+      {{smd-data-item label="Birthplace" value=model.birthplace}}
+      {{smd-data-item label="Genres" value=model.genres isMultiLine=true}}
+      {{smd-data-item label="Occupation(s)" value=model.occupation isMultiLine=true}}
+      {{smd-data-item label="Instruments" value=model.instruments isMultiLine=true}}
+      {{smd-data-item label="Years active" value=model.yearsActive}}
+      {{smd-data-item label="Labels" value=model.labels isSmall=true}}
+      {{smd-data-item label="Associated acts" value=model.associatedActs isSmall=true isMultiLine=true}}
+      {{smd-data-item label="Website" url=model.website}}
+    {{/smd-data-list}}
+
+  {{/smd-page-body}}
+
+  {{smd-page-header title="Attributes"}}
+
+  {{#smd-page-body}}
+
+    <p>The following attributes are available for the <em>smd-data-item</em> component.</p>
+
+    <table class="sg-table sg-table--attributes">
+      <thead>
+        <tr>
+          <th>Attribute</th>
+          <th>Description</th>
+          <th>Type</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>label</td>
+          <td>A label string</td>
+          <td><em>string</em></td>
+          <td>null</td>
+        </tr>
+        <tr>
+          <td>value</td>
+          <td>String value to display</td>
+          <td><em>string</em></td>
+          <td>null</td>
+        </tr>
+        <tr>
+          <td>url</td>
+          <td>Set this rather than the value if you need to present a clickable url</td>
+          <td><em>string</em></td>
+          <td>null</td>
+        </tr>
+        <tr>
+          <td>icon</td>
+          <td>Url to a icon or avatar image</td>
+          <td><em>string</em></td>
+          <td>null</td>
+        </tr>
+        <tr>
+          <td>isMultiLine</td>
+          <td>Set to true if the value should wrap over multiple lines</td>
+          <td><em>boolean</em></td>
+          <td>false</td>
+        </tr>
+        <tr>
+          <td>isSmall</td>
+          <td>Set to true to display value in smaller text</td>
+          <td><em>boolean</em></td>
+          <td>false</td>
+        </tr>
+      </tbody>
+    </table>
+  {{/smd-page-body}}
+
+{{/smd-page}}
