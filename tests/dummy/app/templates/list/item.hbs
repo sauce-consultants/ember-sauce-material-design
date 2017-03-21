@@ -1,4 +1,5 @@
 <div class="smd-page">
+
   <header class="smd-page__header">
     <h1 class="smd-page__title">Standard Item</h1>
   </header>
@@ -99,6 +100,39 @@
     {{code-snippet name="smd-item-custom.hbs"}}
 
   </section>
+
+    <header class="smd-page__header">
+      <h1 class="smd-page__title">Multiple Yields</h1>
+    </header>
+
+    <section class="smd-page__body">
+
+      <p>A standard material list item has a title, meta text, an avatar and action icon.</p>
+
+      {{#smd-item
+        title="Item With Yields"
+        meta="Elit commodo turpis volutpat risus"
+        avatarSrc="http://i.pravatar.cc/80?r=1"
+        actionIcon="info_circle"
+        isBordered=true
+        as |section|
+      }}
+        {{#if section.isLeft}}
+          Left
+        {{else if section.isMiddle}}
+          Middle
+        {{else if section.isRight}}
+          Right
+        {{else if section.isBottom}}
+          Bottom
+        {{else if section.isTop}}
+          Top
+        {{/if}}
+      {{/smd-item}}
+
+      {{code-snippet name="smd-item-yeilds.hbs"}}
+
+    </section>
 
   <header class="smd-page__header" id="attributes">
     <h1 class="smd-page__title">Attributes</h1>

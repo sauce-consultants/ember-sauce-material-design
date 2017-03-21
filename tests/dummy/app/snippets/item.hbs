@@ -49,6 +49,29 @@
 {{/smd-item}}
 // END-SNIPPET
 
+// BEGIN-SNIPPET smd-item-yeilds
+{{#smd-item
+  title="Item With Yields"
+  meta="Elit commodo turpis volutpat risus"
+  avatarSrc="http://i.pravatar.cc/80?r=1"
+  actionIcon="info_circle"
+  isBordered=true
+  as |section|
+}}
+  {{#if section.isLeft}}
+    Left
+  {{else if section.isMiddle}}
+    Middle
+  {{else if section.isRight}}
+    Right
+  {{else if section.isBottom}}
+    Bottom
+  {{else if section.isTop}}
+    Top
+  {{/if}}
+{{/smd-item}}
+// END-SNIPPET
+
 // BEGIN-SNIPPET smd-empty
   {{smd-empty text="No things were found"}}
 // END-SNIPPET

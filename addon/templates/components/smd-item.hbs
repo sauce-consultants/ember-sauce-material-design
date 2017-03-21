@@ -1,4 +1,4 @@
-
+{{yield sections.top}}
 <div class="{{leftColumnClassNames}}">
   {{#if isInverted}}
     {{#if hasActionOrLabel}}
@@ -9,6 +9,7 @@
       {{smd-item-avatar avatarText=avatarText avatarIcon=avatarIcon avatarSrc=avatarSrc classModifier=avatarClassModifier isRounded=isRoundedAvatar}}
     {{/if}}
   {{/if}}
+  {{yield sections.left}}
 </div>
 <div class="smd-item__column smd-item__column--middle">
   {{#if hasTitle}}
@@ -20,17 +21,18 @@
   {{#if hasMeta}}
   <p class="{{metaClassNames}}">{{meta}}</p>
   {{/if}}
-  {{yield}}
+  {{yield sections.middle}}
 </div>
 <div class="{{rightColumnClassNames}}">
   {{#if isInverted}}
     {{#if hasAvatar}}
       {{smd-item-avatar avatarText=avatarText avatarIcon=avatarIcon avatarSrc=avatarSrc classModifier=avatarClassModifier isRounded=isRoundedAvatar}}
     {{/if}}
-    {{yield}}
   {{else}}
     {{#if hasActionOrLabel}}
       {{smd-item-action label=label icon=actionIcon action='secondaryAction'}}
     {{/if}}
   {{/if}}
+  {{yield sections.right}}
 </div>
+{{yield sections.bottom}}

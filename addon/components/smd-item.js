@@ -12,6 +12,23 @@ export default Ember.Component.extend({
     'noRightClassModifier',
   ],
   // Attributes
+  sections: {
+    left: {
+      isLeft: true,
+    },
+    middle: {
+      isMiddle: true,
+    },
+    right: {
+      isRight: true,
+    },
+    top: {
+      isTop: true,
+    },
+    bottom: {
+      isBottom: true,
+    },
+  },
   title: null,
   subTitle: null,
   meta: null,
