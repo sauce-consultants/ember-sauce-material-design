@@ -1,0 +1,28 @@
+<fieldset class="smd-form__fieldset">
+    <legend class="smd-form__legend">{{title}}</legend>
+
+  {{#if hasItemsArray}}
+    {{#each items as |listItem|}}
+      {{#smd-editable-list-item
+      item=listItem
+      showRemove=showRemove removeItem='removeItem'
+      as |item|
+      }}
+        {{yield item}}
+      {{/smd-editable-list-item}}
+    {{/each}}
+  {{else}}
+    {{yield}}
+  {{/if}}
+
+  {{#if showAdd}}
+      <div class="smd-editable-list__item">
+          <div class="smd-editable-list__item-inputs">
+          </div>
+          <div class="smd-editable-list__item-actions">
+            {{smd-button icon='add' type='button' action='addItem' class="smd-editable-list__action smd-editable-list__action--add"}}
+          </div>
+      </div>
+  {{/if}}
+
+</fieldset>

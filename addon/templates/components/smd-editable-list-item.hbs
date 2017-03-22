@@ -1,0 +1,8 @@
+<div class="smd-editable-list__item-inputs">
+  {{yield item}}
+</div>
+<div class="smd-editable-list__item-actions">
+  {{#if showRemove}}
+    {{smd-button icon='remove' type='button' action='removeItem' item=item class="smd-editable-list__action smd-editable-list__action--remove"}}
+  {{/if}}
+</div>
