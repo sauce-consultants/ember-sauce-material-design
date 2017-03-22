@@ -3,11 +3,7 @@
 
   {{#if hasItemsArray}}
     {{#each items as |listItem|}}
-      {{#smd-editable-list-item
-      item=listItem
-      showRemove=showRemove removeItem='removeItem'
-      as |item|
-      }}
+      {{#smd-editable-list-item item=listItem showRemove=showRemove removeItem='removeItem' as |item|}}
         {{yield item}}
       {{/smd-editable-list-item}}
     {{/each}}

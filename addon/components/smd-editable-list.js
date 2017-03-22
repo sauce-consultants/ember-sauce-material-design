@@ -1,7 +1,12 @@
 import Ember from 'ember';
-import Form from 'ember-sauce-material-design/components/smd-form';
+import layout from '../templates/components/smd-editable-list';
 
-export default Form.extend({
+const {
+  Component
+} = Ember;
+
+export default Component.extend({
+  layout,
   // Attributes
   tagName: 'div',
   classNames: ['smd-editable-list'],

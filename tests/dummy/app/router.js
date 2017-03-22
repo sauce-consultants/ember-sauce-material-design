@@ -34,6 +34,7 @@ Router.map(function() {
     this.route('scrollable');
     this.route('example');
   });
+  this.route('editable-list');
   this.route('dialog', function() {
     this.route('modal', function() {
       this.route('default');
