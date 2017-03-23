@@ -10,24 +10,12 @@ scrolling=true
     {{smd-page-header title="Editable Lists"}}
     <section class="smd-page__body">
 
-        <p>Here is an example of an editable list using the items attribute.</p>
-
-        {{#smd-editable-list title="Dummy items" items=model addItem='addDummyItem' removeItem='removeDummyItem' as |item|}}
-          {{smd-form-control type='text' model=item name='someProperty' value=item.someProperty label="Some Property Label"}}
-        {{/smd-editable-list}}
-
+      <p>Here is an example of an editable list using the items attribute.</p>
+      {{partial "examples/editable-list/simple"}}
       {{code-snippet name="smd-editable-list.hbs"}}
 
-        <p>Further customisation can be achieved by manually rendering smd-editable-list-items into the list and not using the items property. Here is an example.</p>
-
-      {{#smd-editable-list title="Custom Dummy items" addItem='addDummyItem' removeItem='removeDummyItem' as |item|}}
-        {{#each model as |listItem|}}
-          {{#smd-editable-list-item item=listItem as |item|}}
-            {{smd-form-control type='text' model=item name='someProperty' value=item.someProperty label="Some Property Label"}}
-          {{/smd-editable-list-item}}
-        {{/each}}
-      {{/smd-editable-list}}
-
+      <p>Further customisation can be achieved by manually rendering smd-editable-list-items into the list and not using the items property. Here is an example.</p>
+      {{partial "examples/editable-list/custom"}}
       {{code-snippet name="smd-editable-list-custom.hbs"}}
 
     </section>
