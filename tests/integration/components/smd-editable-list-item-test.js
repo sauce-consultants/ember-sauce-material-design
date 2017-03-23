@@ -11,15 +11,19 @@ test('it renders', function(assert) {
   // Handle any actions with this.on('myAction', function(val) { ... });
 
   this.render(hbs`{{smd-editable-list-item}}`);
+  assert.ok(this.$());
+});
 
-  assert.equal(this.$().text().trim(), '');
 
-  // Template block usage:
+test('it render and yields content',function(assert) {
   this.render(hbs`
     {{#smd-editable-list-item}}
-      template block text
+          <div class="content">template block text</div>
     {{/smd-editable-list-item}}
   `);
 
-  assert.equal(this.$().text().trim(), 'template block text');
+  let $component = this.$('.ember-view').first(),
+    $content = $component.find('.content');
+
+  assert.equal($content.text().trim(), 'template block text', 'it renders content');
 });

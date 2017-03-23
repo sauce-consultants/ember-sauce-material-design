@@ -1,25 +1,21 @@
-import { moduleForComponent, test } from 'ember-qunit';
+import {
+  moduleForComponent,
+  test
+} from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('smd-editable-list', 'Integration | Component | smd editable list', {
+moduleForComponent('smd-drawer', 'Integration | Component | smd drawer', {
   integration: true
 });
 
 test('it renders', function(assert) {
 
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
+  this.set('title', 'My Title');
 
-  this.render(hbs`{{smd-editable-list}}`);
+  this.render(hbs `{{smd-drawer title=title}}`);
 
-  assert.equal(this.$().text().trim(), '');
+  let $content = this.$('.ember-view').first(),
+    $title = $content.find('.smd-form__legend');
 
-  // Template block usage:
-  this.render(hbs`
-    {{#smd-editable-list}}
-      template block text
-    {{/smd-editable-list}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.equal($title.text().trim(), 'My Title', 'it renders title');
 });
