@@ -1,12 +1,4 @@
-// BEGIN-SNIPPET smd-editable-list
-
-{{#smd-editable-list title="Dummy items" items=model addItem='addDummyItem' removeItem='removeDummyItem' as |item|}}
-  {{smd-form-control type='text' model=item name='someProperty' value=item.someProperty label="Some Property Label"}}
-{{/smd-editable-list}}
-
-// END-SNIPPET
-
-// BEGIN-SNIPPET smd-editable-list-custom
+{{!-- BEGIN-SNIPPET smd-editable-list-custom --}}
 
 {{#smd-editable-list title="Custom Dummy items" addItem='addDummyItem' removeItem='removeDummyItem' as |item|}}
   {{#each model as |listItem|}}
@@ -19,4 +11,4 @@
   {{/each}}
 {{/smd-editable-list}}
 
-// END-SNIPPET
+{{!-- END-SNIPPET --}}

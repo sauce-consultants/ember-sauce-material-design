@@ -46,6 +46,13 @@ Router.map(function() {
   this.route('animation');
   this.route('data-list');
 
+  this.route('examples',function() {
+    this.route('editable-list',function(){
+      this.route('simple');
+      this.route('custom');
+    });
+  });
+
   // Old Routes (Days numbered)
   this.route('item');
   this.route('empty');
