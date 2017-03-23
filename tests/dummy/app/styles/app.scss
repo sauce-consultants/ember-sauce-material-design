@@ -2,6 +2,42 @@
 @import "//fonts.googleapis.com/icon?family=Material+Icons";
 @import "sauce-material-design.scss";
 
+.smd-fab {
+  @include trans;
+  bottom    : 1rem;
+  opacity   : 1;
+  position  : fixed;
+  visibility: visible;
+  z-index   : 5;
+
+  .smd-button {
+    @include trans;
+  }
+
+  &--hidden {
+    visibility: hidden;
+    opacity   : 0;
+  }
+
+  &--left {
+    left: 1rem;
+  }
+
+  &--right {
+    right: 1rem;
+  }
+
+  &--small.smd-fab--left {
+    bottom: 1.5rem;
+    left  : 1.5rem;
+  }
+
+  &--small.smd-fab--right {
+    bottom: 1.5rem;
+    right : 1.5rem;
+  }
+}
+
 .sg-flex-row {
   display        : flex;
   flex-direction : row;

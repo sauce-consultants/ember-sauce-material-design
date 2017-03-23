@@ -1,0 +1,100 @@
+{{#smd-page}}
+
+  {{smd-page-header title="Fab Button"}}
+
+  {{#smd-page-body}}
+
+    <p>SMD contains a fab component to create fab buttons positioned at the bottom of your app.</p>
+
+    <p>The fab component can be placed at the application route and controlled at route level by the smd-fab-service. This allows easy fixed positioning of the button.</p>
+
+    <div class="sg-flex-row">
+      {{smd-button text="Toggle Alignment" action="toggleFabAlign"}}
+      {{smd-button text="Toggle Size" action="toggleFabSize"}}
+      {{smd-button text="Toggle Type" action="toggleFabType"}}
+      {{smd-button text="Enable/Disable" action="toggleFabDisable"}}
+    </div>
+
+    <p>The following bare component is added to the application.hbs</p>
+
+    {{code-snippet name="smd-fab.hbs"}}
+
+    <p>Use the smd-fabable-route mixin or the injected <em>fab</em> instance of smd-fab-service in any route that requires a fab button.</p>
+
+    {{code-snippet name="smd-fab-route.js"}}
+
+  {{/smd-page-body}}
+
+  {{smd-page-header title="Attributes"}}
+
+  {{#smd-page-body}}
+
+    <p><em>smd-fab-service</em> has the following attributes.</p>
+
+    <table class="sg-table sg-table--attributes">
+      <thead>
+        <tr>
+          <th>Attribute</th>
+          <th>Description</th>
+          <th>Type</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>icon</td>
+          <td>Icon name of the fab.</td>
+          <td><em>string</em></td>
+          <td>'add'</td>
+        </tr>
+        <tr>
+          <td>align</td>
+          <td>Horizontal location of the fab. 'left' or 'right'.</td>
+          <td><em>string</em></td>
+          <td>'right'</td>
+        </tr>
+        <tr>
+          <td>isHidden</td>
+          <td>Show/Hide the fab button</td>
+          <td><em>boolean</em></td>
+          <td>false</td>
+        </tr>
+        <tr>
+          <td>isSmall</td>
+          <td>Show a smaller instance of the fab</td>
+          <td><em>boolean</em></td>
+          <td>false</td>
+        </tr>
+        <tr>
+          <td>isPrimary</td>
+          <td>Primary styled fab button</td>
+          <td><em>boolean</em></td>
+          <td>false</td>
+        </tr>
+        <tr>
+          <td>isAccent</td>
+          <td>Accent styled fab button</td>
+          <td><em>boolean</em></td>
+          <td>false</td>
+        </tr>
+        <tr>
+          <td>disabled</td>
+          <td>Disable/Enable the fab button</td>
+          <td><em>boolean</em></td>
+          <td>false</td>
+        </tr>
+        <tr>
+          <td>action</td>
+          <td>Name of the action to call on fab click</td>
+          <td><em>string</em></td>
+          <td>'fabAction'</td>
+        </tr>
+      </tbody>
+    </table>
+  {{/smd-page-body}}
+
+  {{#smd-page-footer}}
+    <p>View on <a href="https://github.com/sauce-consultants/ember-sauce-material-design">github</a></p>
+  {{/smd-page-footer}}
+
+{{/smd-page}}

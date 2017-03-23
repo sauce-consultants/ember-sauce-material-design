@@ -20,6 +20,7 @@ Router.map(function() {
     this.route('link');
     this.route('icon');
     this.route('badge');
+    this.route('fab');
   });
   this.route('dropdown');
   this.route('tabs', function() {
