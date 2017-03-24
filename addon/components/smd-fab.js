@@ -1,5 +1,6 @@
 import Ember from 'ember';
-import layout from '../templates/components/smd-fab';
+import Button from '../components/smd-button';
+import layout from '../templates/components/smd-button';
 
 const {
     Component,
@@ -8,7 +9,7 @@ const {
     inject:{service},
 } = Ember;
 
-export default Component.extend({
+export default Button.extend({
   // Services
   service: service('smd-fab-service'),
   // Attributes
@@ -16,15 +17,16 @@ export default Component.extend({
   classNames:["smd-fab"],
   classNameBindings:[
     "alignClass",
-    "isSmall:smd-fab--small",
+    "isMiniFab:smd-fab--mini",
     "isHidden:smd-fab--hidden",
   ],
+  isFab: true,
   // Computed
   action:alias("service.action"),
   icon:alias("service.icon"),
   align:alias("service.align"),
   isHidden:alias("service.isHidden"),
-  isSmall:alias("service.isSmall"),
+  isMiniFab:alias("service.isSmall"),
   isAccent:alias("service.isAccent"),
   isPrimary:alias("service.isPrimary"),
   disabled:alias("service.disabled"),
@@ -36,10 +38,4 @@ export default Component.extend({
       return "smd-fab--left";
     }
   }),
-  // Actions
-  actions: {
-    fabAction: function () {
-      this.sendAction("action");
-    },
-  },
 });

@@ -4,15 +4,12 @@
 
 .smd-fab {
   @include trans;
-  bottom    : 1rem;
-  opacity   : 1;
-  position  : fixed;
-  visibility: visible;
-  z-index   : 5;
-
-  .smd-button {
-    @include trans;
-  }
+  transition-property: all;
+  bottom             : 1rem;
+  opacity            : 1;
+  position           : absolute;
+  visibility         : visible;
+  z-index            : 5;
 
   &--hidden {
     visibility: hidden;
@@ -24,17 +21,17 @@
   }
 
   &--right {
-    right: 1rem;
+    left: calc(100% - 4.5rem);
   }
 
-  &--small.smd-fab--left {
+  &--mini.smd-fab--left {
     bottom: 1.5rem;
     left  : 1.5rem;
   }
 
-  &--small.smd-fab--right {
+  &--mini.smd-fab--right {
     bottom: 1.5rem;
-    right : 1.5rem;
+    left  : calc(100% - 4rem);
   }
 }
 
