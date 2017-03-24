@@ -7,14 +7,14 @@ const {
 } = Ember;
 
 export default Service.extend({
-  icon:null,
+  icon: null,
   align: null,
-  isHidden:null,
-  isSmall:null,
-  isAccent:null,
-  isPrimary:null,
-  disabled:null,
-  action:null,
+  isHidden: null,
+  isSmall: null,
+  isAccent: null,
+  isPrimary: null,
+  disabled: null,
+  action: null,
   // Methods
   clear: function() {
     let defaults = copy(this.get('_defaults'));
@@ -26,7 +26,7 @@ export default Service.extend({
   },
   setup: function(hash) {
     let defaults = copy(this.get('_defaults'));
-    merge(defaults, hash)
+    merge(defaults, hash);
     Object.keys(defaults).forEach(
       (key) => {
         this.set(key, defaults[key]);
@@ -35,13 +35,13 @@ export default Service.extend({
   },
   // Private Attributes
   _defaults: {
-    icon:"add",
+    icon: "add",
     align: "right",
-    isHidden:true,
-    isSmall:false,
-    isAccent:false,
-    isPrimary:true,
-    disabled:false,
-    action:"fabAction",
+    isHidden: true,
+    isSmall: false,
+    isAccent: false,
+    isPrimary: true,
+    disabled: false,
+    action: "fabAction",
   },
 });

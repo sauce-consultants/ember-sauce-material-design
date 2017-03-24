@@ -56,6 +56,12 @@ Router.map(function() {
     this.route('icon');
   });
 
+  this.route('examples', function() {
+    this.route('button', function() {
+      this.route('fab');
+    });
+  });
+
 });
 
 export default Router;

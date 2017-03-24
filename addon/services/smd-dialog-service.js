@@ -12,8 +12,8 @@ export default Service.extend({
       Ember.Logger.info('Alert already registered with id=' + id);
     } else {
       // register dialog with pollyfill
-      dialog = document.querySelector('#' + id);
-      dialogPolyfill.registerDialog(dialog);
+      //let dialog = document.querySelector('#' + id);
+      //dialogPolyfill.registerDialog(dialog);
 
       this.get('alerts').push(
         Ember.Object.create({
