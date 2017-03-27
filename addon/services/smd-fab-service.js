@@ -9,7 +9,7 @@ const {
 export default Service.extend({
   icon: null,
   align: null,
-  isHidden: null,
+  isHidden: true,
   isSmall: null,
   isAccent: null,
   isPrimary: null,
