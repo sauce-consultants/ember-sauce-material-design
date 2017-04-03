@@ -37,6 +37,7 @@ export default Component.extend({
   rows: 3,
   format: 'DD/MM/YYYY',
   placeholder: null,
+  useUTC: true,
   // Select Attributes
   nullOption: null,
   options: [],
