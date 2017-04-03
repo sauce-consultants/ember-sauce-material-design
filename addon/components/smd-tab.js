@@ -27,4 +27,9 @@ export default LinkComponent.extend({
       return 'mdl-tabs__tab--' + this.get('theme');
     }
   }),
+  // Methods
+  didInsertElement() {
+    this._super(...arguments);
+    window.componentHandler.upgradeElement(this.element);
+  },
 });

@@ -23,4 +23,9 @@ export default Component.extend({
   tabBarClasses: computed('align', 'theme', function() {
     return 'mdl-tabs__tab-bar--' + this.get('align');
   }),
+  // Methods
+  didInsertElement() {
+    this._super(...arguments);
+    window.componentHandler.upgradeElement(this.element);
+  },
 });
