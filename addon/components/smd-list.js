@@ -75,7 +75,11 @@ export default Component.extend({
       subHeight = parseInt($currentSubheader.outerHeight());
 
       var $lastItem = $currentSubheader.next(),
+        lastItemOffset = 0;
+
+      if ($lastItem.length) {
         lastItemOffset = $lastItem.offset().top - subHeight;
+      }
 
       diff = $list.offset().top - lastItemOffset;
 
