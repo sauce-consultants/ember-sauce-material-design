@@ -12,7 +12,7 @@
 {{else if isCheckbox}}
   {{mdl-checkbox text=label value=value disabled=disabled}}
 {{else if isIcon}}
-  {{mdl-icon-toggle icon=icon value=value disabled=disabled}}
+  {{smd-icon-toggle icon=icon value=value disabled=disabled}}
 {{else if isRadio}}
   {{#each computedOptions as |option|}}
     {{mdl-radio
