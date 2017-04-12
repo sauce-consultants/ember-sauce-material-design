@@ -22,7 +22,7 @@
 
     <p>Adding a back button and action</p>
 
-    {{smd-header title="My Header" backIcon="arrow_back" backAction="goBack"}}
+    {{smd-header title="My Header" backIcon="arrow_back" backAction="goBack" crumb="Christine Crumb"}}
 
     {{code-snippet name="smd-header-back.hbs"}}
 
@@ -101,6 +101,12 @@
         <tr>
           <td>backIcon</td>
           <td>The material icon name for back button, see <a href="https://material.io/icons">Material Docs</a></td>
+          <td><em>string</em></td>
+          <td>null</td>
+        </tr>
+        <tr>
+          <td>crumb</td>
+          <td>Text label that will appear next to the back button</td>
           <td><em>string</em></td>
           <td>null</td>
         </tr>

@@ -10,6 +10,7 @@ export default Service.extend({
   // Attributes
   title: null,
   backIcon: null,
+  crumb: null,
   toolbarIconOne: null,
   toolbarIconTwo: null,
   toolbarIconThree: null,
@@ -52,6 +53,7 @@ export default Service.extend({
   _defaults: {
     // Attributes
     title: null,
+    crumb: null,
     backIcon: null,
     toolbarIconOne: null,
     toolbarIconTwo: null,

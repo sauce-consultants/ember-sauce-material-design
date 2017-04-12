@@ -9,7 +9,13 @@
 <div class="smd-header__toolbar smd-header__toolbar--top">
 
   {{#if hasBack}}
-    {{smd-button icon=_backIcon isColored=false class="smd-header__action smd-header__action--back" action='backAction'}}
+    {{smd-button icon=_backIcon isColored=false class="smd-header__action smd-header__action--back-max" action='backAction'}}
+  {{/if}}
+
+  {{#if hasCrumb}}
+    <div class="smd-header__crumb" {{action 'backAction'}}>
+      {{_crumb}}
+    </div>
   {{/if}}
 
   <div class="spacer"></div>
@@ -35,6 +41,9 @@
 <div class="smd-header__toolbar smd-header__toolbar--middle"></div>
 
 <div class="smd-header__toolbar smd-header__toolbar--bottom">
+  {{#if hasBack}}
+    {{smd-button icon=_backIcon isColored=false class="smd-header__action smd-header__action--back-min" action='backAction'}}
+  {{/if}}
   {{#if hasTitle}}
     <h1 class="smd-header__title">{{_title}}</h1>
   {{/if}}

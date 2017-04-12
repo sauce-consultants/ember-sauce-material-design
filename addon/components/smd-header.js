@@ -22,6 +22,7 @@ export default Component.extend({
   classNameBindings: ['fabClassModifier', 'minimizedClassModifier'],
   title: null,
   backIcon: null,
+  crumb: null,
   toolbarIconOne: null,
   toolbarIconTwo: null,
   toolbarIconThree: null,
@@ -48,6 +49,9 @@ export default Component.extend({
   }),
   _title: computed('title', 'service.title', function() {
     return this._getProperty('title');
+  }),
+  _crumb: computed('crumb', 'service.crumb', function() {
+    return this._getProperty('crumb');
   }),
   _backIcon: computed('backIcon', 'service.backIcon', function() {
     return this._getProperty('backIcon');
@@ -153,6 +157,7 @@ export default Component.extend({
   hasCoverImageClass: bool('_coverImageClass'),
   hasCoverImageSrc: bool('_coverImageSrc'),
   hasSearch: bool('_searchAction'),
+  hasCrumb: bool('_crumb'),
   // Actions
   actions: {
     backAction: function() {
