@@ -1,2 +1,6 @@
 <span class="smd-empty__text">{{text}}</span>
-<i class="smd-empty__icon material-icons">{{icon}}</i>
+<i class="smd-empty__icon material-icons">
+  {{#with icon as |iconName|}}
+    {{iconName}}
+  {{/with}}
+</i>

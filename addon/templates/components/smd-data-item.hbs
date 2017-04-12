@@ -1,5 +1,7 @@
 {{#if hasIcon}}
-  <img src="{{icon}}" alt="{{value}}" class="smd-data-list__icon"/>
+  {{#with icon as |iconName|}}
+      <img src="{{iconName}}" alt="{{value}}" class="smd-data-list__icon"/>
+  {{/with}}
 {{/if}}
 {{#if hasLabel}}
   <div class="smd-data-list__label">{{label}}</div>
