@@ -17,6 +17,23 @@ export default Component.extend({
   service: service('smd-header-service'),
   // Attributes
   layout,
+  sections: {
+    toolbar: {
+      isToolbar: true,
+    },
+    middle: {
+      isMiddle: true,
+    },
+    title: {
+      isTitle: true,
+    },
+    top: {
+      isTop: true,
+    },
+    bottom: {
+      isBottom: true,
+    },
+  },
   tagName: 'header',
   classNames: 'smd-header',
   classNameBindings: ['fabClassModifier', 'minimizedClassModifier'],
