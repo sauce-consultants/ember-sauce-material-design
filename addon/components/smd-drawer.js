@@ -26,7 +26,7 @@ export default Ember.Component.extend(ClickOutside, {
 
     // Hide drawer when navigation link is clicked.
     this.$('.mdl-navigation').on('click', (e) => {
-      let targetIsNavigationLink = e.target.className.indexOf('mdl-navigation__link') >= 0;
+      let targetIsNavigationLink = e.target.className.indexOf('mdl-navigation__link') !== -1;
       let targetIsWithinVisibleDrawer = this.$(e.target).closest('.mdl-navigation').closest('.mdl-layout__drawer').hasClass('is-visible');
       if (targetIsNavigationLink && targetIsWithinVisibleDrawer) {
         Ember.run.next(() => {
