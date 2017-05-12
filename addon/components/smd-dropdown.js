@@ -25,4 +25,9 @@ export default Component.extend({
   buttonId: computed('elementId', function() {
     return `${this.get('elementId')}-button`;
   }),
+  // Methods
+  didInsertElement: function() {
+    // add dropdown and child items to the mdl component registry
+    componentHandler.upgradeElements(this.element);
+  },
 });
