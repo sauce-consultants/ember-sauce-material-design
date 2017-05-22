@@ -22,7 +22,7 @@ export default Ember.Component.extend({
   actions: {
     buttonAction: function () {
       if (this.get('action')) {
-        this.sendAction('action');
+        this.sendAction('action',this);
       }
     }
   }
