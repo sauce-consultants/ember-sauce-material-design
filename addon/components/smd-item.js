@@ -7,6 +7,7 @@ export default Ember.Component.extend({
   tagName: 'div',
   classNames: 'smd-item',
   classNameBindings: [
+    'disabledClassModifier',
     'borderClassModifier',
     'noLeftClassModifier',
     'noRightClassModifier',
@@ -29,6 +30,7 @@ export default Ember.Component.extend({
       isBottom: true,
     },
   },
+  disabled: false,
   title: null,
   subTitle: null,
   meta: null,
@@ -97,6 +99,11 @@ export default Ember.Component.extend({
     }
     return classNames.join(' ');
   }),
+  disabledClassModifier: Ember.computed('disabled',function() {
+    if(this.get('disabled')) {
+      return 'smd-item--disabled';
+    }
+  }),
   borderClassModifier: Ember.computed('isBordered', function() {
     if (this.get('isBordered')) {
       return 'smd-item--border';
@@ -126,7 +133,7 @@ export default Ember.Component.extend({
   }),
   // Events
   click: function() {
-    if (this.get('action')) {
+    if (this.get('action') && !this.get('disabled')) {
       this.sendAction('action', this.get('item'));
     }
   },

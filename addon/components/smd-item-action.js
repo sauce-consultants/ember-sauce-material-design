@@ -3,10 +3,14 @@ import layout from '../templates/components/smd-item-action';
 
 export default Ember.Component.extend({
   layout,
+  classNameBindings: [
+    'disabledClassModifier'
+  ],
   // Attributes
   icon: null,
   label: null,
   action: null,
+  disabled: false,
   // Computed
   hasLabel: Ember.computed.bool('label'),
   hasAction: Ember.computed.bool('icon'),
@@ -18,10 +22,15 @@ export default Ember.Component.extend({
     }
     return classNames.join(' ');
   }),
+  disabledClassModifier: Ember.computed('disabled', function() {
+    if(this.get('disabled')) {
+      return 'smd-item__action--disabled';
+    }
+  }),
   // Actions
   actions: {
     buttonAction: function () {
-      if (this.get('action')) {
+      if (this.get('action') && !this.get('disabled')) {
         this.sendAction('action',this);
       }
     }

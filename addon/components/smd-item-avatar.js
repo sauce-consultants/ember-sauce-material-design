@@ -6,13 +6,22 @@ export default Ember.Component.extend({
   avatarText: null,
   avatarIcon: null,
   avatarSrc: null,
+  classNameBindings: [
+    'disabledClassModifier'
+  ],
   classModifier: null,
   isRounded: false,
+  disabled: false,
   // Computed
   hasText: Ember.computed.bool('avatarText'),
   hasIcon: Ember.computed.bool('avatarIcon'),
   hasImage: Ember.computed.bool('avatarSrc'),
   // Classes
+  disabledClassModifier: Ember.computed('disabled',function() {
+    if(this.get('disabled')) {
+      return 'smd-item__avatar--disabled';
+    }
+  }),
   textClasses: Ember.computed('avatarText', 'classModifier', function() {
     var classNames = [];
     classNames.push('smd-item__avatar-text');

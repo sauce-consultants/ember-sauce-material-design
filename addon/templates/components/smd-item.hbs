@@ -2,11 +2,11 @@
 <div class="{{leftColumnClassNames}}">
   {{#if isInverted}}
     {{#if hasActionOrLabel}}
-      {{smd-item-action label=label icon=actionIcon action='secondaryAction'}}
+      {{smd-item-action disabled=disabled label=label icon=actionIcon action='secondaryAction'}}
     {{/if}}
   {{else}}
     {{#if hasAvatar}}
-      {{smd-item-avatar avatarText=avatarText avatarIcon=avatarIcon avatarSrc=avatarSrc classModifier=avatarClassModifier isRounded=isRoundedAvatar}}
+      {{smd-item-avatar disabled=disabled avatarText=avatarText avatarIcon=avatarIcon avatarSrc=avatarSrc classModifier=avatarClassModifier isRounded=isRoundedAvatar}}
     {{/if}}
   {{/if}}
   {{yield sections.left}}
@@ -26,11 +26,11 @@
 <div class="{{rightColumnClassNames}}">
   {{#if isInverted}}
     {{#if hasAvatar}}
-      {{smd-item-avatar avatarText=avatarText avatarIcon=avatarIcon avatarSrc=avatarSrc classModifier=avatarClassModifier isRounded=isRoundedAvatar}}
+      {{smd-item-avatar disabled=disabled avatarText=avatarText avatarIcon=avatarIcon avatarSrc=avatarSrc classModifier=avatarClassModifier isRounded=isRoundedAvatar}}
     {{/if}}
   {{else}}
     {{#if hasActionOrLabel}}
-      {{smd-item-action label=label icon=actionIcon action='secondaryAction'}}
+      {{smd-item-action disabled=disabled label=label icon=actionIcon action='secondaryAction'}}
     {{/if}}
   {{/if}}
   {{yield sections.right}}
