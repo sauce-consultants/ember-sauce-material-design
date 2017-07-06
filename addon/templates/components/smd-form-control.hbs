@@ -38,7 +38,7 @@
     {{/each}}
   {{/select-box/native}}
 {{else if isDate}}
-  {{pikaday-input
+  {{!--{{pikaday-input
     class=inputClasses
     name=name
     value=value
@@ -46,7 +46,16 @@
     format=format
     placeholder=placeholder
     useUTC=useUTC
-    onSelection=(action 'selectedDate')}}
+    onSelection=(action 'selectedDate')}}--}}
+  {{ember-flatpickr
+    class=inputClasses
+    name=name
+    value=value
+    disabled=disabled
+    onChange=(action 'selectedDate')
+    dateFormat='d M Y H:i'
+    time_24hr=true
+    enableTime=true}}
 {{else}}
   {{input
     class=inputClasses
