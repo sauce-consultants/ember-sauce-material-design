@@ -48,16 +48,38 @@
     useUTC=useUTC
     onSelection=(action 'selectedDate')}}--}}
   {{ember-flatpickr
-    class=inputClasses
-    name=name
-    value=value
-    disabled=disabled
-    onChange=(action 'selectedDate')
+    allowInput=false
+    clickOpens=true
     dateFormat='d M Y H:i'
-    time_24hr=true
+    defaultDate=defaultDate
+    defaultHour=0
+    defaultMinute=0
+    disable=datesToDisable
+    disableMobile=false
+    enable=datesToEnable
+    enableSeconds=false
     enableTime=true
+    hourIncrement=1
+    inline=false
     maxDate=maxDate
-    minDate=minDate}}
+    minDate=minDate
+    minuteIncrement=5
+    mode=mode
+    nextArrow='>'
+    noCalendar=false
+    onChange=(action 'selectedDate')
+    parseDate=false
+    placeholder=label
+    prevArrow='<'
+    static=false
+    timeFormat='H:i'
+    time_24hr=true
+    utc=false
+    name=name    
+    value=value
+    wrap=false
+    disabled=disabled}}
+
 {{else}}
   {{input
     class=inputClasses
