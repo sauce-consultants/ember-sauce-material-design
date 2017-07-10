@@ -38,47 +38,18 @@
     {{/each}}
   {{/select-box/native}}
 {{else if isDate}}
-  {{!--{{pikaday-input
+  {{ember-flatpickr
     class=inputClasses
     name=name
     value=value
     disabled=disabled
-    format=format
-    placeholder=placeholder
-    useUTC=useUTC
-    onSelection=(action 'selectedDate')}}--}}
-  {{ember-flatpickr
-    allowInput=false
-    clickOpens=true
+    onChange=(action 'selectedDate')
     dateFormat='d M Y H:i'
-    defaultDate=defaultDate
-    defaultHour=0
-    defaultMinute=0
-    disable=datesToDisable
-    disableMobile=false
-    enable=datesToEnable
-    enableSeconds=false
+    time_24hr=true
     enableTime=true
-    hourIncrement=1
-    inline=false
     maxDate=maxDate
     minDate=minDate
-    minuteIncrement=5
-    mode=mode
-    nextArrow='>'
-    noCalendar=false
-    onChange=(action 'selectedDate')
-    parseDate=false
-    placeholder=label
-    prevArrow='<'
-    static=false
-    timeFormat='H:i'
-    time_24hr=true
-    utc=false
-    name=name    
-    value=value
-    wrap=false
-    disabled=disabled}}
+    mode=mode}}
 
 {{else}}
   {{input
