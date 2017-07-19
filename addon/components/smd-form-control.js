@@ -233,10 +233,14 @@ export default Component.extend({
       this.set('value', option.value);
     },
     selectedDate(date) {
-      if (date.length) {
-        this.set('value', date[0]);
+      if (this.get('mode') == 'range') {
+        return date;
       } else {
-        this.set('value', date);
+        if (date.length) {
+          this.set('value', date[0]);
+        } else {
+          this.set('value', date);
+        }
       }
     },
   },
