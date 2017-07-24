@@ -234,7 +234,7 @@ export default Component.extend({
     },
     selectedDate(date) {
       if (this.get('mode') == 'range') {
-        return date;
+        this.set('value', date);
       } else {
         if (date.length) {
           this.set('value', date[0]);
