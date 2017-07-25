@@ -26,6 +26,8 @@ export default Component.extend({
   primaryAction: null,
   secondaryAction: null,
   outsideAction: null,
+  // Content data to yield
+  data: null,
   // Computed
   hasHeader: or('hasTitle', 'hasClose', 'hasAction'),
   hasClose: bool('closeIcon'),
