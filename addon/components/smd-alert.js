@@ -24,6 +24,8 @@ export default Component.extend({
   dismissiveText: null,
   affirmativeAction: null,
   dismissiveAction: false,
+  // Content data to yield
+  data: null,
   // Computed
   hasTitle: bool('title'),
   hasFooter: or('affirmativeText', 'dismissiveText'),
