@@ -11,11 +11,17 @@ const bound = function(fnName) {
 };
 
 export default Ember.Mixin.create({
+  clickOutsideSelector: null,
   clickOutside() {},
   clickHandler: bound('outsideClickHandler'),
 
   outsideClickHandler(e) {
-    const element = this.get('element');
+    let element = this.get('element');
+    const clickOutsideSelector = this.get('clickOutsideSelector');
+    if(clickOutsideSelector)
+    {
+      element = element.querySelector(clickOutsideSelector);
+    }
     const $target = $(e.target);
     const isInside = $target.closest(element).length === 1;
     const toggleButtonClass = this.get('toggleButtonClass');
