@@ -62,6 +62,17 @@ Router.map(function() {
     });
   });
 
+  this.route('headerstack', function() {
+    this.route('mother', function() {
+      this.route('child');
+      this.route('sibling');
+    });
+    this.route('father', function() {
+      this.route('child');
+      this.route('sibling');
+    });
+  });
+
 });
 
 export default Router;
