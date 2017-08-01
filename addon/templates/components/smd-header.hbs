@@ -23,19 +23,17 @@
   <div class="spacer"></div>
 
   {{#if hasToolbarOne}}
-    {{smd-button icon=_toolbarIconOne isColored=false class="smd-header__action" action='toolbarActionOne'}}
+    {{smd-toolbar-item icon=_toolbarIconOne options=_toolbarOptionsOne selectedOption=_toolbarSelectedOptionOne action='toolbarActionOne'}}
   {{/if}}
 
   {{#if hasToolbarTwo}}
-    {{smd-button icon=_toolbarIconTwo isColored=false class="smd-header__action" action='toolbarActionTwo'}}
+    {{smd-toolbar-item icon=_toolbarIconTwo options=_toolbarOptionsTwo selectedOption=_toolbarSelectedOptionTwo action='toolbarActionTwo'}}
   {{/if}}
 
   {{#if hasSearch}}
     {{smd-search-widget action='searchAction' term=searchTerm}}
-  {{/if}}
-
-  {{#if hasToolbarThree}}
-    {{smd-button icon=_toolbarIconThree isColored=false class="smd-header__action" action='toolbarActionThree'}}
+  {{else if hasToolbarThree}}
+    {{smd-toolbar-item icon=_toolbarIconThree options=_toolbarOptionsThree selectedOption=_toolbarSelectedOptionThree action='toolbarActionThree'}}
   {{/if}}
 
   {{yield sections.toolbar}}

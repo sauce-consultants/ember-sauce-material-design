@@ -43,6 +43,12 @@ export default Component.extend({
   toolbarIconOne: null,
   toolbarIconTwo: null,
   toolbarIconThree: null,
+  toolbarOptionsOne: null,
+  toolbarOptionsTwo: null,
+  toolbarOptionsThree: null,
+  toolbarSelectedOptionOne: null,
+  toolbarSelectedOptionTwo: null,
+  toolbarSelectedOptionThree: null,
   fabIcon: null,
   isMiniFab: false,
   isRightFab: false,
@@ -79,17 +85,35 @@ export default Component.extend({
   _toolbarIconOne: computed('toolbarIconOne', 'service.toolbarIconOne', function() {
     return this._getProperty('toolbarIconOne');
   }),
+  _toolbarOptionsOne: computed('toolbarOptionsOne', 'service.toolbarOptionsOne', function() {
+    return this._getProperty('toolbarOptionsOne');
+  }),
+  _toolbarSelectedOptionOne: computed('toolbarSelectedOptionOne', 'service.toolbarSelectedOptionOne', function() {
+    return this._getProperty('toolbarSelectedOptionOne');
+  }),
   _toolbarActionOne: computed('toolbarActionOne', 'service.toolbarActionOne', function() {
     return this._getProperty('toolbarActionOne');
   }),
   _toolbarIconTwo: computed('toolbarIconTwo', 'service.toolbarIconTwo', function() {
     return this._getProperty('toolbarIconTwo');
   }),
+  _toolbarOptionsTwo: computed('toolbarOptionsTwo', 'service.toolbarOptionsTwo', function() {
+    return this._getProperty('toolbarOptionsTwo');
+  }),
+  _toolbarSelectedOptionTwo: computed('toolbarSelectedOptionTwo', 'service.toolbarSelectedOptionTwo', function() {
+    return this._getProperty('toolbarSelectedOptionTwo');
+  }),
   _toolbarActionTwo: computed('toolbarActionTwo', 'service.toolbarActionTwo', function() {
     return this._getProperty('toolbarActionTwo');
   }),
   _toolbarIconThree: computed('toolbarIconThree', 'service.toolbarIconThree', function() {
     return this._getProperty('toolbarIconThree');
+  }),
+  _toolbarOptionsThree: computed('toolbarOptionsThree', 'service.toolbarOptionsThree', function() {
+    return this._getProperty('toolbarOptionsThree');
+  }),
+  _toolbarSelectedOptionThree: computed('toolbarSelectedOptionThree', 'service.toolbarSelectedOptionThree', function() {
+    return this._getProperty('toolbarSelectedOptionThree');
   }),
   _toolbarActionThree: computed('toolbarActionThree', 'service.toolbarActionThree', function() {
     return this._getProperty('toolbarActionThree');
@@ -191,25 +215,25 @@ export default Component.extend({
         this.sendAction('_action', 'fab', this);
       }
     },
-    toolbarActionOne: function() {
+    toolbarActionOne: function(item) {
       if (this.get('_toolbarActionOne')) {
-        this.sendAction('_toolbarActionOne', this);
+        this.sendAction('_toolbarActionOne', item, this);
       } else if (this.get('_action')) {
-        this.sendAction('_action', 'toolbarOne', this);
+        this.sendAction('_action', 'toolbarOne', item, this);
       }
     },
-    toolbarActionTwo: function() {
+    toolbarActionTwo: function(item) {
       if (this.get('_toolbarActionTwo')) {
-        this.sendAction('_toolbarActionTwo', this);
+        this.sendAction('_toolbarActionTwo', item, this);
       } else if (this.get('_action')) {
-        this.sendAction('_action', 'toolbarTwo', this);
+        this.sendAction('_action', 'toolbarTwo', item, this);
       }
     },
-    toolbarActionThree: function() {
+    toolbarActionThree: function(item) {
       if (this.get('_toolbarActionThree')) {
-        this.sendAction('_toolbarActionThree', this);
+        this.sendAction('_toolbarActionThree', item, this);
       } else if (this.get('_action')) {
-        this.sendAction('_action', 'toolbarThree', this);
+        this.sendAction('_action', 'toolbarThree', item, this);
       }
     },
     searchAction: function(term) {
