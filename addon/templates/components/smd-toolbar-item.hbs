@@ -1,0 +1,9 @@
+{{#if isDropdown}}
+  {{#smd-dropdown icon=icon align=align}}
+    {{#each items as |item|}}
+      {{smd-dropdown-item text=item.text icon=item.icon value=item.value action="itemAction"}}
+    {{/each}}
+  {{/smd-dropdown}}
+{{else}}
+  {{smd-button icon=icon isColored=false class="smd-header__action" action='itemAction'}}
+{{/if}}
