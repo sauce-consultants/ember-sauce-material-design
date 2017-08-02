@@ -15,7 +15,20 @@
 // END-SNIPPET
 
 // BEGIN-SNIPPET smd-header-toolbar
-{{smd-header toolbarIconOne="insert_photo" toolbarIconTwo="flag" toolbarIconThree="delete"}}
+//.. In controller/component
+toolbarOptions: [{
+  text: 'Item One',
+  value: 'one'
+}, {
+  text: 'Item Two',
+  value: 'two'
+}, {
+  text: 'Item Three',
+  value: 'three'
+}, ],
+//..
+
+{{smd-header title="My Header" toolbarIconOne="insert_photo" toolbarIconTwo="delete" toolbarIconThree="more_vert" toolbarOptionsThree=toolbarOptions toolbarSelectedOptionThree="two" action="headerAction"}}
 // END-SNIPPET
 
 // BEGIN-SNIPPET smd-header-minimized
