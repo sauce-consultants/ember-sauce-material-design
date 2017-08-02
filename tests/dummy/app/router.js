@@ -15,6 +15,7 @@ Router.map(function() {
   });
   this.route('header', function() {
     this.route('service');
+    this.route('stack');
   });
   this.route('button', function() {
     this.route('link');

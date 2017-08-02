@@ -1,20 +1,13 @@
 import Ember from 'ember';
+import StackableRoute from 'ember-sauce-material-design/mixins/smd-stackable-header-route';
 
 const {
-  Route,
-  inject: {
-    service
-  },
+  Route
 } = Ember;
 
-export default Route.extend({
-  header: service('smd-header-service'),
-  activate: function() {
-    let hash = {
-      title: 'Header Component',
-      backIcon: 'arrow_back',
-      backAction: 'back',
-    };
-    this.get('header').setup(hash);
+export default Route.extend(StackableRoute, {
+  headerProps: {
+    title: 'Header Component',
+    backIcon: 'arrow_back',
   },
 });

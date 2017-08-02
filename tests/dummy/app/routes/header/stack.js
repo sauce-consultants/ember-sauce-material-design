@@ -7,6 +7,6 @@ const {
 
 export default Route.extend(StackableRoute, {
   headerProps: {
-    title: 'Header Service',
+    title: 'Header Stack',
   },
 });

@@ -1,0 +1,71 @@
+<div class="smd-page">
+
+  <header class="smd-page__header" id="top">
+    <h1 class="smd-page__title">Usage</h1>
+  </header>
+
+  <section class="smd-page__body">
+
+    <p>The header stack service keeps a running map of the state of each routes header. It's the easiest way to have routes inheret certain header properties from parent routes while overriding others.</p>
+
+    <h2 class="smd-page__subtitle">Route Mixin</h2>
+
+    <p>Implement the header stack by having your routes use the smd-stackable-header-route mixin.</p>
+
+    <p>Define your header properties in the headerProps attribute. When the route is activated these properties will be pushed onto the header stack. They will be poped when the route deactivates.</p>
+
+    {{code-snippet name="smd-header-stackable-route.js"}}
+
+    <h2 class="smd-page__subtitle">Header Property Inheritance</h2>
+
+    <p>By default header attributes not set in child routes will inherit the value set in the parent route. If you want to remove a header property that was set in the parent route you should set that property to null.</p>
+
+    {{code-snippet name="smd-header-stackable-route-inheritance.js"}}
+
+    <p>In this example, the child route would have the same backIcon as the parent but it would remove toolbarIconOne.</p>
+
+  </section>
+
+  <header class="smd-page__header" id="attributes">
+    <h1 class="smd-page__title">Attributes</h1>
+  </header>
+
+  <section class="smd-page__body">
+    <table class="sg-table sg-table--actions">
+      <thead>
+        <tr>
+          <th>Method</th>
+          <th>Description</th>
+          <th>Params</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>clear</td>
+          <td>Clear the state of the header stack.</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>push</td>
+          <td>Push a new hash onto the stack. Usually called on route "activate".</td>
+          <td><em>hash</em> (object)</td>
+        </tr>
+        <tr>
+          <td>pop</td>
+          <td>Pop the last hash of the stack. Usually called on route "deactivate".</td>
+          <td><em>key</em> (string)</td>
+        </tr>
+        <tr>
+          <td>refresh</td>
+          <td>Manually refresh the header state to the current stack. Use this if you need to update the header during a routes lifetime.</td>
+          <td><em>key</em> (string), <em>value</em> (mixed)</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <footer class="smd-page__footer">
+    <p>View on <a href="https://github.com/sauce-consultants/ember-sauce-material-design">github</a></p>
+  </footer>
+
+</div>

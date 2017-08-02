@@ -21,7 +21,7 @@ export default function() {
   tabTransitions(this, ['layout.index', 'layout.page']);
   tabTransitions(this, ['tabs.index', 'tabs.two', 'tabs.three', 'tabs.four']);
   tabTransitions(this, ['list.index', 'list.item', 'list.subheading', 'list.empty', 'list.scrollable', 'list.example']);
-  tabTransitions(this, ['header.index', 'header.service']);
+  tabTransitions(this, ['header.index', 'header.service', , 'header.stack']);
   tabTransitions(this, ['dialog.index', 'dialog.modal']);
   tabTransitions(this, ['button.index', 'button.link', 'button.icon', 'button.badge', 'button.fab']);
 
