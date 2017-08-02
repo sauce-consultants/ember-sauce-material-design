@@ -5,7 +5,7 @@ import {
 
 moduleFor('service:smd-header-stack-service', 'Unit | Service | smd header stack service', {
   // Specify the other units that are required for this test.
-  needs: []
+  needs: ['service:smd-header-service']
 });
 
 // Replace this with your real tests.
