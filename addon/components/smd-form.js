@@ -16,7 +16,7 @@ export default Ember.Component.extend({
 
       let childViews = thisComponent.get('childViews');
       var childFormControls = childViews.filter((childView) => {
-        return childView.constructor.toString().indexOf('smd-form-control') !== -1;
+        return childView.element.className.match('smd-form__control') || childView.constructor.toString().indexOf('smd-form-control') !== -1;
       });
 
       childViews.forEach(function(childView) {
