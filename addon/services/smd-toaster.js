@@ -18,6 +18,7 @@ export default Ember.Service.extend({
     {
       snackbarElement.addClass(newExtraClass);
     }
+    this.set('_extraClass',newExtraClass);
 
     var data = {
       message: this.get('message'),
