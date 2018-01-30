@@ -1,3 +1,7 @@
+# ABANDONED!!!!
+
+Please note we are no longer using this
+
 # Ember Sauce Material Design
 
 This README outlines the details of collaborating on this Ember addon.
