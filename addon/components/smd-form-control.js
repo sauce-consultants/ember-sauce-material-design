@@ -224,6 +224,12 @@ export default Component.extend({
   didInsertElement() {
     this._super(...arguments);
     window.componentHandler.upgradeElement(this.element);
+    this.applyFastClickFix();
+  },
+  applyFastClickFix() {
+    if(this.get('isSwitch')){
+      this.$().find('.mdl-switch__ripple-container').addClass('needsclick');
+    }
   },
   actions: {
     selectedOption(option) {
