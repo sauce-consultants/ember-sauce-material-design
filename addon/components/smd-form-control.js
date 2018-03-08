@@ -231,6 +231,12 @@ export default Component.extend({
       this.$().find('.mdl-switch__ripple-container').addClass('needsclick');
     }
   },
+  change: function(e) {
+    e.preventDefault();
+    if (this.get('changeAction') !== undefined) {
+      this.sendAction('changeAction');
+    }
+  },
   actions: {
     selectedOption(option) {
       this.set('value', option);
