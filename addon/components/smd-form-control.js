@@ -234,7 +234,12 @@ export default Component.extend({
     },
     selectedDate(date) {
       if (this.get('mode') == 'range') {
-        this.set('value', date);
+        Ember.run.next(() => {
+          this.set('value', date);
+          if (this.get('onDateSelected')) {
+            this.sendAction('onDateSelected', date);
+          }
+        });
       } else {
         if (date.length) {
           this.set('value', date[0]);
